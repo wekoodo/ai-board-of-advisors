@@ -1,8 +1,8 @@
 # Board of Advisors
 
-An AI-powered panel of elite virtual advisors — financial, legal, tax, business, investment, real estate, estate, and insurance — delivered as pure markdown files that any AI agent harness can read. No code, no dependencies, no build step. Install once, complete a one-time onboarding interview that captures your personal and financial profile, and from then on every session opens with full context already in hand.
+A panel of elite virtual advisors — financial, tax, legal, business, investment, real estate, estate, and insurance — delivered as pure markdown that any AI agent harness can read. No code, no dependencies, no build step. Complete a one-time onboarding interview, and every future session opens with your full personal and financial context already in hand.
 
-It is intended for individuals — operators, business owners, investors — who want a thinking partner across the full surface area of their financial and business life, without paying eight different professionals to assemble around the same table.
+Built for individuals — operators, business owners, investors — who want a thinking partner across the full surface area of their financial and business life, without paying eight different professionals to assemble around the same table.
 
 ## The Board
 
@@ -27,6 +27,10 @@ It is intended for individuals — operators, business owners, investors — who
 | 10 | Storage Facility Advisor (CCIM, CPM, CFA) | Site selection, development, operations, financing, portfolio strategy |
 
 The two extended advisors are fully usable today **and** serve as worked examples of how to add your own niche advisor. They sit in their own folder so the core roster stays focused.
+
+## See it in action
+
+Browse [`sessions/example-2026-business-sale/`](sessions/example-2026-business-sale/) for a shipped Round 1 board session — a fictional founder weighing a $6.2M acquisition offer, with initial analyses from the financial planner, tax strategist, corporate attorney, and business strategist.
 
 ## Install
 

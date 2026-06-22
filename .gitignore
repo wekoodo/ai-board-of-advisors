@@ -18,3 +18,12 @@ advisors-extended/**/output/*
 .DS_Store
 Thumbs.db
 *.swp
+
+# AI agent harness tooling — installed locally by Claude Code / Codex / other harnesses, not part of the project
+.agents/
+.claude/
+.codex/
+skills-lock.json
+
+# Build / iteration scratch
+tmp/
