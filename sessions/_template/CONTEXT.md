@@ -24,9 +24,11 @@ Check the advisors relevant to this session's question. Uncheck all others.
 - [ ] 03-reconvene — only if artifacts were produced in Stage 2
 
 ## Execution
-This session can be run in **manual** mode (default — works on any harness) or **delegated** mode
-(if your harness supports sub-agents/parallel tasks). The flow, files, and outputs are identical
-either way. See `../../_config/shared/board-process.md`.
+**Prefer delegated mode** when your harness supports sub-agents: the board chair dispatches one
+sub-agent per advisor per stage, handing each only that stage's load list and letting it write its
+own output file. Fall back to **manual** mode (one fresh context window per advisor) when sub-agents
+aren't available. The flow, files, and outputs are identical either way.
+See `../../_config/shared/board-process.md`.
 
 ## Stage Load Instructions
 

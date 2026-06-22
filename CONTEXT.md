@@ -67,6 +67,15 @@ Every advisor response ends with a `## Handoff` block (format in `_config/shared
 which carries context cleanly between stages. For manual vs. delegated execution of these stages,
 see `_config/shared/board-process.md`.
 
+### Execution
+
+When your harness supports sub-agents, **prefer Delegated Mode**: dispatch one sub-agent per advisor
+per stage, handing each only that stage's load list, and let it write its own output file. You (the
+board chair) then read only the saved `## Handoff` blocks to drive the next round — keeping your
+context small even across long, multi-advisor meetings. Fall back to **Manual Mode** (one fresh
+context window per advisor) only when sub-agents aren't available. Details in
+`_config/shared/board-process.md`.
+
 ---
 
 ## Profile

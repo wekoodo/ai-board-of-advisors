@@ -30,7 +30,10 @@ The two extended advisors are fully usable today **and** serve as worked example
 
 ## See it in action
 
-Browse [`sessions/example-2026-business-sale/`](sessions/example-2026-business-sale/) for a shipped Round 1 board session — a fictional founder weighing a $6.2M acquisition offer, with initial analyses from the financial planner, tax strategist, corporate attorney, and business strategist.
+Two shipped example sessions — both fully fictional personas, and both **actually produced by running the system end-to-end** (in delegated/sub-agent mode), not hand-authored:
+
+- [`sessions/example-2026-emergency-fund/`](sessions/example-2026-emergency-fund/) — the simplest path: a single advisor (Financial Planner) resolving a one-domain question in a single round.
+- [`sessions/example-2026-rental-property/`](sessions/example-2026-rental-property/) — the full natural flow: a two-advisor initial meeting (Real Estate Advisor + Financial Planner), Round 2 artifacts (an affordability/reserves worksheet and a deal-screen + due-diligence checklist), and a Round 3 reconvene closing with a board synthesis.
 
 ## Install
 
