@@ -25,5 +25,6 @@ Thumbs.db
 .codex/
 skills-lock.json
 
-# Build / iteration scratch
+# Build / iteration scratch — authoring-only, not part of the distributable
 tmp/
+run-iterations.ps1
