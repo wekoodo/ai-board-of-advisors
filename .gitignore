@@ -1,0 +1,20 @@
+# User profile — generated during onboarding, local-only, never committed
+_config/profile/personal.md
+_config/profile/financial.md
+_config/profile/businesses.md
+_config/profile/investments.md
+_config/profile/goals.md
+
+# User sessions — local-only (the _template/ and the shipped example-* session are NOT excluded)
+sessions/????-??-??-*/
+
+# Advisor working artifacts — local-only, but keep the .gitkeep that preserves each output/ dir
+advisors/**/output/*
+advisors-extended/**/output/*
+!advisors/**/output/.gitkeep
+!advisors-extended/**/output/.gitkeep
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
