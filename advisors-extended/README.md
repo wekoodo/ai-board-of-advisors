@@ -3,8 +3,8 @@
 This folder holds **niche, specialist advisors**. They serve two purposes at once:
 
 1. **Ready-to-use advisors.** Advisors 09 (Oil & Gas Specialist) and 10 (Self-Storage Investment
-   Advisor) are fully built. You can consult them right now — standalone or as part of a board
-   session — exactly like the eight core advisors in `advisors/`.
+   Advisor) are fully built. The board chair can convene them in any meeting — alone, alongside
+   each other, or with the core eight — exactly like the advisors in `advisors/`.
 2. **Reference implementations of the extension pattern.** They are the worked example of how to add
    your own custom advisor. Study them alongside `advisors/_template/` to see a real, fleshed-out
    advisor built to spec.
@@ -42,15 +42,15 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    frameworks, checklists, and analytical tools it needs. Obey the durable-figures rule: express
    formulas and ratios, and label any concrete year-specific or market-specific figure
    "illustrative — verify current-year value."
-4. **Keep `output/.gitkeep`.** It preserves the working-artifact directory in git; the contents of
-   `output/` are gitignored.
-5. **Register the advisor in the roster.** Add your new advisor (number, title, slug, one-line
-   description) to the root `CONTEXT.md` roster so the board and standalone flows can find it. If it
-   should participate in board sessions, also add it to `_config/shared/collaboration.md`.
+4. **Register the advisor in the roster.** Add your new advisor (number, title, slug, one-line
+   description) to the root `CONTEXT.md` roster so the board chair can convene it. If it should be
+   visible to the other advisors as a cross-referral target, also add it to
+   `_config/shared/collaboration.md`.
 
 ## Path reminder
 
 Extended advisors sit at the same depth as core advisors, so relative paths are unchanged:
 `../../_config/shared/disclaimer.md`, `../../_config/shared/conventions.md`,
-`../../meetings/[meeting-name]/00-brief.md`. If you nest your advisor deeper, you must adjust the
-`../` count accordingly — but the standard `advisors-extended/NN-name/` placement needs no change.
+`../../_config/profile/`, `../../meetings/[meeting-name]/artifacts/`. If you nest your advisor
+deeper, you must adjust the `../` count accordingly — but the standard `advisors-extended/NN-name/`
+placement needs no change.

@@ -33,12 +33,13 @@ optional summary the chair may record. The block's format is unchanged:
 - **Key decisions reached:** [conclusions and recommendations made this session]
 - **Open questions:** [what remains unresolved or needs more information]
 - **Action items:** [specific next steps for the client]
-- **Artifacts to produce:** [documents/plans/analyses to create in Round 2, if any]
-- **Files written:** [any files written to output/ this session, if any]
+- **Artifacts to produce:** [documents/plans/analyses still to write, if any]
+- **Files written:** [any files written under `meetings/<meeting>/artifacts/` this turn, if any]
 ```
 
-The Handoff block carries dense context forward between context windows without replaying the
-whole conversation. It is required in standalone consultations and in every board-session round.
+The Handoff block carries dense context across the sub-agent → chair boundary without replaying
+the whole conversation. It is required when an advisor is convened as a sub-agent; in inline
+convening it is an optional summary the chair may record.
 
 ## Response Style
 

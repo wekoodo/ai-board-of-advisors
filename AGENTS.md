@@ -15,7 +15,7 @@ The Board of Advisors is a harness-agnostic AI advisory system built as pure mar
 - `07-estate-planning-attorney/` — Estate Planning Attorney (JD/CTFA): wills, trusts, legacy planning
 - `08-insurance-specialist/` — Insurance Specialist (CPCU/CIC): personal and commercial coverage
 
-Each advisor folder contains `CONTEXT.md` (role identity and contract), `references/` (domain frameworks, loaded on demand), and `output/` (working artifacts; gitignored).
+Each advisor folder contains `CONTEXT.md` (role identity and contract) and `references/` (domain frameworks, loaded on demand). Working artifacts produced in a meeting live under `meetings/<meeting>/artifacts/`, not under the advisor folder.
 
 **`advisors-extended/`** — Two fully-built niche advisors that ship ready to use **and** serve as the worked "add your own advisor" example:
 

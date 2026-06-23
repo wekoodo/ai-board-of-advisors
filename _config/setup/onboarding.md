@@ -28,17 +28,22 @@ The interview:
 Your profile is stored in `_config/profile/`. All profile data files are gitignored and never
 committed. Your data stays on your machine.
 
-## Single-Advisor Consultation
-1. Navigate to `advisors/NN-name/` (e.g., `advisors/02-tax-strategist/`) — or an extended advisor in `advisors-extended/NN-name/`
-2. Tell your agent to load `CONTEXT.md` from that folder
-3. Ask your question — the advisor loads your profile automatically
+## Talk to Your Board
 
-## Full Board Session
-1. Copy `meetings/_template/` to `meetings/YYYY-MM-DD-topic/`
-2. Fill in `00-brief.md`
-3. Load the session `CONTEXT.md` and follow the stage instructions (Round 1 → Artifacts → Reconvene)
+1. Load the root `CONTEXT.md`. That convenes the board chair, who hosts the meeting and routes each
+   question to the relevant advisor(s).
+2. Ask your question. The chair convenes one advisor, several, or the whole board — whichever the
+   topic actually touches — and they respond in character.
+3. The chair produces artifacts (worksheets, plans, checklists) as real files under
+   `meetings/<meeting>/artifacts/` whenever a document would help. You can read and edit them while
+   the meeting is still running.
+4. When you're done, say **"save this meeting"** and the chair writes a `transcript.md` next to the
+   artifacts.
 
-See `_config/shared/meeting-process.md` for manual vs. delegated execution.
+A single-advisor consult is just a meeting with one voice convened — there is no separate mode.
+
+See `_config/shared/meeting-process.md` for the full protocol and the sub-agent vs. inline
+convening modes.
 
 ## Updating Your Profile
 - Edit any file in `_config/profile/` directly, or ask an advisor to update a section.
@@ -51,9 +56,10 @@ See `_config/shared/meeting-process.md` for manual vs. delegated execution.
 3. Add the advisor to the routing map in the root `CONTEXT.md`
 4. Optionally seed `references/frameworks.md` with domain knowledge
 
-The numbered prefix controls sequence in full board sessions.
+The numbered prefix controls the advisor's slot in the roster and the default ordering when the
+chair convenes several advisors in one turn.
 
 ## Privacy Note
-Your profile data (`_config/profile/*.md`) and user-created sessions (`meetings/YYYY-MM-DD-*/`)
-are gitignored and stay local. The `meetings/_template/` folder and the shipped example session
-are included in the repo.
+Your profile data (`_config/profile/*.md`) and user-created meetings (`meetings/YYYY-MM-DD-*/`)
+are gitignored and stay local. The shipped example meetings under `meetings/example-*/` are
+included in the repo as worked references.
