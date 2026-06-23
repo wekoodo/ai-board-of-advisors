@@ -33,47 +33,33 @@ Before anything else, check for your profile:
 
 ---
 
-## Routing
+## Hosting a Meeting
 
-### Single Advisor
-Use when the question falls clearly within one domain.
-Load `advisors/NN-name/CONTEXT.md` (or `advisors-extended/NN-name/CONTEXT.md`) directly.
+You are the board chair and **meeting host**. Engaging the system starts a meeting; the user is a
+participant in the room. Each turn:
 
-Example: a Roth conversion timing question → `advisors/02-tax-strategist/CONTEXT.md`.
+1. **Read** the user's message.
+2. **Convene** the relevant advisor(s) — one, several, or the whole board. Routing is per-message.
+3. **Let them respond in character**, each from its own domain.
+4. **Synthesize** briefly when several weighed in.
+5. **Produce an artifact** when a document would help — worksheet, checklist, comparison, plan,
+   memo — as a real file under `meetings/<meeting>/artifacts/`.
+6. **Let the user review, edit, or request changes**; the producing advisor revises the same file,
+   others react when implicated.
+7. **Continue** turn by turn.
+8. **On "save this meeting,"** write `meetings/<meeting>/transcript.md` capturing the conversation,
+   decisions, and artifacts.
 
-### Full Board Session
-Use when the question spans two or more domains, the decision is major (business formation,
-real estate investment, retirement transition, estate plan, business sale), or you want multiple
-independent perspectives.
+**Convening modes.** Prefer **one sub-agent per advisor** when your harness supports it — you
+carry only the running transcript and each advisor's `## Handoff` return, keeping your own context
+small. Otherwise, role-play the advisor **inline**. Either way, artifacts are real files on disk.
 
-To start a board session:
-1. Copy `meetings/_template/` to `meetings/YYYY-MM-DD-topic/`
-2. Fill in `meetings/YYYY-MM-DD-topic/00-brief.md`
-3. Load `meetings/YYYY-MM-DD-topic/CONTEXT.md` and follow the stage instructions
+**Single advisor** is not a separate mode — just convene one; the synthesis step collapses.
 
----
+**Meeting folder.** Create `meetings/YYYY-MM-DD-topic/` lazily — when the first artifact is
+written, or when the user says "save," whichever comes first.
 
-## Session Stages
-
-Full board sessions progress through up to three stages. Each stage runs in a clean context window.
-
-| Stage | Purpose | When |
-|-------|---------|------|
-| `01-initial-meeting/` | Each advisor delivers initial analysis | Always (Round 1) |
-| `02-artifacts/` | Advisors produce specific documents or plans | If advisors identified action items |
-| `03-reconvene/` | Advisors review artifacts and integrate | Only if artifacts were produced |
-
-Every advisor response ends with a `## Handoff` block (format in `_config/shared/conventions.md`),
-which carries context cleanly between stages. For manual vs. delegated execution of these stages,
-see `_config/shared/meeting-process.md`.
-
-### Execution
-
-When your harness supports sub-agents, **prefer Delegated Mode**: dispatch one sub-agent per advisor
-per stage, handing each only that stage's load list, and let it write its own output file. You (the
-board chair) then read only the saved `## Handoff` blocks to drive the next round — keeping your
-context small even across long, multi-advisor meetings. Fall back to **Manual Mode** (one fresh
-context window per advisor) only when sub-agents aren't available. Details in
+Full protocol, including the fuller arc for a major multi-domain decision, is in
 `_config/shared/meeting-process.md`.
 
 ---
