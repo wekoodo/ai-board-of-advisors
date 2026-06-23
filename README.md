@@ -30,10 +30,10 @@ The two extended advisors are fully usable today **and** serve as worked example
 
 ## See it in action
 
-Two shipped example sessions — both fully fictional personas, and both **actually produced by running the system end-to-end** (in delegated/sub-agent mode), not hand-authored:
+> _Stubbed — the two example meetings are being regenerated as conversational meeting records; per-meeting summaries are filled in once the new records ship._
 
-- [`meetings/example-2026-emergency-fund/`](meetings/example-2026-emergency-fund/) — the simplest path: a single advisor (Financial Planner) resolving a one-domain question in a single round.
-- [`meetings/example-2026-rental-property/`](meetings/example-2026-rental-property/) — the full natural flow: a two-advisor initial meeting (Real Estate Advisor + Financial Planner), Round 2 artifacts (an affordability/reserves worksheet and a deal-screen + due-diligence checklist), and a Round 3 reconvene closing with a board synthesis.
+- [`meetings/example-2026-emergency-fund/`](meetings/example-2026-emergency-fund/)
+- [`meetings/example-2026-rental-property/`](meetings/example-2026-rental-property/)
 
 ## Install
 
@@ -43,11 +43,11 @@ Two shipped example sessions — both fully fictional personas, and both **actua
 
 No build step, no package install, no API keys.
 
-## Quick start
+## Talk to your board
 
-**Single-advisor consult.** Open `advisors/NN-name/` (e.g. `advisors/02-tax-strategist/`) and tell your agent to load `CONTEXT.md`. The advisor assumes its role, loads your profile, and answers in-character. Add a `## Handoff` block to capture decisions you want to carry forward.
+Open the project in your AI agent harness and load `CONTEXT.md`. Ask your question — the board chair convenes the relevant advisor(s), they respond in character, and the chair produces artifacts (worksheets, plans, checklists) as the conversation needs them. Those artifacts are real files under `meetings/<meeting>/artifacts/` that you can read and edit while the meeting is still running; the advisors will react to your edits. When you're done, say "save this meeting" and the chair writes a `transcript.md` next to the artifacts.
 
-**Full board session.** Start at the repository root by loading `CONTEXT.md`. The board chair routes the topic. Copy `meetings/_template/` to a date-slug folder (e.g. `meetings/2026-06-21-business-sale/`), fill in `00-brief.md`, and run the three stages — initial meeting, optional artifacts, optional reconvene — per the session's stage instructions.
+Consulting a single advisor is just a meeting with one voice convened — there is no separate mode.
 
 ## Your profile stays local
 

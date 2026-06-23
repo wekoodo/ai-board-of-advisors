@@ -4,5 +4,4 @@ Canonical instructions for this project are in `AGENTS.md`. If it was not alread
 
 ## Claude Code Notes
 
-- To consult a single advisor: navigate to `advisors/NN-name/` (or `advisors-extended/NN-name/`) and load `CONTEXT.md`
-- To run a full board session: start at the root `CONTEXT.md`
+To begin, load `CONTEXT.md` — it convenes your board as a live meeting.

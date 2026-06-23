@@ -24,17 +24,11 @@ Each advisor folder contains `CONTEXT.md` (role identity and contract), `referen
 
 The structure is identical to a core advisor and the folder sits at the same depth, so all relative paths into `_config/` and `meetings/` resolve identically for core and extended advisors.
 
-**`meetings/`** — Holds the session template and your board-session folders. A session is a date-slug folder (`YYYY-MM-DD-topic/`) and follows a three-stage model:
-
-- `01-initial-meeting/` — Round 1: each selected advisor weighs in
-- `02-artifacts/` — Round 2 (optional): advisors produce concrete deliverables when action items require it
-- `03-reconvene/` — Round 3 (optional, requires Round 2): advisors review artifacts and the board chair synthesizes
-
-A shipped `_template/` is copied to start each new session. A fully fictional `example-…/` session also ships as a worked reference.
+**`meetings/`** — Holds **records of board meetings**. Each meeting is a `YYYY-MM-DD-topic/` folder with an `artifacts/` directory and an optional `transcript.md`. The model is live: you talk to the board, the chair convenes the relevant advisor(s), and artifacts (worksheets, plans, checklists) are produced as the conversation needs them — real files you can read and edit while the meeting is still in progress. Fully fictional `example-…/` meetings ship as worked references.
 
 **`_config/`** — Shared rules and personalization:
 
-- `shared/` — disclaimer, advisor collaboration map, ethics, output conventions (durable-figures rule, Handoff format), and the board-session process (manual and optional delegated modes)
+- `shared/` — disclaimer, advisor collaboration map, ethics, output conventions (durable-figures rule, Handoff format), and the meeting process (sub-agent and inline convening modes)
 - `setup/` — the onboarding interview that runs on first launch
 - `profile/` — the locally generated personal, financial, business, investment, and goals profile (gitignored; only `CONTEXT.md` ships)
 
