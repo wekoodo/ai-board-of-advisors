@@ -27,7 +27,7 @@ board-of-advisors/
 
 Because `advisors-extended/NN-name/` is at the same depth as `advisors/NN-name/`, **every relative
 path inside an extended advisor is identical to a core advisor's** — `../../_config/...`,
-`../../sessions/...`. Nothing changes. Do **not** add an extra `../`.
+`../../meetings/...`. Nothing changes. Do **not** add an extra `../`.
 
 ## How to add your own advisor
 
@@ -52,5 +52,5 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
 
 Extended advisors sit at the same depth as core advisors, so relative paths are unchanged:
 `../../_config/shared/disclaimer.md`, `../../_config/shared/conventions.md`,
-`../../sessions/[session-name]/00-brief.md`. If you nest your advisor deeper, you must adjust the
+`../../meetings/[meeting-name]/00-brief.md`. If you nest your advisor deeper, you must adjust the
 `../` count accordingly — but the standard `advisors-extended/NN-name/` placement needs no change.

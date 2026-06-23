@@ -32,8 +32,8 @@ The two extended advisors are fully usable today **and** serve as worked example
 
 Two shipped example sessions — both fully fictional personas, and both **actually produced by running the system end-to-end** (in delegated/sub-agent mode), not hand-authored:
 
-- [`sessions/example-2026-emergency-fund/`](sessions/example-2026-emergency-fund/) — the simplest path: a single advisor (Financial Planner) resolving a one-domain question in a single round.
-- [`sessions/example-2026-rental-property/`](sessions/example-2026-rental-property/) — the full natural flow: a two-advisor initial meeting (Real Estate Advisor + Financial Planner), Round 2 artifacts (an affordability/reserves worksheet and a deal-screen + due-diligence checklist), and a Round 3 reconvene closing with a board synthesis.
+- [`meetings/example-2026-emergency-fund/`](meetings/example-2026-emergency-fund/) — the simplest path: a single advisor (Financial Planner) resolving a one-domain question in a single round.
+- [`meetings/example-2026-rental-property/`](meetings/example-2026-rental-property/) — the full natural flow: a two-advisor initial meeting (Real Estate Advisor + Financial Planner), Round 2 artifacts (an affordability/reserves worksheet and a deal-screen + due-diligence checklist), and a Round 3 reconvene closing with a board synthesis.
 
 ## Install
 
@@ -47,7 +47,7 @@ No build step, no package install, no API keys.
 
 **Single-advisor consult.** Open `advisors/NN-name/` (e.g. `advisors/02-tax-strategist/`) and tell your agent to load `CONTEXT.md`. The advisor assumes its role, loads your profile, and answers in-character. Add a `## Handoff` block to capture decisions you want to carry forward.
 
-**Full board session.** Start at the repository root by loading `CONTEXT.md`. The board chair routes the topic. Copy `sessions/_template/` to a date-slug folder (e.g. `sessions/2026-06-21-business-sale/`), fill in `00-brief.md`, and run the three stages — initial meeting, optional artifacts, optional reconvene — per the session's stage instructions.
+**Full board session.** Start at the repository root by loading `CONTEXT.md`. The board chair routes the topic. Copy `meetings/_template/` to a date-slug folder (e.g. `meetings/2026-06-21-business-sale/`), fill in `00-brief.md`, and run the three stages — initial meeting, optional artifacts, optional reconvene — per the session's stage instructions.
 
 ## Your profile stays local
 

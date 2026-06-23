@@ -198,4 +198,4 @@ acting. See `_config/shared/disclaimer.md` for full terms.*
 - **Open questions:** Actual local property-tax rate and a real landlord-insurance quote both materially move the monthly result; whether a ~$190k–$210k / $1,800–$1,900 property exists in their target submarkets; self-manage vs. pay ~8–10% management.
 - **Action items:** Run Part A on every candidate listing; only underwrite (Part B) the survivors; substitute verified current-year rate, actual property tax, real insurance quote, and *signed-lease* rent comps before trusting any output.
 - **Cross-referrals:** Financial Planner (01) — affordability/reserves and preserving the emergency fund; Tax Strategist (02) — depreciation/passive-loss after-tax modeling; Insurance Specialist (08) — DP-3 landlord policy quote.
-- **Files written:** `sessions/example-2026-rental-property/02-artifacts/real-estate-advisor/rental-deal-screen-worksheet.md`
+- **Files written:** `meetings/example-2026-rental-property/02-artifacts/real-estate-advisor/rental-deal-screen-worksheet.md`

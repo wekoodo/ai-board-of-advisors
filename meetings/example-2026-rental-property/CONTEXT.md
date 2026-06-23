@@ -23,7 +23,7 @@ See `00-brief.md`.
 
 ## Execution
 Run in **delegated** mode — the board chair dispatched each advisor as its own sub-agent per stage,
-handing each only that stage's load list. See `../../_config/shared/board-process.md`.
+handing each only that stage's load list. See `../../_config/shared/meeting-process.md`.
 
 ## Note
 This is a shipped **example** session with a fully fictional persona ("Priya and Marcus"). It was

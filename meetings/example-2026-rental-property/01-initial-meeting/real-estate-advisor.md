@@ -117,4 +117,4 @@ Before you ever go under contract:
 - **Action items:** (1) Pull *actual signed* rent comps, not list prices; (2) target sub-1% deals only if value-add/appreciation thesis is explicit; (3) get a real tax + insurance number before underwriting any specific home; (4) treat reserves (vacancy 5% / maintenance 10% / CapEx 5%) as mandatory line items.
 - **Artifacts to produce:** A **single-family rental deal-screen + cash-flow underwriting worksheet** (1% rule, GRM, NOI, cap rate, cash-on-cash, DSCR, reserves) plus a **due-diligence / location checklist** — Round 2.
 - **Cross-referrals:** Financial Planner (01) — affordability, reserves, and whether the purchase preserves the emergency fund; Tax Strategist (02) — depreciation/passive-loss after-tax modeling; Insurance Specialist (08) — landlord (DP-3) policy and umbrella liability; Investment Advisor (05) — comparing this against deploying the cash in markets.
-- **Files written:** `sessions/example-2026-rental-property/01-initial-meeting/real-estate-advisor.md`
+- **Files written:** `meetings/example-2026-rental-property/01-initial-meeting/real-estate-advisor.md`

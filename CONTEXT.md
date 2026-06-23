@@ -47,9 +47,9 @@ real estate investment, retirement transition, estate plan, business sale), or y
 independent perspectives.
 
 To start a board session:
-1. Copy `sessions/_template/` to `sessions/YYYY-MM-DD-topic/`
-2. Fill in `sessions/YYYY-MM-DD-topic/00-brief.md`
-3. Load `sessions/YYYY-MM-DD-topic/CONTEXT.md` and follow the stage instructions
+1. Copy `meetings/_template/` to `meetings/YYYY-MM-DD-topic/`
+2. Fill in `meetings/YYYY-MM-DD-topic/00-brief.md`
+3. Load `meetings/YYYY-MM-DD-topic/CONTEXT.md` and follow the stage instructions
 
 ---
 
@@ -65,7 +65,7 @@ Full board sessions progress through up to three stages. Each stage runs in a cl
 
 Every advisor response ends with a `## Handoff` block (format in `_config/shared/conventions.md`),
 which carries context cleanly between stages. For manual vs. delegated execution of these stages,
-see `_config/shared/board-process.md`.
+see `_config/shared/meeting-process.md`.
 
 ### Execution
 
@@ -74,7 +74,7 @@ per stage, handing each only that stage's load list, and let it write its own ou
 board chair) then read only the saved `## Handoff` blocks to drive the next round — keeping your
 context small even across long, multi-advisor meetings. Fall back to **Manual Mode** (one fresh
 context window per advisor) only when sub-agents aren't available. Details in
-`_config/shared/board-process.md`.
+`_config/shared/meeting-process.md`.
 
 ---
 

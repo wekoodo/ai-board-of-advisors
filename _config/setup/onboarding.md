@@ -34,11 +34,11 @@ committed. Your data stays on your machine.
 3. Ask your question — the advisor loads your profile automatically
 
 ## Full Board Session
-1. Copy `sessions/_template/` to `sessions/YYYY-MM-DD-topic/`
+1. Copy `meetings/_template/` to `meetings/YYYY-MM-DD-topic/`
 2. Fill in `00-brief.md`
 3. Load the session `CONTEXT.md` and follow the stage instructions (Round 1 → Artifacts → Reconvene)
 
-See `_config/shared/board-process.md` for manual vs. delegated execution.
+See `_config/shared/meeting-process.md` for manual vs. delegated execution.
 
 ## Updating Your Profile
 - Edit any file in `_config/profile/` directly, or ask an advisor to update a section.
@@ -54,6 +54,6 @@ See `_config/shared/board-process.md` for manual vs. delegated execution.
 The numbered prefix controls sequence in full board sessions.
 
 ## Privacy Note
-Your profile data (`_config/profile/*.md`) and user-created sessions (`sessions/YYYY-MM-DD-*/`)
-are gitignored and stay local. The `sessions/_template/` folder and the shipped example session
+Your profile data (`_config/profile/*.md`) and user-created sessions (`meetings/YYYY-MM-DD-*/`)
+are gitignored and stay local. The `meetings/_template/` folder and the shipped example session
 are included in the repo.

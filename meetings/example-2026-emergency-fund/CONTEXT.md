@@ -24,7 +24,7 @@ See `00-brief.md`.
 ## Execution
 Run in **delegated** mode — the board chair dispatched the Financial Planner as a sub-agent for the
 initial meeting. A single-domain question like this typically resolves in Round 1. See
-`../../_config/shared/board-process.md`.
+`../../_config/shared/meeting-process.md`.
 
 ## Note
 This is a shipped **example** session with a fully fictional persona ("Daniel"). It was produced by

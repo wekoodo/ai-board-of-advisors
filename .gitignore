@@ -5,8 +5,8 @@ _config/profile/businesses.md
 _config/profile/investments.md
 _config/profile/goals.md
 
-# User sessions — local-only (the _template/ and the shipped example-* session are NOT excluded)
-sessions/????-??-??-*/
+# User meetings — local-only (the shipped example-* meetings are NOT excluded)
+meetings/????-??-??-*/
 
 # Advisor working artifacts — local-only, but keep the .gitkeep that preserves each output/ dir
 advisors/**/output/*

@@ -5,7 +5,7 @@ It is harness-agnostic: it works with any AI agent that can read files and follo
 
 ## The Session Flow
 
-**Round 0 — Brief.** Copy `sessions/_template/` to `sessions/YYYY-MM-DD-topic/` and fill in
+**Round 0 — Brief.** Copy `meetings/_template/` to `meetings/YYYY-MM-DD-topic/` and fill in
 `00-brief.md` with your question and context.
 
 **Round 1 — Initial Meeting (`01-initial-meeting/`).** The board chair reads the brief, selects

@@ -22,9 +22,9 @@ Each advisor folder contains `CONTEXT.md` (role identity and contract), `referen
 - `09-oil-gas-specialist/` — Oil & Gas Industry Expert (CFA, P.Eng-Petroleum, ERP): upstream/midstream/downstream, E&P economics, MLPs, energy infrastructure
 - `10-storage-facility-advisor/` — Self-Storage Investment Advisor (CCIM, CPM, CFA): site selection, development, operations, financing, portfolio strategy
 
-The structure is identical to a core advisor and the folder sits at the same depth, so all relative paths into `_config/` and `sessions/` resolve identically for core and extended advisors.
+The structure is identical to a core advisor and the folder sits at the same depth, so all relative paths into `_config/` and `meetings/` resolve identically for core and extended advisors.
 
-**`sessions/`** — Holds the session template and your board-session folders. A session is a date-slug folder (`YYYY-MM-DD-topic/`) and follows a three-stage model:
+**`meetings/`** — Holds the session template and your board-session folders. A session is a date-slug folder (`YYYY-MM-DD-topic/`) and follows a three-stage model:
 
 - `01-initial-meeting/` — Round 1: each selected advisor weighs in
 - `02-artifacts/` — Round 2 (optional): advisors produce concrete deliverables when action items require it

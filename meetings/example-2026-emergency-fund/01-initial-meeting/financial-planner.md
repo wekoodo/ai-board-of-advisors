@@ -84,4 +84,4 @@ You're in a genuinely solid position for 29: no high-interest debt, a funded mat
 - **Open questions:** Exact interest rate on the ~$11k student loan (drives the payoff-vs-invest decision). Whether Daniel qualifies for the student-loan interest deduction. Current-year HYSA rates, FDIC limit, and Roth IRA contribution limit all need verification.
 - **Action items:** (1) Open a dedicated HYSA at a separate FDIC-insured institution. (2) Move $5,000 of the existing $6,000 in now; keep ~$1,000 in checking. (3) Automate ~$650–700/month from payday to reach $12,800 in ~12 months. (4) Stop the transfer at target. (5) Redeploy freed cash flow to student loan and/or Roth IRA per the post-fund priority stack.
 - **Artifacts to produce:** Optional in Round 2 — a one-page funding schedule (month-by-month balance to $12,800) and a post-fund priority-stack worksheet (loan payoff vs. Roth IRA), if the client wants the build-out plan in writing.
-- **Files written:** `sessions/example-2026-emergency-fund/01-initial-meeting/financial-planner.md`
+- **Files written:** `meetings/example-2026-emergency-fund/01-initial-meeting/financial-planner.md`

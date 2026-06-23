@@ -136,4 +136,4 @@ legal, tax, and insurance professionals in your jurisdiction before acting. See
 - **Open questions:** Same data gaps that drive the worksheet — actual post-sale property tax, a real DP-3 insurance quote, and signed-lease rent comps in the target submarkets; self-manage vs. hire decision; whether to hold in an LLC.
 - **Action items:** Apply Stage 1 to filter markets before touring; run Stages 2–3 within the inspection/contingency window on any specific home; feed every verified figure into the companion deal-screen + cash-flow worksheet; treat any uncheckable box as grounds to renegotiate or walk.
 - **Cross-referrals:** Financial Planner (01) — reserves/affordability; Tax Strategist (02) — depreciation/passive loss; Insurance Specialist (08) — DP-3, flood, umbrella; Corporate Attorney (03) — entity structure.
-- **Files written:** `sessions/example-2026-rental-property/02-artifacts/real-estate-advisor/due-diligence-and-location-checklist.md`
+- **Files written:** `meetings/example-2026-rental-property/02-artifacts/real-estate-advisor/due-diligence-and-location-checklist.md`

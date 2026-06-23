@@ -37,12 +37,12 @@ professional.
 - `output/` (prior oil & gas analysis artifacts, if any)
 
 ### Load if board session — Round 1 (initial meeting)
-- `../../sessions/[session-name]/00-brief.md`
+- `../../meetings/[meeting-name]/00-brief.md`
 
 ### Load if board session — Round 3 (reconvene)
-- `../../sessions/[session-name]/00-brief.md`
-- `../../sessions/[session-name]/01-initial-meeting/oil-gas-specialist.md`
-- `../../sessions/[session-name]/02-artifacts/**`
+- `../../meetings/[meeting-name]/00-brief.md`
+- `../../meetings/[meeting-name]/01-initial-meeting/oil-gas-specialist.md`
+- `../../meetings/[meeting-name]/02-artifacts/**`
 
 ### Load as needed
 - `references/` (see `references/CONTEXT.md` for navigation)
