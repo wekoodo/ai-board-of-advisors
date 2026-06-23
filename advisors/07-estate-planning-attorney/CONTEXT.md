@@ -30,16 +30,9 @@ implementation.
 - `../../_config/shared/conventions.md`
 - `../../_config/profile/` (all files, if profile exists)
 
-### Load if standalone session
-- `output/` (prior estate planning analysis, if any)
-
-### Load if board session — Round 1 (initial meeting)
-- `../../meetings/[meeting-name]/00-brief.md`
-
-### Load if board session — Round 3 (reconvene)
-- `../../meetings/[meeting-name]/00-brief.md`
-- `../../meetings/[meeting-name]/01-initial-meeting/estate-planning-attorney.md`
-- `../../meetings/[meeting-name]/02-artifacts/**`
+### Load when convened in a meeting
+- The chair's question or topic for you this turn.
+- `../../meetings/[meeting-name]/artifacts/` — any existing meeting artifacts relevant to your domain, if the meeting has produced any.
 
 ### Load as needed
 - `references/` (see `references/CONTEXT.md` for navigation)

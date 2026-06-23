@@ -24,7 +24,9 @@ Example (correct):
 
 ## Handoff Block Format
 
-**Every advisor response ends with this block**, exactly this structure:
+**When an advisor is convened as a sub-agent, it returns this block to the chair** as the
+compact carrier of its result across the context boundary. In inline convening it is an
+optional summary the chair may record. The block's format is unchanged:
 
 ```
 ## Handoff
