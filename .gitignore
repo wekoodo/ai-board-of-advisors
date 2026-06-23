@@ -8,12 +8,6 @@ _config/profile/goals.md
 # User meetings — local-only (the shipped example-* meetings are NOT excluded)
 meetings/????-??-??-*/
 
-# Advisor working artifacts — local-only, but keep the .gitkeep that preserves each output/ dir
-advisors/**/output/*
-advisors-extended/**/output/*
-!advisors/**/output/.gitkeep
-!advisors-extended/**/output/.gitkeep
-
 # OS and editor files
 .DS_Store
 Thumbs.db
