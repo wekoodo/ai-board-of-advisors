@@ -2,7 +2,7 @@
 
 **Prepared for:** Priya and Marcus
 **Prepared by:** Real Estate Advisor (CCIM) — Board of Advisors
-**Session:** example-2026-rental-property | Round 2 artifact
+**Meeting:** example-2026-rental-property
 
 > **How to use this:** Run **Part A** on every listing in ~5 minutes to decide whether it
 > deserves a deep look. Only properties that survive Part A move to **Part B** (the real
@@ -147,12 +147,13 @@ current-year values.**
 cash-to-close exceeds your deployable savings, and cash-on-cash is negative — you'd be
 subsidizing the property every month and betting entirely on appreciation.
 
-> **Note on the numbers:** my Round 1 narrative quoted a wider negative range (≈ −$250 to −$550)
-> by reserving maintenance/CapEx at the higher end and including a property-management line. This
-> worksheet shows the *self-managed, mid-range* case (≈ −$60 to −$260). Both land in the same
-> place: **negative cash flow before the tax picture**, and worse once you pay for management or
-> hit a high-tax/high-insurance locale. The point of the worksheet is that *your verified local
-> tax, insurance, and rent comps* decide where in that range a real deal lands — so fill them in.
+> **Note on the numbers:** the initial-take I gave in the meeting quoted a wider negative range
+> (≈ −$250 to −$550) by reserving maintenance/CapEx at the higher end and including a
+> property-management line. This worksheet shows the *self-managed, mid-range* case (≈ −$60 to
+> −$260). Both land in the same place: **negative cash flow before the tax picture**, and worse
+> once you pay for management or hit a high-tax/high-insurance locale. The point of the worksheet
+> is that *your verified local tax, insurance, and rent comps* decide where in that range a real
+> deal lands — so fill them in.
 
 ---
 
@@ -198,4 +199,4 @@ acting. See `_config/shared/disclaimer.md` for full terms.*
 - **Open questions:** Actual local property-tax rate and a real landlord-insurance quote both materially move the monthly result; whether a ~$190k–$210k / $1,800–$1,900 property exists in their target submarkets; self-manage vs. pay ~8–10% management.
 - **Action items:** Run Part A on every candidate listing; only underwrite (Part B) the survivors; substitute verified current-year rate, actual property tax, real insurance quote, and *signed-lease* rent comps before trusting any output.
 - **Cross-referrals:** Financial Planner (01) — affordability/reserves and preserving the emergency fund; Tax Strategist (02) — depreciation/passive-loss after-tax modeling; Insurance Specialist (08) — DP-3 landlord policy quote.
-- **Files written:** `meetings/example-2026-rental-property/02-artifacts/real-estate-advisor/rental-deal-screen-worksheet.md`
+- **Files written:** `meetings/example-2026-rental-property/artifacts/rental-deal-screen-worksheet.md`

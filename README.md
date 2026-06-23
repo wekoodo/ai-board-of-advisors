@@ -30,10 +30,10 @@ The two extended advisors are fully usable today **and** serve as worked example
 
 ## See it in action
 
-> _Stubbed — the two example meetings are being regenerated as conversational meeting records; per-meeting summaries are filled in once the new records ship._
+Two worked examples ship with the repo as reference meeting records. Personas, companies, and figures are fully fictional; year-specific numbers are labeled illustrative.
 
-- [`meetings/example-2026-emergency-fund/`](meetings/example-2026-emergency-fund/)
-- [`meetings/example-2026-rental-property/`](meetings/example-2026-rental-property/)
+- **[`meetings/example-2026-emergency-fund/`](meetings/example-2026-emergency-fund/)** — *the simplest path.* Fictional Daniel asks how big his emergency fund should be and where to park it. The chair convenes a single advisor, the Financial Planner answers in one turn, the user is satisfied, the meeting saves. Just a [`transcript.md`](meetings/example-2026-emergency-fund/transcript.md) — no artifact was needed.
+- **[`meetings/example-2026-rental-property/`](meetings/example-2026-rental-property/)** — *the flagship.* Fictional Priya and Marcus weigh their first single-family rental. The chair routes to the Real Estate Advisor and the Financial Planner, who give independent initial takes, then commissions three artifacts: a [deal-screen + cash-flow worksheet](meetings/example-2026-rental-property/artifacts/rental-deal-screen-worksheet.md), a [due-diligence and location checklist](meetings/example-2026-rental-property/artifacts/due-diligence-and-location-checklist.md), and an [affordability & reserves worksheet](meetings/example-2026-rental-property/artifacts/affordability-and-reserves-worksheet.md). **The user reviews the affordability worksheet, asks for a worked passing example, the Financial Planner revises the file in place, and the Real Estate Advisor reacts** — showing the collaborative-artifact loop the system is built around. The chair synthesizes, the user says "save this meeting," and the [`transcript.md`](meetings/example-2026-rental-property/transcript.md) lands next to the artifacts.
 
 ## Install
 
