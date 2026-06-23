@@ -1,51 +1,131 @@
-# Board Process
+# Meeting Process
 
-This file describes how a full board session runs, and the two ways you can execute it.
-It is harness-agnostic: it works with any AI agent that can read files and follow instructions.
+A board meeting is **one continuous conversation** hosted by the board chair. The user is a participant
+in the room — asking, reacting, editing the documents that get produced — not an outsider operating a
+pipeline from the edge. The protocol below is harness-agnostic: any AI agent that can read project
+files and follow instructions can host a meeting, whether it supports sub-agents or only a single
+context window.
 
-## The Session Flow
+## The Meeting Loop
 
-**Round 0 — Brief.** Copy `meetings/_template/` to `meetings/YYYY-MM-DD-topic/` and fill in
-`00-brief.md` with your question and context.
+A meeting unfolds turn by turn. Each cycle:
 
-**Round 1 — Initial Meeting (`01-initial-meeting/`).** The board chair reads the brief, selects
-the relevant advisors, and routes to each. Each advisor consults independently and saves its
-response to `01-initial-meeting/[advisor-slug].md`, ending with a `## Handoff` block.
+1. **The user asks** — a question, a topic, a decision they're weighing, a problem they want a fresh
+   look at.
+2. **The chair routes** — names which advisor(s) the topic actually touches (one, several, or
+   occasionally the whole board) and convenes them. Routing is per-message, not per-meeting: a later
+   turn may pull in a different mix.
+3. **The advisors respond in character** — each convened advisor answers from its own domain, following
+   the response style in `conventions.md` and grounded in the user's profile.
+4. **The chair synthesizes when several weighed in** — a short integration call-out: where the advisors
+   agree, where they diverge, and what the user should take away. When only one advisor was convened,
+   no synthesis is needed.
+5. **An artifact is produced when a document would help** — a worksheet, checklist, comparison, plan,
+   model, or memo. The producing advisor writes it as a real file under the meeting's `artifacts/`
+   directory and the chair surfaces it in the conversation.
+6. **The user collaborates on the artifact** — reads it, edits it directly in the file, or asks for
+   changes in the conversation. The producing advisor revises the file; other advisors react to the
+   revision when their domain is implicated.
+7. **The loop continues** — the user asks the next thing, the chair routes again, the meeting keeps
+   going. There is no fixed length and no required end state.
+8. **The user may say "save this meeting"** — at which point the chair writes a `transcript.md`
+   capturing the conversation and decisions alongside the artifacts already on disk.
 
-**Round 2 — Artifact Production (`02-artifacts/`) — optional.** Advisors whose Handoff listed
-artifacts produce them, loading the brief, their own identity file, and their Round 1 handoff.
-Output goes to `02-artifacts/[advisor-slug]/`.
+A "single-advisor consult" is not a separate mode of the system — it is simply a meeting in which the
+chair convenes one voice. The same loop applies; the synthesis step in (4) just collapses.
 
-**Round 3 — Reconvene (`03-reconvene/`) — optional, requires Round 2.** Each advisor reviews the
-brief, its Round 1 handoff, and all artifacts, then produces an updated view. The board chair
-synthesizes all reconvene outputs into `03-reconvene/00-synthesis.md`.
+## Convening Modes
 
-## Execution Modes
+The chair convenes advisors in one of two ways depending on what the host harness supports. Both are
+file-based and produce identical records. This supersedes the older **manual vs. delegated** framing —
+there is now one protocol with two execution modes.
 
-The flow above is identical regardless of how you execute it. **Prefer Delegated Mode when your
-harness supports sub-agents; otherwise use Manual Mode.** The file structure, load lists, and outputs
-are identical either way — a session run in delegated mode is indistinguishable from one run manually.
+### Sub-agent mode (preferred, where the harness supports it)
 
-### Delegated Mode (preferred — when the harness supports sub-agents)
+The chair convenes each advisor as an **isolated sub-agent**, handing it only its load list:
 
-If your agent harness can dispatch sub-agents or parallel tasks, the board chair runs each advisor's
-stage by sub-agent: it spawns **one sub-agent per advisor**, gives that sub-agent **only** the files
-in that stage's load list, and has it write its output to the path the stage specifies. Advisors
-within a single stage are independent, so their sub-agents can run in parallel.
+- The advisor's own `CONTEXT.md`.
+- `_config/profile/` (the user's profile).
+- `_config/shared/disclaimer.md`, `collaboration.md`, and `conventions.md`.
+- Any existing artifacts under `meetings/<meeting>/artifacts/` relevant to the advisor's domain.
+- The chair's specific question or task for it this turn.
 
-This keeps the board chair's own context small: the chair holds the brief and each advisor's saved
-output — the `## Handoff` block carries decisions forward — but never the full identity files,
-references, and profile each advisor loads. That separation is what lets a multi-advisor, multi-round
-session run without exhausting a single context window.
+The advisor responds in character, writes any artifact file directly to `meetings/<meeting>/artifacts/`,
+and returns a compact `## Handoff` summary to the chair. The chair stitches the handoff into the
+conversation and surfaces the artifact to the user.
 
-### Manual Mode (universal fallback — works everywhere)
+This mode keeps the host's context **small across a long meeting**: the host carries the running
+transcript and each advisor's returned handoff — never the full identity files, references, and
+profile each advisor loaded. That separation is what lets a multi-turn, multi-advisor meeting run for
+hours without exhausting the host's context window.
 
-When sub-agents aren't available, run each advisor in its own fresh context window. For each advisor
-in a stage:
-1. Load exactly the files that stage's load instructions list (advisor `CONTEXT.md`, the brief,
-   shared config, profile, and — in later rounds — prior handoffs and artifacts).
-2. Prompt the advisor for that stage's output.
-3. Save the output to the path the stage specifies.
-4. Advance to the next advisor, then the next stage, by hand.
+### Inline mode (fallback, when sub-agents are unavailable)
 
-This mode depends on no special features — only the ability to open a fresh context and read files.
+In a harness without sub-agents, the host role-plays the convened advisor directly in the shared
+context. The advisor's identity, profile, and shared rules are already in scope, and the host still
+writes any artifact file to `meetings/<meeting>/artifacts/` as a real file on disk. The `## Handoff`
+block is optional in this mode — the chair may record one when it's useful for synthesis or for the
+eventual transcript — because there is no context boundary to carry the handoff across.
+
+Inline mode produces the same on-disk record as sub-agent mode. The only difference is where the
+advisor's reasoning runs.
+
+## Artifacts
+
+Artifacts are the **living documents** of a meeting — the worksheets, plans, checklists, comparisons,
+and memos advisors produce when a document will serve the user better than prose in a transcript.
+
+- **Location.** Every artifact lives at `meetings/<meeting>/artifacts/<name>.md`. There is no other
+  artifact home; the per-advisor `output/` directories from earlier versions of this system are
+  retired.
+- **Authoring rules.** Artifacts follow `conventions.md`: durable formulas and ratios are stated
+  plainly, but any concrete year-specific figure (contribution limits, tax brackets, exemption
+  amounts, premium ranges, rate assumptions) is labeled **"illustrative — verify current-year
+  value."** Format follows the response style guidance — lead with the answer, use numbered lists for
+  steps and tables for comparisons.
+- **The user may edit them directly.** The user can open an artifact in their editor and change it.
+  The meeting reads those edits on the next turn — the chair and advisors react to the artifact as it
+  now is, not as it was when produced.
+- **Revisions overwrite the same file.** When the user requests a change in conversation, the
+  producing advisor revises the artifact and writes back to the same path. The history of edits lives
+  in git; the file always reflects the current state.
+
+## The Meeting Record
+
+A meeting record is a folder at `meetings/YYYY-MM-DD-topic/`, named from the meeting's date and a
+short topic slug. It contains:
+
+- **`artifacts/`** — present whenever the meeting has produced one or more artifacts. Each file is a
+  living document the user can read and edit.
+- **`transcript.md`** — present only when the user says **"save this meeting"** (or "checkpoint
+  this"). It is a readable capture of the conversation: who said what, what was decided, which
+  artifacts were produced, and any open questions.
+
+The chair creates the meeting folder **lazily** — at the moment the first artifact is written, or
+when the user asks to save, whichever comes first. There is no template to copy at the start of a
+meeting, no brief file to fill in, and no required folder before the conversation begins. A meeting
+in which nothing needed writing down leaves no record on disk, and that is fine.
+
+## A Bigger Decision
+
+Some questions deserve more than a single turn or two. For a **major, multi-domain decision** — a
+business restructure, a large real-estate purchase, an estate plan overhaul, an employer-equity event,
+a career change with cross-cutting financial implications — the chair can deliberately run a fuller
+arc *inside* the meeting:
+
+1. **Get every relevant advisor's initial take.** The chair convenes each implicated advisor in turn
+   (or in parallel, in sub-agent mode) and lets them weigh in from their domain before the meeting
+   converges on a direction.
+2. **Commission a full artifact set.** Advisors produce the documents the decision actually needs — a
+   cash-flow model, a deal screen, a tax projection, an entity comparison, an insurance gap analysis
+   — each written into `artifacts/`.
+3. **Reconvene the advisors over the artifacts.** With the artifacts on disk, the chair brings the
+   advisors back so each can review the full set (including any user edits) and update their position
+   in light of what the others produced.
+4. **Deliver an integrated synthesis.** The chair pulls the threads together into a single
+   recommendation the user can act on — flagging where advisors aligned, where trade-offs remain, and
+   which next steps belong to the user versus to licensed professionals outside this system.
+
+This is the same thoroughness an old-style formal board process delivered, now conducted live with
+the user in the room — able to interrupt, redirect, edit an artifact mid-arc, or ask for a different
+advisor at any point.
