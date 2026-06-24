@@ -2,7 +2,7 @@
 
 **Prepared for:** Priya and Marcus
 **Prepared by:** Certified Financial Planner (Board of Advisors)
-**Meeting:** example-2026-rental-property
+**Meeting:** example-rental-property
 **Date:** 2026-06-22
 
 ---
@@ -224,4 +224,4 @@ CFP or RIA in your jurisdiction. See `_config/shared/disclaimer.md`.*
 - **Open questions (for reconvene):** (1) The property carrying-cost inputs (B1–B5: mortgage payment, taxes, insurance quote) are placeholders — need the Real Estate Advisor's (06) actual deal figures and a real lender quote to finalize Parts B–D for a specific property. (2) Priya/Marcus's true monthly core expenses (to confirm the $15k emergency fund really is ~3 months). (3) Actual employer parental-leave terms and state benefits to size the D3 income gap precisely. (4) Verified investment-property down-payment requirement and closing-cost percentage in their market.
 - **Action items:** (1) Pick a target property and fill the "This property" column down all four parts before making any offer. (2) Do not proceed unless the Scorecard shows all four PASS with the emergency fund untouched. (3) Stand up a *separate* property-reserve account (Part B target ~$15k) before possession. (4) Decide between the lower-price path and the save-more path within the 6–12 month horizon.
 - **Artifacts to produce:** None further this round; this worksheet is the committed deliverable. Pairs with the Real Estate Advisor's (06) property-evaluation checklist, which should feed verified carry numbers into Parts B–D.
-- **Files written:** `meetings/example-2026-rental-property/artifacts/affordability-and-reserves-worksheet.md`
+- **Files written:** `meetings/example-rental-property/artifacts/affordability-and-reserves-worksheet.md`

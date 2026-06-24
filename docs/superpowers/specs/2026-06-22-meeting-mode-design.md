@@ -48,8 +48,10 @@ Project/Gem/GPT packaging.
 - Preserve **context discipline**: where the harness supports sub-agents, convene each advisor as an
   isolated sub-agent so a long meeting does not exhaust the host's context window; fall back to in-context
   role-play (still file-based) where it does not.
-- **Hybrid persistence**: write artifacts to disk whenever they are produced; write a full meeting
-  transcript only when the user asks to "save/checkpoint."
+- **Routed, scannable record** (ICM-aligned): a substantive meeting leaves small single-purpose files — a
+  `brief.md` (question + context), a `minutes.md` (decisions, artifacts and how to use them, next steps),
+  and any `artifacts/` — rather than one monolithic transcript. The full `transcript.md` is written only on
+  request, for digging deeper. Meeting folders are topic-only (the date lives inside the files).
 - Rename `sessions/` → `meetings/` to remove the ambiguity between *board meetings* and *agent sessions /
   context windows*.
 
@@ -121,12 +123,14 @@ both are file-based.
 - Editable by the user; the meeting reads edits and responds. Revisions overwrite the same file.
 
 ### 5.5 Meeting record — `meetings/`
-- A meeting record is `meetings/YYYY-MM-DD-topic/` containing:
+- A meeting record is `meetings/<topic-slug>/` (topic-only name; the date lives inside the files) containing:
+  - `brief.md` — the question + context + date (the entry point)
+  - `minutes.md` — the scannable summary: advisors convened, decisions, each artifact and how to use it, next steps
   - `artifacts/` — documents advisors produced (written whenever artifacts exist)
-  - `transcript.md` — written on "save/checkpoint"
-- The chair creates the folder lazily — on first artifact or on "save" — naming it from the meeting's date
-  and a short topic slug (`YYYY-MM-DD-topic`). No template to copy, no brief file to fill in. The record
-  shape is documented in `meeting-process.md`.
+  - `transcript.md` — the full turn-by-turn conversation; written **only on request** ("save the full transcript"), for digging deeper — not the default
+- The chair creates the folder lazily and writes `brief.md` + `minutes.md` itself (not a template the user
+  fills in). `brief.md` + `minutes.md` are the standard record for any substantive meeting; `transcript.md`
+  is optional. The record shape is documented in `meeting-process.md`.
 
 ### 5.6 `conventions.md` — Handoff reframed
 - The `## Handoff` block is repositioned from "what every stage file ends with" to "what a convened
@@ -153,18 +157,23 @@ both are file-based.
   quick-start collapses into "just talk to your board"; install unchanged ("Use this template" → onboard).
 
 ### 6.3 New meeting-record shape
-Replaces the `01-initial-meeting/`, `02-artifacts/`, `03-reconvene/` staged subfolders:
+Replaces the `01-initial-meeting/`, `02-artifacts/`, `03-reconvene/` staged subfolders. Folders are
+topic-only (no date); a substantive meeting leaves `brief.md` + `minutes.md` (+ `artifacts/`);
+`transcript.md` is optional.
 ```
 meetings/
-├── example-2026-emergency-fund/
-│   └── transcript.md                     # (+ artifacts/ if any)
-├── example-2026-rental-property/
-│   ├── transcript.md
-│   └── artifacts/
-│       ├── affordability-and-reserves-worksheet.md
-│       ├── rental-deal-screen-worksheet.md
-│       └── due-diligence-and-location-checklist.md
-└── YYYY-MM-DD-topic/                     # user meetings (gitignored)
+├── example-emergency-fund/
+│   ├── brief.md
+│   └── minutes.md                       # single-advisor; no artifact or transcript needed
+├── example-rental-property/
+│   ├── brief.md
+│   ├── minutes.md
+│   ├── artifacts/
+│   │   ├── affordability-and-reserves-worksheet.md
+│   │   ├── rental-deal-screen-worksheet.md
+│   │   └── due-diligence-and-location-checklist.md
+│   └── transcript.md                    # kept because the user asked to
+└── <topic-slug>/                        # user meetings (gitignored)
 ```
 
 ### 6.4 Removals
@@ -173,7 +182,12 @@ meetings/
   home (`meetings/…/artifacts/`) makes per-advisor output dirs redundant.
 
 ### 6.5 `.gitignore`
-- Swap `sessions/????-??-??-*/` → `meetings/????-??-??-*/` (user meetings local; `example-*` shipped).
+- Ignore user meetings while shipping the examples. Because meeting folders are now topic-only (no date
+  prefix to glob), use the example-prefix form:
+  ```gitignore
+  meetings/*/
+  !meetings/example-*/
+  ```
 - Drop the `advisors/**/output/*` and `advisors-extended/**/output/*` rules and their `.gitkeep` negations.
 
 ### 6.6 Untouched
@@ -184,30 +198,28 @@ The 10 advisor identities themselves, onboarding + profile system, `disclaimer.m
 
 ## 7. Examples
 
-Both examples are regenerated as real meeting records by running the new protocol via sub-agents
-(dogfooding it). Personas remain fully fictional.
+Both examples ship as meeting records with the routed-file shape. Personas remain fully fictional.
 
-- **`meetings/example-2026-emergency-fund/`** — a short single-advisor meeting: the chair routes to the
-  Financial Planner, the advisor answers, the user is satisfied. Demonstrates the simplest path and that
-  "single advisor" is just a one-voice meeting. `transcript.md`; `artifacts/` only if one is produced.
-- **`meetings/example-2026-rental-property/`** — the flagship. The chair routes to Real Estate + Financial
-  Planner; they weigh in; the chair commissions the affordability and deal-screen artifacts; **the user
-  reviews the affordability worksheet and requests a change; the advisor revises it; the other advisor
-  reacts**; the user says "save this meeting." Its `transcript.md` shows the new collaborative-artifact
-  capability end to end, with the revised documents in `artifacts/`.
+- **`meetings/example-emergency-fund/`** — the simplest path: a single-advisor meeting (chair → Financial
+  Planner). The record is just `brief.md` + `minutes.md` — no artifact, no transcript. Demonstrates that a
+  light meeting leaves two small files, not a monolith.
+- **`meetings/example-rental-property/`** — the flagship. The chair routes to Real Estate + Financial
+  Planner; commissions three `artifacts/`; **the user reviews the affordability worksheet and requests a
+  worked passing example; the Financial Planner revises it; the Real Estate Advisor reacts.** Captured as
+  `brief.md` + `minutes.md` + `artifacts/`, plus a `transcript.md` (kept because the user asked) showing
+  the collaborative-artifact loop end to end.
 
-The fictional user's turns are authored as part of the transcript. Existing artifact content from the
-current rental example may be reused/adapted into `artifacts/` rather than regenerated from scratch where
-it still fits.
+`brief.md` and `minutes.md` are authored from the meeting; the rental `artifacts/` reuse the existing
+worked worksheets.
 
 ---
 
 ## 8. Cross-Harness Behavior
 
-| Harness capability | Convening | Artifacts | Transcript |
+| Harness capability | Convening | Record (brief + minutes + artifacts) | Transcript |
 |---|---|---|---|
-| Sub-agents + filesystem (e.g. Claude Code) | Isolated sub-agent per advisor (preferred) | Real files | On "save" |
-| Filesystem, no sub-agents | Host role-plays advisor inline | Real files | On "save" |
+| Sub-agents + filesystem (e.g. Claude Code) | Isolated sub-agent per advisor (preferred) | Real files | On request |
+| Filesystem, no sub-agents | Host role-plays advisor inline | Real files | On request |
 
 Both paths are file-based and produce identical records. The chair selects the mode based on harness
 capability, defaulting to sub-agents where available.

@@ -6,7 +6,8 @@ _config/profile/investments.md
 _config/profile/goals.md
 
 # User meetings — local-only (the shipped example-* meetings are NOT excluded)
-meetings/????-??-??-*/
+meetings/*/
+!meetings/example-*/
 
 # OS and editor files
 .DS_Store

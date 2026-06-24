@@ -47,8 +47,10 @@ participant in the room. Each turn:
 6. **Let the user review, edit, or request changes**; the producing advisor revises the same file,
    others react when implicated.
 7. **Continue** turn by turn.
-8. **On "save this meeting,"** write `meetings/<meeting>/transcript.md` capturing the conversation,
-   decisions, and artifacts.
+8. **Capture the record.** As decisions land, write `meetings/<topic>/brief.md` (the question and
+   context) and `minutes.md` (the decisions, each artifact and how to use it, and next steps) next to
+   any `artifacts/`. Write the full `transcript.md` only if the user asks to keep the complete
+   back-and-forth.
 
 **Convening modes.** Prefer **one sub-agent per advisor** when your harness supports it — you
 carry only the running transcript and each advisor's `## Handoff` return, keeping your own context
@@ -56,8 +58,9 @@ small. Otherwise, role-play the advisor **inline**. Either way, artifacts are re
 
 **Single advisor** is not a separate mode — just convene one; the synthesis step collapses.
 
-**Meeting folder.** Create `meetings/YYYY-MM-DD-topic/` lazily — when the first artifact is
-written, or when the user says "save," whichever comes first.
+**Meeting folder.** Create `meetings/<topic-slug>/` lazily — a **topic-only** name, no date in the
+folder (the date lives inside `brief.md`/`minutes.md`). A substantive meeting leaves `brief.md` +
+`minutes.md` (+ `artifacts/`); the full `transcript.md` is optional, for digging deeper.
 
 Full protocol, including the fuller arc for a major multi-domain decision, is in
 `_config/shared/meeting-process.md`.

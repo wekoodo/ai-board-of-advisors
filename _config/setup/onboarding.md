@@ -37,8 +37,9 @@ committed. Your data stays on your machine.
 3. The chair produces artifacts (worksheets, plans, checklists) as real files under
    `meetings/<meeting>/artifacts/` whenever a document would help. You can read and edit them while
    the meeting is still running.
-4. When you're done, say **"save this meeting"** and the chair writes a `transcript.md` next to the
-   artifacts.
+4. The chair keeps a small, routed record of each meeting — a `brief.md` (what you asked), a
+   `minutes.md` (the decisions and how to use each artifact), and the `artifacts/` themselves. Ask to
+   keep the full `transcript.md` only when you want the complete back-and-forth.
 
 A single-advisor consult is just a meeting with one voice convened — there is no separate mode.
 
@@ -60,6 +61,6 @@ The numbered prefix controls the advisor's slot in the roster and the default or
 chair convenes several advisors in one turn.
 
 ## Privacy Note
-Your profile data (`_config/profile/*.md`) and user-created meetings (`meetings/YYYY-MM-DD-*/`)
+Your profile data (`_config/profile/*.md`) and user-created meetings (`meetings/<topic>/`)
 are gitignored and stay local. The shipped example meetings under `meetings/example-*/` are
 included in the repo as worked references.

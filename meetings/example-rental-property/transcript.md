@@ -129,11 +129,13 @@ The one trade-off I want to flag — and concede, in this household's case — i
 
 **Marcus:** And the $15k stays sacred. Got it. We'll spend the next six months saving and looking in the price band you've described. **Save this meeting** — we'll want to come back to these artifacts when we find a real property.
 
-**Board Chair:** Saved. The meeting record now lives at `meetings/example-2026-rental-property/` with:
-- `transcript.md` (this conversation)
+**Board Chair:** Saved. The meeting record now lives at `meetings/example-rental-property/`:
+- `brief.md` — the question and your situation
+- `minutes.md` — the scannable summary: the verdict, what a "yes" looks like, and how to use each worksheet
 - `artifacts/affordability-and-reserves-worksheet.md` (with the passing example you asked for)
 - `artifacts/rental-deal-screen-worksheet.md`
 - `artifacts/due-diligence-and-location-checklist.md`
+- `transcript.md` (this full conversation — kept because you asked)
 
 The worksheets are yours to edit — fill in the "This property" column on any candidate listing. When you've got a real one to underwrite, come back, name the meeting, and we'll convene the right advisors over the verified numbers (post-sale tax, real DP-3 quote, signed-lease comps) and run both worksheets on the actual deal.
 

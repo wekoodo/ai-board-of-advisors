@@ -28,8 +28,10 @@ A meeting unfolds turn by turn. Each cycle:
    revision when their domain is implicated.
 7. **The loop continues** — the user asks the next thing, the chair routes again, the meeting keeps
    going. There is no fixed length and no required end state.
-8. **The user may say "save this meeting"** — at which point the chair writes a `transcript.md`
-   capturing the conversation and decisions alongside the artifacts already on disk.
+8. **The meeting is captured as a small record** — as the meeting reaches decisions, the chair writes
+   a `brief.md` (the question and context) and a `minutes.md` (the decisions, each artifact and how to
+   use it, and next steps) alongside any `artifacts/`. The full turn-by-turn `transcript.md` is written
+   only if the user asks to keep it ("save the full transcript").
 
 A "single-advisor consult" is not a separate mode of the system — it is simply a meeting in which the
 chair convenes one voice. The same loop applies; the synthesis step in (4) just collapses.
@@ -92,19 +94,28 @@ and memos advisors produce when a document will serve the user better than prose
 
 ## The Meeting Record
 
-A meeting record is a folder at `meetings/YYYY-MM-DD-topic/`, named from the meeting's date and a
-short topic slug. It contains:
+A meeting record is a folder at `meetings/<topic-slug>/`, named from a short **topic slug only** —
+the date lives inside the files, not in the folder name. A substantive meeting leaves a small set of
+**routed, single-purpose files** rather than one monolithic document:
 
-- **`artifacts/`** — present whenever the meeting has produced one or more artifacts. Each file is a
+- **`brief.md`** — *what the meeting was about*: the user's question, the relevant context, and the
+  date. The entry point — read this first to know what was on the table.
+- **`minutes.md`** — *what happened and what to do now*: which advisors were convened, the key
+  decisions and recommendations, each artifact with a one-line note on what it is and how to use it,
+  and the open questions / next steps. This is the scannable summary — read it instead of replaying
+  the whole conversation.
+- **`artifacts/`** — present whenever the meeting produced one or more deliverables. Each file is a
   living document the user can read and edit.
-- **`transcript.md`** — present only when the user says **"save this meeting"** (or "checkpoint
-  this"). It is a readable capture of the conversation: who said what, what was decided, which
-  artifacts were produced, and any open questions.
+- **`transcript.md`** — the full, turn-by-turn conversation. Written **only when the user asks to
+  keep it** ("save the full transcript" / "keep the record"). It exists for digging deeper into how a
+  conclusion or an artifact came about — not as the default record.
 
-The chair creates the meeting folder **lazily** — at the moment the first artifact is written, or
-when the user asks to save, whichever comes first. There is no template to copy at the start of a
-meeting, no brief file to fill in, and no required folder before the conversation begins. A meeting
-in which nothing needed writing down leaves no record on disk, and that is fine.
+The chair creates the folder **lazily** — when the meeting's question and context are clear enough to
+write a `brief.md`, when the first artifact is produced, or when the user asks to save, whichever
+comes first. `brief.md` and `minutes.md` are the chair's to write — not a template the user fills in.
+A quick exchange that needs nothing written down leaves no record, and that is fine; but once a
+meeting reaches a real decision or produces an artifact, capture it as a `brief.md` + `minutes.md`
+pair so the user can return to a small, scannable summary instead of re-reading everything.
 
 ## A Bigger Decision
 
