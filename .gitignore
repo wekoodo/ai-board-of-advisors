@@ -14,11 +14,20 @@ meetings/*/
 Thumbs.db
 *.swp
 
-# AI agent harness tooling — installed locally by Claude Code / Codex / other harnesses, not part of the project
-.agents/
+# AI agent harness tooling — installed skill *content* is regenerable, like node_modules.
+# skills-lock.json is the manifest that reproduces it on clone (`skills install`), so it IS tracked.
+# Exception: maintaining-icm is authored here and tracked in-place until it's published to
+# skills.sh; after that it becomes a normal skills-lock.json entry and this exception is removed.
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/maintaining-icm/
 .claude/
 .codex/
-skills-lock.json
+
+# Python bytecode (e.g. from running the maintaining-icm audit script)
+__pycache__/
+*.pyc
 
 # Build / iteration scratch — authoring-only, not part of the distributable
 tmp/

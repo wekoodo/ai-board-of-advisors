@@ -47,6 +47,23 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    visible to the other advisors as a cross-referral target, also add it to
    `_config/shared/collaboration.md`.
 
+## How to remove an advisor
+
+Numbers are **stable identifiers, not sequence positions** — there is no code that counts
+`01..N` or expects them to be contiguous. Deleting an advisor leaves a gap (e.g. removing 04
+leaves `01, 02, 03, 05, …`), and that is fine. The thing that actually breaks is **dangling
+cross-references**, since advisors refer to each other by number + slug. To remove an advisor cleanly:
+
+1. **Delete the folder** (`advisors/NN-name/` or `advisors-extended/NN-name/`).
+2. **Remove its roster row** from the root `CONTEXT.md`.
+3. **Remove its row and any referral rules** from `_config/shared/collaboration.md`.
+4. **Scrub cross-referrals** in any *other* advisor's `CONTEXT.md` Process section that pointed to
+   it by number (e.g. "the Tax Strategist (02)").
+5. **Leave the number gap. Do not renumber the survivors.** Treat numbers like database IDs:
+   assigned once, never reused. When you add the next advisor, use the next *unused* number — not
+   the gap. Renumbering would force renaming folders *and* rewriting every `(NN)` cross-reference
+   across the repo, for a purely cosmetic gain.
+
 ## Path reminder
 
 Extended advisors sit at the same depth as core advisors, so relative paths are unchanged:
