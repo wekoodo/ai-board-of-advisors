@@ -8,6 +8,12 @@ context window.
 
 ## The Meeting Loop
 
+At the **start of the meeting**, before the first cycle, the chair checks the `_inbox/` drop zone:
+list any documents waiting there, surface them to the user, and ask which are relevant to this
+meeting. **Move** the confirmed files into `meetings/<meeting>/inputs/` (creating that directory),
+and leave the rest in `_inbox/` for future meetings. `_inbox/` documents are local-only (gitignored);
+they become part of the meeting record once assigned. If `_inbox/` is empty, skip silently.
+
 A meeting unfolds turn by turn. Each cycle:
 
 1. **The user asks** — a question, a topic, a decision they're weighing, a problem they want a fresh
@@ -106,6 +112,9 @@ the date lives inside the files, not in the folder name. A substantive meeting l
   the whole conversation.
 - **`artifacts/`** — present whenever the meeting produced one or more deliverables. Each file is a
   living document the user can read and edit.
+- **`inputs/`** — present whenever the user supplied pre-meeting documents. Holds the source files
+  moved from `_inbox/` when the meeting started (contracts, statements, spreadsheets). Local-only,
+  like the rest of a real meeting record.
 - **`transcript.md`** — the full, turn-by-turn conversation. Written **only when the user asks to
   keep it** ("save the full transcript" / "keep the record"). It exists for digging deeper into how a
   conclusion or an artifact came about — not as the default record.
