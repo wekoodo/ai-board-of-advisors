@@ -9,6 +9,10 @@ _config/profile/goals.md
 meetings/*/
 !meetings/example-*/
 
+# Pre-meeting document intake — folder + README tracked, dropped docs local-only
+_inbox/*
+!_inbox/README.md
+
 # OS and editor files
 .DS_Store
 Thumbs.db
