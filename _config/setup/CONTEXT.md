@@ -30,8 +30,12 @@ You are running the Board of Advisors onboarding interview. Follow these rules:
    - Goals domain → `_config/profile/goals.md`
    - Concerns domain → "Current Concerns" section appended to `_config/profile/goals.md`
 
-6. **When complete:** Tell the user their profile is saved and they can return to the root
-   `CONTEXT.md` to begin using the advisors.
+6. **Connect product updates (after the profile interview).** For a personal board only: load
+   `../shared/updates.md` and follow **Connect `upstream`**. (Skip on the product/contributor
+   repo.) Read `product_repo` from `../shared/version.md` if needed. Decline is fine; no nagging.
+
+7. **When complete:** Profile saved; note whether upstream was connected; return to root
+   `CONTEXT.md` to use the board.
 
 ## Files in This Directory
 

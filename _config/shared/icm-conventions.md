@@ -38,10 +38,18 @@ keys, like database IDs:
 
 ## Factory vs. product
 
-- **Factory (Layer 3, stable):** advisor roster, `_config/shared/` rules, `_config/setup/`.
-- **Product (Layer 4, per-run):** everything under `meetings/`.
+- **Factory (Layer 3, stable):** advisor roster, `_config/shared/` rules (including `version.md`
+  soft-check and on-demand `updates.md`), `_config/setup/`, root `CHANGELOG.md`.
+- **Product (Layer 4, per-run):** everything under `meetings/` (user meetings; examples ship as
+  reference factory content under `meetings/example-*/`).
 
 Keep them apart. Per-meeting artifacts never live inside advisor folders.
+
+**Naming note:** “product” in `version.md` / `updates.md` means the *shipped Board of Advisors
+system* (the GitHub template source), not Layer-4 meeting output. Personal boards pull factory
+updates from that product via an `upstream` git remote; they do not push Layer-4 life data there.
+**Load discipline:** meeting-start soft checks use `version.md` only; load `updates.md` only for
+connect/apply — keep always-on routers (e.g. `AGENTS.md`) free of the deep protocol.
 
 ## In-workspace memory (portability rule)
 

@@ -8,11 +8,19 @@ context window.
 
 ## The Meeting Loop
 
-At the **start of the meeting**, before the first cycle, the chair checks the `_inbox/` drop zone:
-list any documents waiting there, surface them to the user, and ask which are relevant to this
-meeting. **Move** the confirmed files into `meetings/<meeting>/inputs/` (creating that directory),
-and leave the rest in `_inbox/` for future meetings. `_inbox/` documents are local-only (gitignored);
-they become part of the meeting record once assigned. If `_inbox/` is empty, skip silently.
+At the **start of the meeting**, before the first cycle, the chair does two soft checks (once per
+session — not every turn):
+
+1. **`_inbox/` drop zone** — list any documents waiting there, surface them to the user, and ask
+   which are relevant to this meeting. **Move** the confirmed files into
+   `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
+   future meetings. `_inbox/` documents are local-only (gitignored); they become part of the meeting
+   record once assigned. If `_inbox/` is empty, skip silently.
+
+2. **Product update check** — load **only** `_config/shared/version.md` and follow its soft-check
+   steps (personal board, fetch/compare, short notice if behind, fail soft). Do **not** load
+   `_config/shared/updates.md` unless the user wants to **connect** upstream or **apply** an
+   update — that file holds connect/apply only. Never auto-merge; never block the meeting.
 
 A meeting unfolds turn by turn. Each cycle:
 
