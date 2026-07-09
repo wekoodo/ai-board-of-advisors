@@ -81,7 +81,7 @@ Open the project in your AI agent harness and load `CONTEXT.md`. Ask your questi
 
 Consulting a single advisor is just a meeting with one voice convened — there is no separate mode.
 
-At the **start of a meeting**, the chair also soft-checks for **product updates** (when `upstream` is set and the network/git allow it). If something newer is available, you get a short notice — the meeting is not blocked.
+At most **once a day** (or whenever you ask “any updates?”), the chair soft-checks for **product updates** — only when `upstream` is set and the network/git allow it. If something newer is available, you get a short one-line notice; the meeting is never blocked. Most sessions run no check at all.
 
 ## Keeping your board up to date
 
@@ -89,7 +89,7 @@ GitHub **does not** notify template-created repos when the product changes. Pers
 
 | Piece | Role |
 |-------|------|
-| [`_config/shared/version.md`](_config/shared/version.md) | Version stamp + soft-check steps (what the chair loads at meeting start) |
+| [`_config/shared/version.md`](_config/shared/version.md) | Version stamp + soft-check steps (loaded for a check — at most once a day, or on request) |
 | [`CHANGELOG.md`](CHANGELOG.md) | What changed in each product release |
 | [`_config/shared/updates.md`](_config/shared/updates.md) | Connect upstream / apply merge — loaded only when you update or connect |
 
@@ -97,7 +97,7 @@ GitHub **does not** notify template-created repos when the product changes. Pers
 
 1. Onboarding (or “connect product updates”) adds:
    `git remote add upstream https://github.com/wekoodo/ai-board-of-advisors.git`
-2. At meeting start, the chair may notice: local `0.1.0` → upstream `0.2.0` (example).
+2. On the day's first meeting (at most once a day), the chair may notice: local `0.1.0` → upstream `0.2.0` (example).
 3. You say you want to update. The agent shows **commands to run yourself** and offers to **apply the merge for you** (with your consent — never auto-merge).
 
 **Do it yourself**

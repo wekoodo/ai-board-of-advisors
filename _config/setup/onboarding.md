@@ -69,9 +69,9 @@ Agents: connect steps in `_config/shared/updates.md`; routine version checks use
 4. The chair keeps a small, routed record of each meeting — a `brief.md` (what you asked), a
    `minutes.md` (the decisions and how to use each artifact), and the `artifacts/` themselves. Ask to
    keep the full `transcript.md` only when you want the complete back-and-forth.
-5. At **meeting start**, the chair soft-checks versions via `version.md` (not the full update
-   protocol). If an update exists, you get a short notice. Say you want to update for DIY commands
-   or agent-apply (with consent).
+5. **Once a day at most** (or when you ask “any updates?”), the chair soft-checks versions via
+   `version.md` — not the full update protocol, and not every session. If an update exists, you get
+   a short notice; say you want to update for DIY commands or agent-apply (with consent).
 
 A single-advisor consult is just a meeting with one voice convened — there is no separate mode.
 

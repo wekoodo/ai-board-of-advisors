@@ -5,6 +5,9 @@ _config/profile/businesses.md
 _config/profile/investments.md
 _config/profile/goals.md
 
+# Local update-check bookkeeping — last product-update check date; local-only, not profile data
+_config/profile/.update-check
+
 # User meetings — local-only (the shipped example-* meetings are NOT excluded)
 meetings/*/
 !meetings/example-*/

@@ -25,8 +25,10 @@ Routine soft checks: **`version.md` only**. Humans: root `README.md` (Use vs con
 **Identity fields** (do not hardcode a second source): `_config/shared/version.md`
 (`product_repo`, `upstream_remote_name`, `version`).
 
-**Workspace kind:** If `origin` matches **product_repo**, skip personal-board update/apply flows
-(or say to use releases/PRs). Otherwise treat as a personal board.
+**Workspace kind:** Compare **normalized** `origin` to **product_repo** — see `version.md` soft-check
+step 2 (strip scheme, any `user@`, and a trailing `.git`; lowercase; compare `host/owner/repo`). If
+they match, this is the product/contributor repo — skip personal-board update/apply flows (use
+releases/PRs). Otherwise treat it as a personal board.
 
 ---
 

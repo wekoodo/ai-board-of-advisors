@@ -12,7 +12,7 @@ This directory contains shared infrastructure loaded by all advisors and the onb
 | `shared/conventions.md` | Durable-figures rule, the `## Handoff` block format, and response style |
 | `shared/meeting-process.md` | The live-meeting protocol and convening modes (sub-agent / inline) |
 | `shared/icm-conventions.md` | How this project applies ICM (layer map, numbers-as-IDs, in-workspace memory, tooling vs. content) |
-| `shared/version.md` | Product semver stamp + soft-check recipe (default update path) |
+| `shared/version.md` | Product semver stamp + soft-check recipe (on demand, else once a day) |
 | `shared/updates.md` | Connect upstream / apply merge — load only when needed |
 | `setup/` | Onboarding interview and installation guide (loaded only during first-launch onboarding) |
 | `profile/` | Your persistent profile — written during onboarding, gitignored, local-only |
@@ -25,7 +25,8 @@ This directory contains shared infrastructure loaded by all advisors and the onb
 
 - `shared/disclaimer.md`, `shared/collaboration.md`, and `shared/conventions.md` are referenced automatically in each advisor's `CONTEXT.md` under "Always load"
 - `shared/meeting-process.md` is loaded by the board chair when hosting a meeting
-- `shared/version.md` — chair loads **only this** for the start-of-meeting soft update check
+- `shared/version.md` — the update soft-check (on demand, else once a day); routers pre-gate it by
+  `profile/.update-check`, so it isn't loaded on repeat same-day sessions
 - `shared/updates.md` — load **only** when connecting `upstream` or applying an update (setup
   post-profile step, or user asks to update the board)
 - `profile/` files are referenced automatically in each advisor's `CONTEXT.md` under "Always load"

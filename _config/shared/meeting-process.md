@@ -17,10 +17,12 @@ session — not every turn):
    future meetings. `_inbox/` documents are local-only (gitignored); they become part of the meeting
    record once assigned. If `_inbox/` is empty, skip silently.
 
-2. **Product update check** — load **only** `_config/shared/version.md` and follow its soft-check
-   steps (personal board, fetch/compare, short notice if behind, fail soft). Do **not** load
-   `_config/shared/updates.md` unless the user wants to **connect** upstream or **apply** an
-   update — that file holds connect/apply only. Never auto-merge; never block the meeting.
+2. **Product-update check** (once per calendar day at most, or when the user asks) — if
+   `_config/profile/.update-check` already shows today's date and the user didn't ask, skip.
+   Otherwise follow the soft-check in `_config/shared/version.md`, the single source for that
+   procedure: it stamps the date, skips on the product repo, fetches `upstream`, fails soft if
+   offline, and posts at most a one-line notice — never blocking or auto-merging. Load
+   `_config/shared/updates.md` only to **connect** `upstream` or **apply** an update.
 
 A meeting unfolds turn by turn. Each cycle:
 
