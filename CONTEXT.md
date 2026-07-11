@@ -43,10 +43,8 @@ participant in the room. Each turn:
      which are relevant to this meeting. **Move** the confirmed files into
      `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
      future meetings. `_inbox/` documents are local-only.
-   - **Product-update check** (once per calendar day at most, or when the user asks) — if
-     `_config/profile/.update-check` already shows today's date and they didn't ask about updates,
-     skip. Otherwise follow the soft-check in `_config/shared/version.md` (it stamps the date, skips
-     on the product repo, fails soft, never blocks). Load `_config/shared/updates.md` **only** to
+   - **Product-update check** — follow `_config/shared/version.md` (on demand, otherwise at most
+     once daily; fail soft and never auto-merge). Load `_config/shared/updates.md` **only** to
      connect `upstream` or apply an update.
 2. **Read** the user's message.
 3. **Convene** the relevant advisor(s) — one, several, or the whole board. Routing is per-message.

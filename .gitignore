@@ -10,7 +10,8 @@ _config/profile/.update-check
 
 # User meetings — local-only (the shipped example-* meetings are NOT excluded)
 meetings/*/
-!meetings/example-*/
+!meetings/example-emergency-fund/
+!meetings/example-rental-property/
 
 # Pre-meeting document intake — folder + README tracked, dropped docs local-only
 _inbox/*

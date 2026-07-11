@@ -25,10 +25,9 @@ Routine soft checks: **`version.md` only**. Humans: root `README.md` (Use vs con
 **Identity fields** (do not hardcode a second source): `_config/shared/version.md`
 (`product_repo`, `upstream_remote_name`, `version`).
 
-**Workspace kind:** Compare **normalized** `origin` to **product_repo** — see `version.md` soft-check
-step 2 (strip scheme, any `user@`, and a trailing `.git`; lowercase; compare `host/owner/repo`). If
-they match, this is the product/contributor repo — skip personal-board update/apply flows (use
-releases/PRs). Otherwise treat it as a personal board.
+**Workspace kind:** Profile data is the durable signal; follow `version.md` step 1. A workspace with
+at least one defined profile file is a personal board, whether it came from a template or direct
+clone. A clean canonical clone or contributor fork has no profile data and skips this flow.
 
 ---
 
@@ -61,7 +60,7 @@ git fetch upstream
 git merge upstream/main
 ```
 
-Rebase alternative: `git fetch upstream` then `git rebase upstream/main`.  
+Rebase alternative: `git fetch upstream` then `git rebase upstream/main`.
 Then fix conflicts if any; reopen the board. Profile/meetings should not appear in the merge.
 
 ### Option B — Agent applies

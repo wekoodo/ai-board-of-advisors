@@ -17,9 +17,7 @@ check never uses it.
 
 ## Soft check (single source of truth)
 
-This file holds the whole procedure. `CONTEXT.md` and `meeting-process.md` only *point* here and
-pre-gate the throttle so this file isn't even loaded on repeat same-day sessions. Keep the steps in
-this one place.
+This file holds the whole procedure. Routers only point here. Keep the steps in this one place.
 
 ### When to run
 
@@ -30,17 +28,18 @@ this one place.
 
 ### Steps
 
-1. **Throttle & stamp** (skip this step only when the user explicitly asked). Read
+1. **Workspace kind.** Profile data is the durable signal that this is a personal board:
+   - If any of `personal.md`, `financial.md`, `businesses.md`, `investments.md`, or `goals.md` exists
+     in `_config/profile/`, continue. This includes template-created boards and direct clones used
+     personally.
+   - If none exists, stop. A clean canonical clone or contributor fork uses releases/PRs, not the
+     personal-board update flow. Onboarding runs before this check is relevant and writes profile
+     files before offering to connect updates.
+2. **Throttle & stamp** (skip this step only when the user explicitly asked). Read
    `_config/profile/.update-check`. If it already holds today's date, **stop** — no fetch, no
    notice. Otherwise write today's date (`YYYY-MM-DD`) to it *now*, before fetching: that bounds the
    check to one attempt per day even when offline. This file is local-only bookkeeping — gitignored,
    not profile data.
-2. **Product-repo skip.** If this workspace *is* the product/contributor repo, stop (it ships via
-   releases/PRs, not `upstream` merges). Compare **normalized** remotes, not raw URLs: take `origin`
-   and **product_repo**, strip the scheme (`https://`, `git@`), any `user@`, the `:` a host may use
-   before the path, and a trailing `.git`; lowercase; compare the remaining `host/owner/repo`.
-   Example — these are the **same** repo: `git@github.com:wekoodo/ai-board-of-advisors.git` and
-   `https://github.com/wekoodo/ai-board-of-advisors`.
 3. **No `upstream` yet?** If the remote named by **upstream_remote_name** is missing, emit one quiet
    line that they can say “connect product updates,” then continue the meeting. (Connect steps live
    in `updates.md` — do not load it for a check.)

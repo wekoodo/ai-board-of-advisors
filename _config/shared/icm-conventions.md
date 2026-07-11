@@ -48,9 +48,9 @@ Keep them apart. Per-meeting artifacts never live inside advisor folders.
 **Naming note:** “product” in `version.md` / `updates.md` means the *shipped Board of Advisors
 system* (the GitHub template source), not Layer-4 meeting output. Personal boards pull factory
 updates from that product via an `upstream` git remote; they do not push Layer-4 life data there.
-**Load discipline:** the update soft-check lives in `version.md` alone — routers pre-gate it by
-`profile/.update-check` so it loads at most once a day, not every session; load `updates.md` only
-for connect/apply — keep always-on routers (e.g. `AGENTS.md`) free of the deep protocol.
+**Load discipline:** the update soft-check and its throttle live in `version.md` alone; load
+`updates.md` only for connect/apply, and keep always-on routers (e.g. `AGENTS.md`) free of the deep
+protocol.
 
 ## In-workspace memory (portability rule)
 
