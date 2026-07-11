@@ -51,6 +51,9 @@ participant in the room. Each turn:
    - **Product-update check** — follow `_config/shared/version.md` (on demand, otherwise at most
      once daily; fail soft and never auto-merge). Load `_config/shared/updates.md` **only** to
      connect `upstream` or apply an update.
+   - **Prior meeting context** — when the request refers to earlier work or prior context may matter,
+     read `meetings/CONTEXT.md` and follow its index-first, selective-loading flow. Do not list or
+     preload the complete meeting history.
 2. **Read** the user's message.
 3. **Convene** the relevant advisor(s) — one, several, or the whole board. Routing is per-message.
 4. **Let them respond in character**, each from its own domain.
@@ -62,8 +65,10 @@ participant in the room. Each turn:
 8. **Continue** turn by turn.
 9. **Capture the record.** As decisions land, write `meetings/<topic>/brief.md` (the question and
    context) and `minutes.md` (the decisions, each artifact and how to use it, and next steps) next to
-   any `artifacts/`. Write the full `transcript.md` only if the user asks to keep the complete
-   back-and-forth.
+   any `artifacts/`. At the existing lazy record-creation threshold, create or update that meeting's
+   single local index entry following `meetings/CONTEXT.md`; its minutes field may remain `pending`
+   until `minutes.md` is written. Write the full `transcript.md` only if the user asks to keep the
+   complete back-and-forth.
 
 **Convening modes.** Prefer **one sub-agent per advisor** when your harness supports it — you
 carry only the running transcript and each advisor's `## Handoff` return, keeping your own context

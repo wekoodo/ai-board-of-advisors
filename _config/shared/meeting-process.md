@@ -21,6 +21,10 @@ session — not every turn):
    on-demand/daily, fail-soft check. Load `_config/shared/updates.md` only to **connect** `upstream`
    or **apply** an update.
 
+When the request refers to earlier work or prior meeting context may matter, follow
+`meetings/CONTEXT.md`: use its index-first, selective-loading flow to choose one meeting before
+loading its record. Do not list or preload the complete meeting history.
+
 A meeting unfolds turn by turn. Each cycle:
 
 1. **The user asks** — a question, a topic, a decision they're weighing, a problem they want a fresh
@@ -132,6 +136,13 @@ comes first. `brief.md` and `minutes.md` are the chair's to write — not a temp
 A quick exchange that needs nothing written down leaves no record, and that is fine; but once a
 meeting reaches a real decision or produces an artifact, capture it as a `brief.md` + `minutes.md`
 pair so the user can return to a small, scannable summary instead of re-reading everything.
+
+At that same lazy-creation threshold, create or update exactly one local `meetings/index.md` entry,
+keyed by the meeting folder path, following `meetings/CONTEXT.md`. The minutes field may remain
+`pending` until `minutes.md` exists; do not create empty minutes solely to satisfy the index. Update
+the same entry when minutes are written, the meeting status changes, or material routing metadata
+changes. Meeting record files are authoritative: when an entry is stale, missing, or duplicated,
+use the router's scoped search, trust the record files, and repair or consolidate the entry.
 
 ## A Bigger Decision
 

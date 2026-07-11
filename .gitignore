@@ -13,6 +13,9 @@ meetings/*/
 !meetings/example-emergency-fund/
 !meetings/example-rental-property/
 
+# Compact private meeting-history routing metadata
+/meetings/index.md
+
 # Pre-meeting document intake — folder + README tracked, dropped docs local-only
 _inbox/*
 !_inbox/README.md
