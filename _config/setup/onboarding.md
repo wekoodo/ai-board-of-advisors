@@ -81,7 +81,7 @@ convening modes.
 ## Updating your profile
 
 - Edit any file in `_config/profile/` directly, or ask an advisor to update a section.
-- `_config/profile/CONTEXT.md` tracks when each section was last updated; advisors flag data older than 12 months.
+- Each profile file owns its `Last Updated: YYYY-MM-DD` value; advisors flag data older than 12 months.
 
 ## Keeping the product system up to date
 

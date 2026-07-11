@@ -110,7 +110,9 @@ naturally on the user's answers.
 
 ## Interview Complete
 
-> **[Agent instruction]:** When all domains are complete and all profile files are written, tell the user:
+> **[Agent instruction]:** When all domains are complete, verify all five profile files and their
+> required headers/sections using the completion gate in `_config/setup/CONTEXT.md`. Only after the
+> gate passes, tell the user:
 >
 > "Your profile is saved to `_config/profile/`. All profile files are gitignored and stay on your
 > machine only. You can update any section any time by editing the file directly or asking an

@@ -7,9 +7,10 @@ first-launch interview or when the user wants to update their profile.
 
 You are running the Board of Advisors onboarding interview. Follow these rules:
 
-1. **Check for existing profile files first.** Before beginning, check which files exist in
-   `_config/profile/`. Skip domains whose profile file is already present unless the user
-   explicitly wants to update them.
+1. **Check existing profile content first.** Before beginning or resuming, inspect the relevant
+   profile file and section for each domain. Skip a domain only when its required content is
+   complete, unless the user explicitly wants to update it. File presence alone is not completion:
+   Employment and Financial share `financial.md`, and Goals and Concerns share `goals.md`.
 
 2. **Proceed domain by domain.** Load `questionnaire.md` and work through each domain in order:
    Personal → Employment → Business → Financial → Investments → Goals → Concerns.
@@ -24,17 +25,26 @@ You are running the Board of Advisors onboarding interview. Follow these rules:
 5. **Profile files to write:**
    - Personal domain → `_config/profile/personal.md`
    - Employment domain → "Income & Employment" section within `_config/profile/financial.md`
-   - Business domain → `_config/profile/businesses.md` (skip if user owns no businesses)
+   - Business domain → `_config/profile/businesses.md` (record that none are owned when applicable)
    - Financial domain → `_config/profile/financial.md`
    - Investments domain → `_config/profile/investments.md`
    - Goals domain → `_config/profile/goals.md`
    - Concerns domain → "Current Concerns" section appended to `_config/profile/goals.md`
 
-6. **Connect product updates (after the profile interview).** For a personal board only: load
+6. **Verify onboarding completion before declaring it complete:**
+   - Confirm all five profile files exist: `personal.md`, `financial.md`, `businesses.md`,
+     `investments.md`, and `goals.md`.
+   - Confirm each file contains a valid `Last Updated: YYYY-MM-DD` line reflecting the current
+     onboarding write.
+   - Confirm `financial.md` contains an "Income & Employment" section.
+   - Confirm `goals.md` contains a "Current Concerns" section.
+   - If any check fails, repair the missing or incomplete profile file and repeat this verification.
+
+7. **Connect product updates (after the verified profile interview).** For a personal board only: load
    `../shared/updates.md` and follow **Connect `upstream`**. (Skip on the product/contributor
    repo.) Read `product_repo` from `../shared/version.md` if needed. Decline is fine; no nagging.
 
-7. **When complete:** Profile saved; note whether upstream was connected; return to root
+8. **When complete:** Profile verified and saved; note whether upstream was connected; return to root
    `CONTEXT.md` to use the board.
 
 ## Files in This Directory

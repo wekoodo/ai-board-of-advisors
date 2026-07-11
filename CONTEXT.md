@@ -2,10 +2,15 @@
 
 ## First Launch Check
 
-Before anything else, check for your profile:
-- If `_config/profile/` contains no profile files, run the onboarding interview first.
-  Load `_config/setup/CONTEXT.md` to begin. Return here when onboarding is complete.
-- If profile files exist, proceed below.
+Before anything else, check for your profile. A complete profile has:
+- All five required files: `personal.md`, `financial.md`, `businesses.md`, `investments.md`, and
+  `goals.md`.
+- A valid `Last Updated: YYYY-MM-DD` line in every file.
+- An "Income & Employment" section in `financial.md` and a "Current Concerns" section in `goals.md`.
+
+If any condition fails, load `_config/setup/CONTEXT.md` to begin or resume onboarding. That setup
+contract owns repair and final verification. Return here only after its completion gate passes.
+Otherwise, proceed below.
 
 ---
 
@@ -79,4 +84,4 @@ Full protocol, including the fuller arc for a major multi-domain decision, is in
 
 Always load `_config/profile/` files alongside the advisor's `CONTEXT.md`. They provide your
 persistent personal and financial context. Advisors flag profile data older than 12 months.
-If profile files are missing, run onboarding: `_config/setup/CONTEXT.md`.
+If the profile is incomplete, run or resume onboarding: `_config/setup/CONTEXT.md`.
