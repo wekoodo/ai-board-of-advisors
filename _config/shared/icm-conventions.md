@@ -17,7 +17,7 @@ ICM supports two valid shapes. We use the second one, and the distinction matter
 | **Layer 1** — workspace routing | root `CONTEXT.md` — the board chair; convenes the right advisors per message |
 | **Layer 2** — control point (the work) | the **meeting lifecycle**: intake (`brief.md`) → deliberation (convene + `artifacts/`) → minutes (`minutes.md`), per `shared/meeting-process.md` |
 | **Layer 3** — stable reference | the **advisor roster library** (`advisors/`, `advisors-extended/`) + this `_config/` |
-| **Layer 4** — working artifacts | `meetings/<topic>/` (brief, artifacts, minutes) |
+| **Layer 4** — working artifacts | `meetings/CONTEXT.md` routes into `meetings/<topic>/` records; local `meetings/index.md` catalogs them |
 
 **The advisors are a Layer-3 reference library, not Layer-2 stages.** They are numbered for stable
 identity, *not* execution order, and are *selected by topic*, not run in sequence. Convening the
@@ -40,8 +40,10 @@ keys, like database IDs:
 
 - **Factory (Layer 3, stable):** advisor roster, `_config/shared/` rules (including `version.md`
   soft-check and on-demand `updates.md`), `_config/setup/`, root `CHANGELOG.md`.
-- **Product (Layer 4, per-run):** everything under `meetings/` (user meetings; examples ship as
-  reference factory content under `meetings/example-*/`).
+- **Product (Layer 4, per-run):** user records under `meetings/<topic>/`; tracked
+  `meetings/CONTEXT.md` is recursive routing guidance for this area, and local-only
+  `meetings/index.md` is evolving routing metadata. Meeting record files remain authoritative.
+  Examples ship separately as reference factory content under `meetings/example-*/`.
 
 Keep them apart. Per-meeting artifacts never live inside advisor folders.
 
