@@ -1,0 +1,5 @@
+# Normalize line endings. Store text files with LF in the repo; check out with the
+# platform's native ending. Fixes the "everything shows modified" noise that appears
+# when the working tree has CRLF but the committed blobs are LF. Git auto-detects
+# binary files and leaves them untouched.
+* text=auto
