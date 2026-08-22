@@ -13,6 +13,7 @@ section *Keeping your board up to date*.
 - Replace the in-repo `maintaining-icm` skill with the published `icm` skill from
   `wekoodo/skills`, pinned in `skills-lock.json`.
 - Drop the `obra/superpowers` skill set from the project lockfile.
+- Refresh the `google-doc-style` pin in `skills-lock.json` (skill v1.1).
 
 ### Added
 
