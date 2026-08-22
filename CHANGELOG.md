@@ -8,7 +8,22 @@ section *Keeping your board up to date*.
 
 ## [Unreleased]
 
-_Notes for the next release after v0.1.0 go here._
+### Changed
+
+- Replace the in-repo `maintaining-icm` skill with the published `icm` skill from
+  `wekoodo/skills`, pinned in `skills-lock.json`.
+- Drop the `obra/superpowers` skill set from the project lockfile.
+
+### Added
+
+- Pin `google-doc-style` from `wekoodo/skills` in `skills-lock.json`.
+
+### Removed
+
+- Tracked `.agents/skills/maintaining-icm/` (now restored from the lockfile like other skills).
+
+After merging this change, restore project skills with `npx skills experimental_install`. If
+leftover Superpowers copies remain on disk, run `npx skills remove --all` and then restore.
 
 ## [0.1.0] — TBD
 

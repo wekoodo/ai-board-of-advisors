@@ -5,7 +5,8 @@ folder structure as agent architecture. It is committed Layer-3 reference materi
 *decisions* travel with the project on any harness, with no skill install required.
 
 For the general, reusable methodology (layer definitions, audit script, templates), use the
-`maintaining-icm` skill. This file is the project-specific overlay: what *we* decided.
+`icm` skill (pinned in `skills-lock.json`). This file is the project-specific overlay: what *we*
+decided.
 
 ## This project is pure ICM (a library, not a broken pipeline)
 
@@ -76,10 +77,11 @@ adding reference files.
   `_config/`, `meetings/example-*/`. This *is* the project and must travel self-contained.
 - **Agent tooling** (re-installable, not the project): skills under `.agents/skills/` (with
   `.claude/`/`.codex/` symlinked to it). The content dirs are gitignored like `node_modules`;
-  `skills-lock.json` is committed like a lockfile so a clone can reinstall them.
-- **Coexisting conventions:** `docs/superpowers/` holds plan/spec artifacts from the
-  [superpowers](https://skills.sh) skill set (dev-process tooling). It sits *beside* ICM and does
-  not define ICM structure — do not mistake it for a Layer.
-- **The `maintaining-icm` skill** is this methodology's own linter/scaffolder. It lives in
-  `.agents/skills/maintaining-icm/` and is tracked in-place via a `.gitignore` exception for now;
-  once published to skills.sh it becomes a normal `skills-lock.json` entry and the exception goes.
+  `skills-lock.json` is committed like a lockfile so a clone can reinstall them with
+  `npx skills experimental_install`.
+- **Coexisting conventions:** `docs/superpowers/` holds historical plan/spec artifacts from an
+  earlier development process. It sits *beside* ICM and does not define ICM structure — do not
+  mistake it for a Layer.
+- **Locked skills** (see `skills-lock.json`): `icm` (methodology linter/scaffolder) and
+  `google-doc-style` (reader-facing prose), both from [wekoodo/skills](https://www.skills.sh/wekoodo/skills).
+  Restore with `npx skills experimental_install`.
