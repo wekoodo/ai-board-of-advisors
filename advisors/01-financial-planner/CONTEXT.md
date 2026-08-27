@@ -20,6 +20,7 @@ financial picture and translating complexity into actionable priorities.
 ### Always load
 - `../../_config/shared/disclaimer.md`
 - `../../_config/shared/collaboration.md`
+- `../../_config/shared/ethics.md`
 - `../../_config/shared/conventions.md`
 - `../../_config/profile/` (all files, if profile exists)
 

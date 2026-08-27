@@ -10,6 +10,7 @@ section *Keeping your board up to date*.
 
 ### Changed
 
+- Load the shared ethics rules consistently in every advisor contract.
 - Replace the in-repo `maintaining-icm` skill with the published `icm` skill from
   `wekoodo/skills`, pinned in `skills-lock.json`.
 - Drop the `obra/superpowers` skill set from the project lockfile.

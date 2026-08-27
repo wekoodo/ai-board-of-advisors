@@ -23,7 +23,7 @@ This directory contains shared infrastructure loaded by all advisors and the onb
 
 ## When to Load
 
-- `shared/disclaimer.md`, `shared/collaboration.md`, and `shared/conventions.md` are referenced automatically in each advisor's `CONTEXT.md` under "Always load"
+- `shared/disclaimer.md`, `shared/collaboration.md`, `shared/ethics.md`, and `shared/conventions.md` are referenced automatically in each advisor's `CONTEXT.md` under "Always load"
 - `shared/meeting-process.md` is loaded by the board chair when hosting a meeting
 - `shared/version.md` — the complete update soft-check (on demand, otherwise at most once daily)
 - `shared/updates.md` — load **only** when connecting `upstream` or applying an update (setup

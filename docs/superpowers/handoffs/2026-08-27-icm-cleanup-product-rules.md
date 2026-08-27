@@ -13,9 +13,9 @@ This is product structure maintenance on the factory repository
 
 ## Next session
 
-**Next open item:** Item 1 — load `ethics.md` consistently.
+**Next open item:** Item 2 — separate the writing overlay from Always-load protocol.
 
-Present Item 1 using its **Issue** and **Proposed resolution** sections. Wait for the user to say
+Present Item 2 using its **Issue** and **Proposed resolution** sections. Wait for the user to say
 **go** or revise the resolution. Do not edit files before approval.
 
 ## Protocol (do not skip)
@@ -98,33 +98,6 @@ Each issue is gated on the future product work that adds the trust or entity sub
 
 Status values: `open` | `done` | `skipped`
 
-### Item 1 — load `ethics.md` consistently
-
-**Status:** `open`
-
-**Issue**
-
-`_config/CONTEXT.md` says that every advisor loads `shared/ethics.md`, but the advisor Inputs and
-the config router's **When to Load** section omit it. The stable reference contract and the scoped
-load lists disagree.
-
-**Proposed resolution**
-
-1. Add `../../_config/shared/ethics.md` after `collaboration.md` in every advisor **Always load**
-   list:
-   - `advisors/_template/CONTEXT.md`
-   - Core advisors `01`–`08`
-   - Extended advisors `09`–`10`
-2. Add `shared/ethics.md` beside disclaimer, collaboration, and conventions in
-   `_config/CONTEXT.md` **When to Load**.
-3. Add the correction to `CHANGELOG.md`.
-
-**Verification**
-
-- Confirm all 11 advisor contracts contain the same Always-load protocol list.
-- Confirm `_config/CONTEXT.md` **Contents** and **When to Load** agree.
-- Confirm the diff contains no advisor identity or process changes.
-
 ### Item 2 — separate the writing overlay from Always-load protocol
 
 **Status:** `open`
@@ -202,4 +175,40 @@ classifies the repository as `coexist-process` instead of native ICM.
 
 ## Done
 
-*(empty — preparation is complete; Item 1 starts in the next session)*
+### Item 1 — load `ethics.md` consistently
+
+**Status:** `done`
+
+**Issue**
+
+`_config/CONTEXT.md` said that every advisor loads `shared/ethics.md`, but the advisor Inputs and
+the config router's **When to Load** section omitted it. The stable reference contract and the
+scoped load lists disagreed.
+
+**Resolution**
+
+- Added `../../_config/shared/ethics.md` after `collaboration.md` in the advisor template, core
+  advisors `01`–`08`, and extended advisors `09`–`10`.
+- Added `shared/ethics.md` to `_config/CONTEXT.md` **When to Load**.
+- Recorded the correction in `CHANGELOG.md`.
+
+**Files changed**
+
+- `advisors/_template/CONTEXT.md`
+- `advisors/01-financial-planner/CONTEXT.md` through
+  `advisors/08-insurance-specialist/CONTEXT.md`
+- `advisors-extended/09-oil-gas-specialist/CONTEXT.md`
+- `advisors-extended/10-storage-facility-advisor/CONTEXT.md`
+- `_config/CONTEXT.md`
+- `CHANGELOG.md`
+- `docs/superpowers/handoffs/2026-08-27-icm-cleanup-product-rules.md`
+
+**Verification performed**
+
+- Confirmed that all 11 advisor contracts contain the same Always-load protocol list.
+- Confirmed that `_config/CONTEXT.md` **Contents** and **When to Load** agree.
+- Confirmed that the advisor diff changes only the Always-load lists, with no identity or process
+  changes.
+- Ran `git diff --check` successfully.
+- Ran the ICM audit successfully. It reported `coexist-process`, as expected until Item 3 removes
+  `docs/superpowers/`.
