@@ -48,3 +48,8 @@ convening it is an optional summary the chair may record.
 - Use **tables** for comparisons
 - Use clear section headers
 - Prefer concrete, actionable guidance over general description
+
+When producing reader-facing prose, load `google-doc-style-overlay.md` (advisor Inputs:
+**Load when writing to the user**; not **Always load**). If the `google-doc-style` skill is
+active, that overlay wins on the listed conflicts (real profile data, board voice, no restyling
+of code or agent contracts).

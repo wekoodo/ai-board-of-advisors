@@ -13,9 +13,9 @@ This is product structure maintenance on the factory repository
 
 ## Next session
 
-**Next open item:** Item 2 — separate the writing overlay from Always-load protocol.
+**Next open item:** Item 3 — remove factory authoring history from product `main`.
 
-Present Item 2 using its **Issue** and **Proposed resolution** sections. Wait for the user to say
+Present Item 3 using its **Issue** and **Proposed resolution** sections. Wait for the user to say
 **go** or revise the resolution. Do not edit files before approval.
 
 ## Protocol (do not skip)
@@ -98,53 +98,6 @@ Each issue is gated on the future product work that adds the trust or entity sub
 
 Status values: `open` | `done` | `skipped`
 
-### Item 2 — separate the writing overlay from Always-load protocol
-
-**Status:** `open`
-
-**Issue**
-
-`google-doc-style` is pinned in `skills-lock.json`, but the product has no committed board overlay
-or load-class contract. A writing overlay is not the same class as legal, ethical, collaboration,
-or response protocol. It belongs in writing-time Inputs, not **Always load**.
-
-**Proposed resolution**
-
-1. Add `_config/shared/google-doc-style-overlay.md`, based on the tracked sibling-board file and
-   generalized for the product. Preserve these board rules:
-   - Use real profile facts rather than replacing them with sample placeholders.
-   - Preserve board and advisor first-person plural voice where the board contract uses it.
-   - Do not restyle agent contracts or shared protocol as public documentation.
-   - Do not edit vendored skills.
-2. Add **Skills management** to `_config/shared/icm-conventions.md`. Distinguish:
-   - The lockfile.
-   - Gitignored installed skill trees.
-   - Committed overlays.
-   - Load lists.
-   - Harness-bundled skills.
-   - Required board protocol from optional tooling.
-   - Always-load, chair-only, writing-time, and on-demand classes.
-3. Add **Load when writing to the user** to the advisor template, core advisors `01`–`08`, and
-   extended advisors `09`–`10`. Put the overlay there, not under **Always load**.
-4. Align the same load classes in `_config/CONTEXT.md`.
-5. State in `_config/shared/conventions.md` that the overlay is a writing-time load, not shared
-   Always-load protocol.
-6. Update root `CONTEXT.md` so that the chair loads the overlay when writing to the user or
-   producing artifacts.
-7. Update `_config/shared/meeting-process.md` so that a sub-agent receives shared protocol
-   (`disclaimer`, `collaboration`, `ethics`, and `conventions`) plus the overlay when writing.
-8. Update `advisors-extended/README.md` so copied advisors retain the writing-time overlay line.
-9. Add the correction to `CHANGELOG.md`.
-
-**Verification**
-
-- Confirm the overlay exists as committed workspace content.
-- Confirm every advisor loads it only under **Load when writing to the user**.
-- Confirm every advisor keeps `ethics.md` under **Always load**.
-- Confirm root chair, config router, conventions, and meeting process use the same load classes.
-- Confirm no files under `.agents/skills/` changed.
-- Run the ICM audit.
-
 ### Item 3 — remove factory authoring history from product `main`
 
 **Status:** `open`
@@ -174,6 +127,56 @@ classifies the repository as `coexist-process` instead of native ICM.
 - Confirm the tracked working tree is clean after the commit.
 
 ## Done
+
+### Item 2 — separate the writing overlay from Always-load protocol
+
+**Status:** `done`
+
+**Issue**
+
+`google-doc-style` was pinned in `skills-lock.json`, but the product had no committed board overlay
+or load-class contract. A writing overlay is not the same class as legal, ethical, collaboration,
+or response protocol. It belongs in writing-time Inputs, not **Always load**.
+
+**Resolution**
+
+- Added a committed board overlay that preserves real profile facts, board voice, agent-contract
+  structure, shared protocol, and the installed skill boundary.
+- Added the **Skills management** ownership and load-class contract to the ICM conventions.
+- Added **Load when writing to the user** to the advisor template and advisors `01`–`10`, with the
+  overlay outside **Always load**.
+- Aligned the chair, config router, shared conventions, meeting process, and extended-advisor
+  instructions with the same writing-time load class.
+- Recorded the correction in `CHANGELOG.md`.
+
+**Files changed**
+
+- `_config/shared/google-doc-style-overlay.md`
+- `_config/shared/icm-conventions.md`
+- `_config/shared/conventions.md`
+- `_config/shared/meeting-process.md`
+- `_config/CONTEXT.md`
+- `CONTEXT.md`
+- `advisors/_template/CONTEXT.md`
+- `advisors/01-financial-planner/CONTEXT.md` through
+  `advisors/08-insurance-specialist/CONTEXT.md`
+- `advisors-extended/09-oil-gas-specialist/CONTEXT.md`
+- `advisors-extended/10-storage-facility-advisor/CONTEXT.md`
+- `advisors-extended/README.md`
+- `CHANGELOG.md`
+- `docs/superpowers/handoffs/2026-08-27-icm-cleanup-product-rules.md`
+
+**Verification performed**
+
+- Confirmed that the overlay exists as workspace content and contains the real-data safeguard.
+- Confirmed that all 11 advisor contracts load the overlay once under **Load when writing to the
+  user** and keep `ethics.md` once under **Always load**.
+- Confirmed that the chair, config router, shared conventions, and meeting process use the same
+  load classes.
+- Confirmed that no files under `.agents/skills/` changed.
+- Ran `git diff --check` successfully.
+- Ran the ICM audit successfully. It reported `coexist-process`, as expected until Item 3 removes
+  `docs/superpowers/`.
 
 ### Item 1 — load `ethics.md` consistently
 

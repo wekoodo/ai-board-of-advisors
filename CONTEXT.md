@@ -70,6 +70,10 @@ participant in the room. Each turn:
    until `minutes.md` is written. Write the full `transcript.md` only if the user asks to keep the
    complete back-and-forth.
 
+**Reader-facing prose.** Load `_config/shared/google-doc-style-overlay.md` when writing to the user
+or producing artifacts. It overrides the locked `google-doc-style` skill on this board (real
+profile data, board voice, no restyle of code or agent contracts).
+
 **Convening modes.** Prefer **one sub-agent per advisor** when your harness supports it — you
 carry only the running transcript and each advisor's `## Handoff` return, keeping your own context
 small. Otherwise, role-play the advisor **inline**. Either way, artifacts are real files on disk.

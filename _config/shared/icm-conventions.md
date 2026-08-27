@@ -82,6 +82,49 @@ adding reference files.
 - **Coexisting conventions:** `docs/superpowers/` holds historical plan/spec artifacts from an
   earlier development process. It sits *beside* ICM and does not define ICM structure — do not
   mistake it for a Layer.
-- **Locked skills** (see `skills-lock.json`): `icm` (methodology linter/scaffolder) and
-  `google-doc-style` (reader-facing prose), both from [wekoodo/skills](https://www.skills.sh/wekoodo/skills).
-  Restore with `npx skills experimental_install`.
+
+## Skills management
+
+Skills on this board sit on several surfaces. This section is the load and ownership contract.
+Do not treat a skill, an overlay, and shared protocol as the same class of file.
+
+| Surface | Role | Git |
+| --- | --- | --- |
+| `skills-lock.json` | Pins which skills a clone can reinstall | Tracked (lockfile) |
+| `.agents/skills/` (and harness symlinks) | Installed copies of locked skills | Gitignored; reinstallable |
+| Overlays in `_config/shared/` | Project decisions that constrain a skill | Tracked workspace content |
+| Load lists (chair, advisor Inputs, `_config/CONTEXT.md`) | Who loads which overlay, and when | Tracked |
+| Harness-bundled skills | Host may fire skills that are not in the lockfile | Not board protocol |
+
+**Required vs optional.** Shared protocol is required and the board must run with no skill
+install. Locked skills are optional tooling. Overlays are required *workspace content* (they
+travel with the project) but they are not Always-load protocol. A clone that never runs
+`npx skills experimental_install` still holds a valid meeting.
+
+**Do not edit vendored skills.** Never patch `SKILL.md` or other files under `.agents/skills/`.
+A lockfile reinstall overwrites them. Put board-specific decisions in a committed overlay.
+
+**Do not restyle agent contracts.** `google-doc-style` governs reader-facing prose only. It must
+not rewrite `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, any `CONTEXT.md`, `_config/shared/` protocol,
+advisor `references/`, `skills-lock.json`, or the `## Handoff` block shape. That rule lives in
+`google-doc-style-overlay.md` and applies whenever that skill is active.
+
+**Locked skills on this board:**
+
+| Skill | Overlay | Required for meetings? | Who loads the overlay |
+| --- | --- | --- | --- |
+| `google-doc-style` | `google-doc-style-overlay.md` | No. `conventions.md` still governs response shape if the skill is absent. | Chair when writing to the user or producing artifacts. Advisors under **Load when writing to the user**, not **Always load**. If the skill is active, the overlay wins on listed conflicts (real profile data, board voice, no restyle of contracts). |
+| `icm` | `icm-conventions.md` (this file) | No. Structure and audit work should install it. | Chair or whoever is doing ICM / structure maintenance, on demand. Not advisor Always load. Not a normal meeting load. |
+
+**Always load** (shared protocol — every advisor, no skill involved): `disclaimer.md`,
+`collaboration.md`, `ethics.md`, `conventions.md`, plus `profile/` (all files, if the profile
+exists).
+
+**Chair-only / on demand:** `meeting-process.md` (hosting a meeting), this file (structure),
+`version.md` / `updates.md` (product update flow).
+
+**Harness-bundled skills.** The host may also fire skills that are not in `skills-lock.json`
+(for example PDF, slides, or image tools). Those are host tooling. They must not rewrite
+workspace contracts, must not restyle agent contracts as public docs, and do not become board
+protocol unless they are pinned in the lockfile and given a committed overlay. Do not vendor
+extra skills to paper over a host default.

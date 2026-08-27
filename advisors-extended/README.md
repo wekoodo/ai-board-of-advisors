@@ -36,8 +36,9 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    if your new advisor is close in spirit. Place the copy in `advisors-extended/NN-your-slug/`,
    using the next available number and a short kebab-case slug.
 2. **Fill in `CONTEXT.md`.** Write the Identity (credentials, mission, approach), keep the v2
-   "Always load" list as-is, write the Process (analytical steps + cross-referrals to other advisors
-   by number + slug), keep the Outputs Handoff reference, and adapt the Disclaimer to your domain.
+   **Always load** list and **Load when writing to the user** overlay line as-is, write the Process
+   (analytical steps + cross-referrals to other advisors by number + slug), keep the Outputs Handoff
+   reference, and adapt the Disclaimer to your domain.
 3. **Fill in `references/CONTEXT.md` and `references/frameworks.md`.** Give your advisor the
    frameworks, checklists, and analytical tools it needs. Obey the durable-figures rule: express
    formulas and ratios, and label any concrete year-specific or market-specific figure
@@ -68,6 +69,7 @@ cross-references**, since advisors refer to each other by number + slug. To remo
 
 Extended advisors sit at the same depth as core advisors, so relative paths are unchanged:
 `../../_config/shared/disclaimer.md`, `../../_config/shared/conventions.md`,
+`../../_config/shared/google-doc-style-overlay.md`,
 `../../_config/profile/`, `../../meetings/[meeting-name]/artifacts/`. If you nest your advisor
 deeper, you must adjust the `../` count accordingly — but the standard `advisors-extended/NN-name/`
 placement needs no change.

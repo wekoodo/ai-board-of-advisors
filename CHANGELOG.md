@@ -10,6 +10,8 @@ section *Keeping your board up to date*.
 
 ### Changed
 
+- Separate the `google-doc-style` board overlay from Always-load protocol and load it only for
+  reader-facing writing.
 - Load the shared ethics rules consistently in every advisor contract.
 - Replace the in-repo `maintaining-icm` skill with the published `icm` skill from
   `wekoodo/skills`, pinned in `skills-lock.json`.

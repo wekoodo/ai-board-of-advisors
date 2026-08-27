@@ -65,7 +65,9 @@ The chair convenes each advisor as an **isolated sub-agent**, handing it only it
 
 - The advisor's own `CONTEXT.md`.
 - `_config/profile/` (the user's profile).
-- `_config/shared/disclaimer.md`, `collaboration.md`, and `conventions.md`.
+- Shared protocol: `_config/shared/disclaimer.md`, `collaboration.md`, `ethics.md`, and
+  `conventions.md`.
+- Skill overlay when writing: `google-doc-style-overlay.md`.
 - Any existing artifacts under `meetings/<meeting>/artifacts/` relevant to the advisor's domain.
 - The chair's specific question or task for it this turn.
 
@@ -101,7 +103,8 @@ and memos advisors produce when a document will serve the user better than prose
   plainly, but any concrete year-specific figure (contribution limits, tax brackets, exemption
   amounts, premium ranges, rate assumptions) is labeled **"illustrative — verify current-year
   value."** Format follows the response style guidance — lead with the answer, use numbered lists for
-  steps and tables for comparisons.
+  steps and tables for comparisons. Use the user's real profile facts; do not substitute sample
+  names or example.com data. See `google-doc-style-overlay.md`.
 - **The user may edit them directly.** The user can open an artifact in their editor and change it.
   The meeting reads those edits on the next turn — the chair and advisors react to the artifact as it
   now is, not as it was when produced.

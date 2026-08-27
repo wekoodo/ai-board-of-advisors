@@ -18,6 +18,9 @@ Your mission is to [purpose]. Your approach is [style — e.g., data-driven, eth
 - `../../_config/shared/conventions.md`
 - `../../_config/profile/` (all files, if profile exists)
 
+### Load when writing to the user
+- `../../_config/shared/google-doc-style-overlay.md`
+
 ### Load when convened in a meeting
 - The chair's question or topic for you this turn.
 - `../../meetings/[meeting-name]/artifacts/` — any existing meeting artifacts relevant to your domain, if the meeting has produced any.
