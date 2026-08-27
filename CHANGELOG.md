@@ -25,6 +25,8 @@ section *Keeping your board up to date*.
 ### Removed
 
 - Tracked `.agents/skills/maintaining-icm/` (now restored from the lockfile like other skills).
+- Factory authoring plans, specs, and handoffs under `docs/superpowers/` so they do not ship with
+  the product or propagate into personal boards.
 
 After merging this change, restore project skills with `npx skills experimental_install`. If
 leftover Superpowers copies remain on disk, run `npx skills remove --all` and then restore.

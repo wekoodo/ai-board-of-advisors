@@ -79,9 +79,10 @@ adding reference files.
   `.claude/`/`.codex/` symlinked to it). The content dirs are gitignored like `node_modules`;
   `skills-lock.json` is committed like a lockfile so a clone can reinstall them with
   `npx skills experimental_install`.
-- **Coexisting conventions:** `docs/superpowers/` holds historical plan/spec artifacts from an
-  earlier development process. It sits *beside* ICM and does not define ICM structure — do not
-  mistake it for a Layer.
+- **Factory authoring history is not product:** Keep plans, specs, and process-pack trees off the
+  product default branch. Keep live control in root `CONTEXT.md` and
+  `_config/shared/meeting-process.md`; do not add a `stages/` pipeline to explain historical
+  files.
 
 ## Skills management
 
