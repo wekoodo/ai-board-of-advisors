@@ -15,7 +15,8 @@ corporations, and other operating or holding structures belong here.
 
 This directory exists only after general onboarding records at least one entity. If
 `index.md` is absent, there is no entity layer: stay on the core profile files and keep
-meeting folders flat under `meetings/<topic-slug>/`.
+meeting folders flat under `meetings/<topic-slug>/`. If `index.md` is created later, leave
+existing flat meeting folders in place.
 
 ## Index
 
@@ -62,9 +63,11 @@ Last Updated: YYYY-MM-DD
      document review, or outstanding-record work.
 5. Do not load files from unrelated entity folders.
 6. Entity-scoped board meetings live at `meetings/<entity-slug>/<topic-slug>/`, not in this
-   profile folder. Follow `../../../meetings/CONTEXT.md`. Create the scope folder only with
-   the first meeting in that scope. Household meetings use `meetings/personal/`. A living-trust
-   meeting uses `meetings/trust/` when `../trust.md` exists.
+   profile folder. Follow `../../../meetings/CONTEXT.md` **Existing records stay put** (including
+   occupancy: do not nest inside a path that is already a meeting record). Create the scope
+   folder only with the first meeting in that scope, and only when that path is not already a
+   meeting record. Household meetings use `meetings/personal/`. A living-trust meeting uses
+   `meetings/trust/` when `../trust.md` exists.
 7. When a meeting changes this entity's standing facts, write the delta into the matching
    files in that entity folder in the same session. Follow `../../shared/meeting-process.md`
    **Profile write-back**. That is a scoped fact update, not onboarding. Do not restart an

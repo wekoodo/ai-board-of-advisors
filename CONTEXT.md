@@ -84,7 +84,8 @@ participant in the room. Each turn:
      which are relevant to this meeting. **Move** the confirmed files into
      `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
      future meetings. `_inbox/` documents are local-only. Follow `meetings/CONTEXT.md` for whether
-     `<meeting>` is `<topic-slug>` or `<scope>/<topic-slug>`.
+     `<meeting>` is an existing record's path, a new `<topic-slug>/`, or a new
+     `<scope>/<topic-slug>/`. Choose the meeting path before moving files.
    - **Product-update check** — follow `_config/shared/version.md` (on demand, otherwise at most
      once daily; fail soft and never auto-merge). Load `_config/shared/updates.md` **only** to
      connect `upstream` or apply an update.
@@ -127,9 +128,11 @@ small. Otherwise, role-play the advisor **inline**. Either way, artifacts are re
 folder (the date lives inside `brief.md`/`minutes.md`). Follow `meetings/CONTEXT.md`:
 
 - If `_config/profile/entities/index.md` is **absent**, use `meetings/<topic-slug>/`.
-- If that index **exists**, use `meetings/<scope>/<topic-slug>/` where scope is `personal`,
-  `trust` (only when `trust.md` exists and the trust is the primary subject), or an entity slug
-  from the index.
+- If that index **exists**, new meetings use `meetings/<scope>/<topic-slug>/` where scope is
+  `personal`, `trust` (only when `trust.md` exists and the trust is the primary subject), or an
+  entity slug from the index.
+- Resume an existing record at its current path. Flat folders created before the index stay
+  put; do not move them.
 
 A substantive meeting leaves `brief.md` + `minutes.md` (+ `artifacts/`); the full `transcript.md`
 is optional, for digging deeper. Standing facts from the meeting belong in `_config/profile/`,

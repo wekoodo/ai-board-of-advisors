@@ -16,7 +16,8 @@ session — not every turn):
    `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
    future meetings. `_inbox/` documents are local-only (gitignored); they become part of the meeting
    record once assigned. If `_inbox/` is empty, skip silently. Follow `meetings/CONTEXT.md` for
-   whether `<meeting>` is `<topic-slug>` or `<scope>/<topic-slug>`.
+   whether `<meeting>` is the existing record's path, a new `<topic-slug>/`, or a new
+  `<scope>/<topic-slug>/`. Choose the meeting path before moving files.
 
 2. **Product-update check** — follow `_config/shared/version.md`, the single source for the
    on-demand/daily, fail-soft check. Load `_config/shared/updates.md` only to **connect** `upstream`
@@ -121,8 +122,9 @@ and memos advisors produce when a document will serve the user better than prose
 
 A meeting record is a folder named from a short **topic slug only** — the date lives inside the
 files, not in the folder name. Follow `meetings/CONTEXT.md`: `meetings/<topic-slug>/` when
-`_config/profile/entities/index.md` is absent; `meetings/<scope>/<topic-slug>/` when that index
-exists (`personal`, `trust`, or an entity slug). A substantive meeting leaves a small set of
+`_config/profile/entities/index.md` is absent; new meetings use `meetings/<scope>/<topic-slug>/`
+when that index exists (`personal`, `trust`, or an entity slug). Resume an existing record at its
+current path; do not move a flat folder after the index appears. A substantive meeting leaves a small set of
 **routed, single-purpose files** rather than one monolithic document:
 
 - **`brief.md`** — *what the meeting was about*: the user's question, the relevant context, and the
@@ -201,7 +203,9 @@ exists, `_config/profile/entities/CONTEXT.md`:
 | Living-trust standing facts or trust actions | `trust.md` (resolved owning section when a shim; never copy facts into the shim) |
 
 Record each action once, in the profile that owns it. Link the meeting folder from the profile when
-the meeting is the provenance of a standing fact. Do not copy the minutes or artifacts into the
+the meeting is the provenance of a standing fact. Use that record's current path; do not rewrite the
+link to a scoped layout unless the folder actually moved (it should not — see
+`meetings/CONTEXT.md` **Existing records stay put**). Do not copy the minutes or artifacts into the
 profile.
 
 ### What stays in the meeting

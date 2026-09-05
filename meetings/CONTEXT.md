@@ -29,8 +29,9 @@ meetings/<scope>/<topic-slug>/
 | `<entity-slug>` | One registered entity is the primary subject. Use the slug from `_config/profile/entities/index.md` |
 
 Do not pre-create empty scope folders. Create `meetings/<scope>/` lazily with the first meeting in
-that scope. Never invent a new scope slug. Reserved non-entity scopes are only `personal` and
-`trust`. Use `trust` only when `trust.md` exists.
+that scope, and only when that path is not already a meeting record. A path is a meeting record
+when it contains `brief.md` or `minutes.md`. Never invent a new logical scope slug. Reserved
+non-entity scopes are only `personal` and `trust`. Use `trust` only when `trust.md` exists.
 
 Shipped `example-*` meetings stay at `meetings/example-*/` as factory references. Never add them
 to the private index. Never move them under a scope folder.
@@ -49,10 +50,32 @@ profile files in the same session. Follow `_config/shared/meeting-process.md` **
    `personal`. Ranking existing action registers is conversation, not a meeting, unless the user
    asks to save that ranking.
 
-If a later session creates `entities/index.md` after some meetings already sit at
-`meetings/<topic-slug>/`, leave those folders until that meeting is next touched, then move the
-record to `meetings/personal/<topic-slug>/` (or the matching entity/trust scope) and update the
-index entry. Do not leave a second copy at the old path.
+### Existing records stay put
+
+If a later session creates `entities/index.md` after meetings already sit at
+`meetings/<topic-slug>/`, leave those folders where they are. Do not move them into
+`meetings/<scope>/<topic-slug>/`. New meetings after the index exists use the scoped layout.
+The private index may list both layouts; the `Folder:` path is the meeting's identity.
+
+Resume an existing record at its current path. Do not relocate it to repair layout, to match a
+new entity index, or because the topic is touched again. Leaving it in place keeps inbound
+profile provenance links and outbound relative links valid.
+
+A matching topic slug is not the same meeting. `meetings/property-review/` and
+`meetings/personal/property-review/` are distinct records. Never merge them, overwrite one with
+the other, or nest a flat folder under a scope because the names match.
+
+Before creating `meetings/<scope>/<topic-slug>/`, check occupancy at two levels:
+
+1. If `meetings/<scope>/` itself contains `brief.md` or `minutes.md`, it is a meeting record, not
+   a scope folder. Do not write a child topic into it. Resume that record only when it is the
+   same work. For other new work in that logical scope, create
+   `meetings/<scope>-<topic-slug>/` and set the index `Scope:` field to the logical scope
+   (`personal`, `trust`, or the entity slug). Do not nest.
+2. If `meetings/<scope>/<topic-slug>/` already exists, resume that record only when it is the
+   same work; otherwise choose a different topic slug.
+
+Never move or create a meeting onto a shipped `example-*` path.
 
 ## Private Index
 
@@ -88,7 +111,8 @@ Each substantive user meeting has exactly one entry, keyed by its folder path fr
 
 When the index is missing, has no useful match, or points to a missing file:
 
-1. Search scope-folder names (when present), then topic folder names.
+1. Search both layouts: existing `meetings/<topic-slug>/` folders and, when present,
+   `meetings/<scope>/<topic-slug>/` folders. Do not treat a matching topic slug as one meeting.
 2. If needed, search only `brief.md` and `minutes.md` files for relevant terms.
 3. Do not search transcripts or bulk-load artifacts by default.
 4. Trust meeting record files over conflicting index metadata.

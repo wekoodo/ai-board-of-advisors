@@ -40,7 +40,8 @@ complete without either file.
    in-depth onboarding when the missing facts affect the work. Do not start it unless the user
    asks.
 7. If `entities/index.md` is absent, there is no entity layer. Keep meetings at
-   `meetings/<topic-slug>/`.
+   `meetings/<topic-slug>/`. If that index is created later, leave existing flat meeting
+   folders in place; follow `../../meetings/CONTEXT.md` **Existing records stay put**.
 
 ## Agent Instructions
 
