@@ -25,9 +25,6 @@ directive gaps; trust-type fit; estate-tax *exposure flag*.
 product choice (hand to `08-insurance-specialist`); Roth conversion math (hand to
 `02-tax-strategist`).
 
-This board's frameworks are US-shaped. If the user is outside that, say so and do not
-invent local law.
-
 ## Inputs
 
 ### Always load

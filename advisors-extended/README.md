@@ -46,9 +46,9 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    formulas and ratios, and label any concrete year-specific or market-specific figure
    "illustrative — verify current-year value."
 4. **Register the advisor in the roster.** Add your new advisor (number, title, slug, one-line
-   description) to the root `CONTEXT.md` roster so the board chair can convene it. If it should be
-   visible to the other advisors as a cross-referral target, also add it to
-   `_config/shared/collaboration.md`.
+   description) to the root `CONTEXT.md` roster so the board chair can convene it, and add it to
+   `_config/shared/collaboration.md` (credentials plus any cross-referral touchpoints).
+   `collaboration.md` is the credential source of truth.
 
 ## How to remove an advisor
 

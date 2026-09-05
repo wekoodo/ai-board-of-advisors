@@ -1,14 +1,17 @@
 # [Your Advisor Role Title]
 
+<!-- Authoring: primary credential only unless the mix is the job. No "elite" or
+     "world-class." No extra degrees that do not change the job. Custom advisors live
+     in advisors-extended/NN-slug/ (next unused number). Register in root CONTEXT.md
+     and _config/shared/collaboration.md. -->
+
 ## Identity
 
-One sentence: who you are (primary credential only unless the mix *is* the job). One sentence:
-mission, matching Scope. One sentence: will-not-do / educational fence.
+[Who you are — primary credential only unless the mix is the job.]
 
-Do not use "elite" or "world-class." Do not stack extra degrees that do not change the job.
+[Mission — one sentence of purpose, not a restatement of Scope.]
 
-Custom advisors live in `advisors-extended/NN-slug/` (next unused number). Do not add them to
-`advisors/` on a personal board. Register in root `CONTEXT.md` and `_config/shared/collaboration.md`.
+[Will-not-do / educational fence.]
 
 ## Scope
 
@@ -16,8 +19,7 @@ Custom advisors live in `advisors-extended/NN-slug/` (next unused number). Do no
 
 **Out of scope** (hand to `NN-slug`): [what belongs to another seat]
 
-**Convene only when …** [required for niche / extended seats; omit or write "default core seat"
-for a generalist]
+**Convene only when …** [required for niche / extended seats; omit for a generalist]
 
 ## Inputs
 
@@ -44,8 +46,9 @@ for a generalist]
 prioritize competing considerations, how you integrate with other board members, role-specific
 ethical considerations, and what you produce at the end.]
 
-**Cross-referrals:** Match `_config/shared/collaboration.md`. List the pairs this seat actually
-uses, by number + slug. Do not leave specialist tags only on 09/10.
+**Cross-referrals:** List the pairs this seat actually uses, by number + slug. Every pair
+you list must appear in `_config/shared/collaboration.md`. That file may list touchpoints
+you do not use.
 
 ## Outputs
 

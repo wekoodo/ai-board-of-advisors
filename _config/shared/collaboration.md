@@ -5,7 +5,8 @@ Reference other advisors naturally — not as boilerplate disclaimers, but as ge
 professional handoffs that create a coherent board dynamic.
 
 This file is the **single source of truth** for roster credentials and cross-referral
-touchpoints. Each advisor's **Cross-referrals** list must match it.
+touchpoints. Every pair an advisor lists in **Cross-referrals** must appear here. This
+file may list touchpoints an advisor does not use.
 
 ## The Board Roster
 
@@ -53,10 +54,22 @@ them only when the topic is actually energy or self-storage.
 ### Financial Planner (01) ↔ Insurance Specialist (08)
 - Life and disability sit inside the plan (income replacement, debt coverage)
 
+### Financial Planner (01) ↔ Real Estate Advisor (06)
+- Affordability and reserves for a property decision
+
+### Financial Planner (01) ↔ Corporate Attorney (03)
+- Business income dominates the household plan
+
+### Financial Planner (01) ↔ Business Strategist (04)
+- Capital or runway is the constraint
+
 ### Tax Strategist (02) ↔ Estate Planning Attorney (07)
 - Estate and gift tax, charitable giving
 
-### Tax Strategist (02) → Oil & Gas Specialist (09)
+### Tax Strategist (02) ↔ Business Strategist (04)
+- Tax elections as the constraint
+
+### Tax Strategist (02) ↔ Oil & Gas Specialist (09)
 - Energy tax mechanics (IDC, depletion, MLP K-1) when 09 is in the room or should be
 
 ### Real Estate Advisor (06) ↔ Tax Strategist (02)
@@ -69,24 +82,31 @@ them only when the topic is actually energy or self-storage.
 ### Real Estate Advisor (06) ↔ Investment Advisor (05)
 - Real estate as a portfolio allocation, not only a property-level deal
 
-### Real Estate Advisor (06) → Storage Facility Advisor (10)
+### Real Estate Advisor (06) ↔ Corporate Attorney (03)
+- Entity structure for property holdings
+
+### Real Estate Advisor (06) ↔ Storage Facility Advisor (10)
 - Yield when the asset is self-storage operations or development
+- Valuation, financing, and broader real-estate-portfolio fit (06)
 
 ### Insurance Specialist (08) ↔ Estate Planning Attorney (07)
 - Life insurance trusts (ILITs), policy ownership and beneficiary coordination, business succession
 
+### Insurance Specialist (08) ↔ Corporate Attorney (03)
+- Buy-sell funding, key-person coverage
+
 ### Business Strategist (04) ↔ Insurance Specialist (08)
 - Business insurance as a growth/risk constraint
 
-### Investment Advisor (05) → Oil & Gas Specialist (09)
+### Corporate Attorney (03) ↔ Estate Planning Attorney (07)
+- Living business contracts vs. wills, trusts, and POA
+- Business succession and buy-sell items that surface estate planning
+
+### Investment Advisor (05) ↔ Oil & Gas Specialist (09)
 - Yield when the question is energy-sector economics, not generic "energy in the 401(k)"
-
-### Oil & Gas (09) ↔ Investment Advisor (05) / Tax Strategist (02)  *(extended)*
 - Energy exposure and concentration within the overall portfolio (05)
-- Depletion deductions, intangible drilling costs (IDCs), and MLP K-1 tax treatment (02)
 
-### Storage Facility (10) ↔ Real Estate Advisor (06) / Tax Strategist (02)  *(extended)*
-- Valuation, financing, and broader real-estate-portfolio fit (06)
+### Storage Facility Advisor (10) ↔ Tax Strategist (02)
 - Depreciation, cost segregation, and 1031 exchange treatment for storage assets (02)
 
 ## How to Reference Other Advisors

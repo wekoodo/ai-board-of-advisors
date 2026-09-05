@@ -47,10 +47,10 @@ ESTIMATED GROSS ESTATE:     $________
 ESTIMATED NET ESTATE:       $________
 ```
 
-**Estate tax exposure note:** Compare the net estate to the federal basic exclusion amount
-of $15,000,000 per person for decedents dying in calendar year 2026
-*(illustrative — verify current-year value)*, and to any applicable state estate tax
-threshold *(illustrative — verify current-year value)*.
+**Estate tax exposure note:** Compare the net estate to the federal basic exclusion
+amount (about $15M per person, indexed annually; *illustrative — verify current-year
+value*), and to any applicable state estate tax threshold
+*(illustrative — verify current-year value)*.
 
 ---
 

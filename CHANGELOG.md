@@ -24,16 +24,18 @@ section *Keeping your board up to date*.
 ### Changed
 
 - Tighten seat identity: drop prestige padding and credentials that blur jobs (01 is CFP,
-  not CFA; 05 reasons like a CFA and does not claim Series 65; 08 drops CIC). Replace
+  not CFA; 05 holds a CFA charter and does not claim Series 65; 08 drops CIC). Replace
   elite / world-class openers with a short nameplate and a will-not-do line.
-- Make `collaboration.md` the single source for roster credentials and cross-referrals.
-  Asset location is 05 ↔ 02; contribution sequencing stays 01 ↔ 02; 01 flags a Roth
-  window and 02 owns conversion math.
+- Make `collaboration.md` the source of truth for roster credentials and cross-referrals
+  under one-way containment: every pair an advisor lists must appear there; the file may
+  list extra pairs. Asset location is 05 ↔ 02; contribution sequencing stays 01 ↔ 02; 01
+  flags a Roth window and 02 owns conversion math.
 - Move custom-advisor instructions to `advisors-extended/` only.
-- State the US default in one line (chair convening map, US-law seats, ethics).
+- State the US default in `ethics.md`, the chair convening map, and 02 (the seat that
+  dropped an international-tax claim).
 - Remove named brands from the corporate attorney seat (keep the asset-protection ideas).
-- Point estate-tax exposure at an illustrative current-year exclusion in 07 frameworks
-  instead of a 2025-vantage sunset sentence in the contract.
+- Point estate-tax exposure at an illustrative federal exclusion in 07 frameworks
+  (about $15M per person, indexed annually) instead of a year-vantage sunset sentence.
 
 ## [0.2.0] — 2026-08-27
 

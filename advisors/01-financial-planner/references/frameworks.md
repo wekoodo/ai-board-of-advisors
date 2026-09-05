@@ -39,7 +39,7 @@ Fund each step before the next, unless a compelling reason to deviate:
    income limits apply.
 6. **401(k) to maximum** — employee deferral ≈ $23,500 (≈ $31,000 if 50+) *(illustrative — verify
    current-year value)*.
-7. **Taxable brokerage** — tax-efficient funds (broad index funds/ETFs).
+7. **Taxable brokerage** — (05 for what to hold).
 8. **Other goals** — education (529), real estate down payment, etc.
 
 **Deviate when:** Roth income limits exceeded (backdoor Roth / traditional); business owner
