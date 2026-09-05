@@ -41,3 +41,5 @@ the same class as a skill overlay.
 - `profile/CONTEXT.md` is referenced in each advisor's `CONTEXT.md` under "Always load"; follow
   its scoped load and do not bulk-load `entities/`
 - `setup/` is loaded only when the onboarding interview is running (first launch or profile update)
+- Root `tmp/CONTEXT.md` (gitignored, only if it exists) — product-authoring work in this clone;
+  not a meeting load and not onboarding

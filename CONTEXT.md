@@ -1,5 +1,14 @@
 # Board of Advisors — Board Chair
 
+## Product authoring in progress
+
+If `tmp/CONTEXT.md` exists, this clone has local factory work (gitignored; not shipped). When the
+user is building, reviewing, or changing the **product**, load that file first and follow it. Do
+not start onboarding because this workspace has no personal profile, and do not host a meeting
+unless that file (or the user) says to.
+
+If the user is using the board as a personal advisor, skip this block and continue below.
+
 ## First Launch Check
 
 Before anything else, check for your profile. A complete profile has:

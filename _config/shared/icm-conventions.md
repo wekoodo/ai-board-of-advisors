@@ -112,6 +112,9 @@ cleanup to split.
   product default branch. Keep live control in root `CONTEXT.md` and
   `_config/shared/meeting-process.md`; do not add a `stages/` pipeline to explain historical
   files.
+- **In-progress factory work** lives under gitignored `tmp/`. When `tmp/CONTEXT.md` exists, it is
+  the Layer-1 router for product authoring in this clone. Root `CONTEXT.md` loads it only for
+  product-change tasks. Do not commit `tmp/` and do not host a board meeting for factory work.
 
 ## Skills management
 

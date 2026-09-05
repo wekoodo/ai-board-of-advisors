@@ -41,4 +41,10 @@ The structure is identical to a core advisor and the folder sits at the same dep
 
 ## Getting Started
 
-To begin, load `CONTEXT.md`. On first launch — before any profile exists — `CONTEXT.md` routes the agent to the onboarding interview, which writes the user's profile to `_config/profile/`. Every subsequent session then loads `_config/profile/CONTEXT.md` and only the files that match the question, so each advisor opens with personal and financial context already in hand.
+To begin, load `CONTEXT.md`. If `tmp/CONTEXT.md` exists and the task is product authoring
+(building, reviewing, or changing the system), follow that router first — this clone may have
+no personal profile on purpose. On first launch of a **personal board** — before any profile
+exists — `CONTEXT.md` routes the agent to the onboarding interview, which writes the user's
+profile to `_config/profile/`. Every subsequent personal-board session then loads
+`_config/profile/CONTEXT.md` and only the files that match the question, so each advisor opens
+with personal and financial context already in hand.
