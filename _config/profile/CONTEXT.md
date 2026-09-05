@@ -1,8 +1,10 @@
 # Profile
 
 Persistent personal, financial, and optional entity and trust facts live in this directory.
-Real profile content is gitignored and stays on this machine. This file routes advisors to the
-smallest relevant profile set; it does not authorize loading every entity folder.
+Real profile content is stored here and excluded from Git by default. Cloning the repository
+does not restore it. Content sent to a cloud model follows that provider's policies. This file
+routes advisors to the smallest relevant profile set; it does not authorize loading every
+entity folder.
 
 ## Profile Files
 

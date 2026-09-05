@@ -44,8 +44,9 @@ The interview:
 - Is conversational and can be paused/resumed — each completed domain is written immediately
 
 Your profile is stored in `_config/profile/`. Core files are always written. An entity registry
-and a `trust.md` file appear only when you have those. All real profile data files are
-gitignored and never committed. Your data stays on your machine.
+and a `trust.md` file appear only when you have those. Real profile data is excluded from Git
+by default. Cloning the repository does not restore it. Content sent to a cloud model follows
+that provider's policies and your account settings.
 
 After general onboarding you can ask to deepen one entity or a living-trust profile. That is
 optional; the board is ready to use without it.
@@ -125,6 +126,7 @@ See `advisors-extended/README.md`.
 ## Privacy note
 
 Your profile data (`_config/profile/` except the tracked routers and entity template) and
-user-created meetings (`meetings/<topic>/` or `meetings/<scope>/<topic>/`) are gitignored and
-stay local. The shipped example meetings under `meetings/example-*/` are included in the repo
-as worked references.
+user-created meetings (`meetings/<topic>/` or `meetings/<scope>/<topic>/`) are stored locally
+and excluded from Git by default. Cloning does not restore them. The shipped example meetings
+under `meetings/example-*/` are included in the repo as worked references. Content sent to a
+cloud model follows that provider's policies and your account settings.

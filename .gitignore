@@ -1,4 +1,4 @@
-# User profile — generated during onboarding, local-only, never committed.
+# User profile — generated during onboarding, excluded from Git by default.
 # Keep the routers and blank entity template tracked; ignore all real profile data.
 # Optional layers: trust.md (or trust/ after a split) and entities/<slug>/ are local-only.
 _config/profile/*

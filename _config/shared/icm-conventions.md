@@ -64,8 +64,8 @@ Durable memory lives **inside the workspace as files**, never only in a harness-
 user-level store — otherwise it does not travel when the project moves to another harness.
 
 - The user profile (`_config/profile/`) is the worked example: a defined in-workspace location,
-  content gitignored for privacy, loaded via `_config/profile/CONTEXT.md` scoped rules (not a
-  bulk directory read).
+  content excluded from Git by default, loaded via `_config/profile/CONTEXT.md` scoped rules
+  (not a bulk directory read). Gitignore does not keep facts off a cloud model that reads them.
 - Apply the same pattern to any new durable memory: stable facts → Layer 3; evolving state →
   Layer 4. Gitignore the *content* if private, but keep the *location* in the structure.
 

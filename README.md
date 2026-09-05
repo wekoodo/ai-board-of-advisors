@@ -109,7 +109,7 @@ git merge upstream/main
 
 **What merges vs what stays local**
 
-| Updated from the product (system) | Stays on your machine (gitignored) |
+| Updated from the product (system) | Local by default (gitignored) |
 |-----------------------------------|-------------------------------------|
 | Advisors, shared rules, chair protocol, examples, docs | Profile (`_config/profile/`), your meetings, `_inbox/` docs |
 
@@ -117,7 +117,9 @@ If you customized **system** files in place, merges can conflict — prefer addi
 
 ## Your profile stays local
 
-The onboarding interview writes your personal, financial, business, investment, and goals data into `_config/profile/`. If you own entities or a living trust, optional local files appear under `entities/` and `trust.md`. Real profile data is gitignored. The tracked factory pieces are `profile/CONTEXT.md` and `profile/entities/_template/`. Profile files never get committed, never leave your machine, and never sync upstream. Merging product updates does not require or overwrite them.
+The onboarding interview writes your personal, financial, business, investment, and goals data into `_config/profile/`. If you own entities or a living trust, optional local files appear under `entities/` and `trust.md`. Real profile data, your meeting records, and `_inbox/` documents are stored in this workspace and excluded from Git by default. The tracked factory pieces are `profile/CONTEXT.md`, `profile/entities/CONTEXT.md`, and `profile/entities/_template/`.
+
+Default Git exclusion is not a guarantee against a forced add. Content you send to a cloud model is processed under that provider's policies and your account settings. Cloning this repository does not restore ignored personal memory. A private backup or export is a separate decision. Connecting `upstream` does not send profile files to the product. Merging product updates does not require or overwrite them.
 
 ## Add your own advisor
 

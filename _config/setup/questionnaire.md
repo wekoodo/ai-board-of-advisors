@@ -158,9 +158,10 @@ trusts already listed as entities.
 > Confirm optional `trust.md` / `entities/` files only when this interview created them. Only
 > after the gate passes, tell the user:
 >
-> "Your profile is saved to `_config/profile/`. All profile files are gitignored and stay on your
-> machine only. You can update any section any time by editing the file directly or asking an
-> advisor to update it during a session.
+> "Your profile is saved to `_config/profile/`. Real profile files are excluded from Git by
+> default. Cloning this repo does not restore them. Content you send to a cloud model follows
+> that provider's policies. You can update any section any time by editing the file directly or
+> asking an advisor to update it during a session.
 >
 > If you registered entities, you can deepen one later by asking — that is not required to use
 > the board. Same for a living-trust profile.
