@@ -39,7 +39,7 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    mission; will-not-do — no "elite" / "world-class"), add **Scope** (in scope, out of scope with
    handoff seats, and "convene only when …" for a niche seat), keep the **Always load** list and
    **Load when writing to the user** overlay line as-is, write the Process (analytical steps +
-   cross-referrals to other advisors by number + slug, matching `collaboration.md`), keep the
+   cross-referrals to other advisors by number + slug, each listed in `collaboration.md`), keep the
    Outputs Handoff reference, and adapt the Disclaimer to your domain.
 3. **Fill in `references/CONTEXT.md` and `references/frameworks.md`.** Give your advisor the
    frameworks, checklists, and analytical tools it needs. Obey the durable-figures rule: express
