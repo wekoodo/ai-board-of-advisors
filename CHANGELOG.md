@@ -25,8 +25,8 @@ section *Keeping your board up to date*.
 
 - Load `_config/profile/CONTEXT.md` and follow scoped rules instead of bulk-loading every
   profile file (including entity folders).
-- Ignore all real profile content in `.gitignore` while tracking `profile/CONTEXT.md` and
-  `profile/entities/_template/`.
+- Ignore all real profile content in `.gitignore` while tracking `profile/CONTEXT.md`,
+  `profile/entities/CONTEXT.md`, and `profile/entities/_template/`.
 
 ## [0.3.0] — 2026-09-05
 

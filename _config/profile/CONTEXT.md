@@ -18,8 +18,9 @@ entity folder.
 | `trust.md` | Living trust or similar estate vehicle (optional; may shim to `trust/`) | Optional |
 | `entities/index.md` | Known entities, relationships, onboarding status, and profile paths | Optional |
 
-`entities/` and `trust.md` appear only when onboarding records them. General onboarding is
-complete without either file.
+`entities/index.md` and `trust.md` appear only when onboarding records them. Tracked
+`entities/CONTEXT.md` and `entities/_template/` are not evidence that the user owns entities.
+General onboarding is complete without `index.md` or `trust.md`.
 
 ## Scoped load rules
 
@@ -64,8 +65,8 @@ complete without either file.
 Edit any file directly, or ask an advisor to update a section. When writing or updating a profile
 file, include a "Last Updated: YYYY-MM-DD" line at the top of the file you edited so the staleness
 check works. If the named path is a shim, edit the resolved owning section; do not duplicate
-facts in the shim. Follow `entities/CONTEXT.md` for entity status and file ownership when that
-directory exists. Follow `../shared/icm-conventions.md` **Keep files load-scoped** and **Resolve
+facts in the shim. Follow `entities/CONTEXT.md` for entity status and file ownership when
+`entities/index.md` exists. Follow `../shared/icm-conventions.md` **Keep files load-scoped** and **Resolve
 a named profile path**: if a write would mix independently loadable concerns into a file that is
 loaded as a whole, split into a folder with a `CONTEXT.md` router now. Keep a thin shim when a
 completeness gate or existing load path names the old file.

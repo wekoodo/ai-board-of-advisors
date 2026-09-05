@@ -17,7 +17,7 @@ This directory contains shared infrastructure loaded by all advisors and the onb
 | `shared/version.md` | Product semver stamp + soft-check recipe (on demand, else once a day) |
 | `shared/updates.md` | Connect upstream / apply merge — load only when needed |
 | `setup/` | Onboarding interview and installation guide (loaded only during first-launch onboarding) |
-| `profile/` | Your persistent profile — written during onboarding, gitignored, local-only. Tracked: `CONTEXT.md` and `entities/_template/` |
+| `profile/` | Your persistent profile — written during onboarding, gitignored, local-only. Tracked: `CONTEXT.md`, `entities/CONTEXT.md`, and `entities/_template/` |
 
 > **Related — repo root:** `_inbox/` is the intake point for pre-meeting documents. The chair checks
 > it at meeting start and moves relevant files into `meetings/<meeting>/inputs/`; full detail is in

@@ -1,4 +1,4 @@
-<!-- @include AGENTS.md -->
+@AGENTS.md
 
 Canonical instructions for this project are in `AGENTS.md`. If it was not already loaded, read it now before proceeding.
 

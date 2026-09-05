@@ -52,7 +52,7 @@ Ask whether the user owns, controls, manages, benefits from, or operates through
 holding companies, land trusts, disregarded entities, or joint ventures.
 
 - If **no**: write `_config/profile/businesses.md` noting that none are owned. Do not create
-  `_config/profile/entities/`. Continue to the living-trust gate.
+  `_config/profile/entities/index.md`. Continue to the living-trust gate.
 - If **yes**, for each entity:
   - What is its legal name and a stable short name?
   - Is it an LLC, corporation, land trust, sole proprietorship, or another structure?

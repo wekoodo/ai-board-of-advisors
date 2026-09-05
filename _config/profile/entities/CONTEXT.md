@@ -13,15 +13,16 @@ A living trust or similar estate vehicle lives in `../trust.md` (or `../trust/` 
 has been split). Do not register that estate vehicle as an entity. Land trusts, LLCs,
 corporations, and other operating or holding structures belong here.
 
-This directory exists only after general onboarding records at least one entity. If
-`index.md` is absent, there is no entity layer: stay on the core profile files and keep
+Tracked router and template files ship in this directory. The entity layer is active only
+when `index.md` exists. If `index.md` is absent, stay on the core profile files and keep
 meeting folders flat under `meetings/<topic-slug>/`. If `index.md` is created later, leave
 existing flat meeting folders in place.
 
 ## Index
 
-Read `index.md` first when this directory exists. It records each entity's stable slug,
-relationship, onboarding status, and available profile files. `index.md` is local-only.
+If `index.md` is absent, the entity layer is inactive. Otherwise read `index.md` first. It
+records each entity's stable slug, relationship, onboarding status, and available profile
+files. `index.md` is local-only.
 
 Allowed onboarding states:
 

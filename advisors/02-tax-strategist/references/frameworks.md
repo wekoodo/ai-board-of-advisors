@@ -1,6 +1,6 @@
 # Tax Planning Frameworks
 
-> Durable-figures rule (see `../../_config/shared/conventions.md`): the formulas and ratios below
+> Durable-figures rule (see `../../../_config/shared/conventions.md`): the formulas and ratios below
 > are durable. Any year-specific dollar figure is labeled "illustrative — verify current-year value."
 > Confirm the live number before relying on it.
 

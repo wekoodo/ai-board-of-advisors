@@ -13,5 +13,7 @@ cloud model follows that provider's policies.
 **What happens to them.** At the start of a meeting the board chair lists whatever
 is waiting here, asks which files are relevant to that meeting, and **moves** the
 ones you confirm into `meetings/<meeting>/inputs/` (`<topic-slug>` or
-`<scope>/<topic-slug>` — see `meetings/CONTEXT.md`). Anything you don't pick stays
+`<scope>/<topic-slug>` — see `meetings/CONTEXT.md`). During in-depth entity
+onboarding, confirmed sources move into that entity's profile `sources/` folder
+instead — see `_config/setup/entity-onboarding.md`. Anything you don't pick stays
 here for a future meeting.

@@ -41,7 +41,8 @@ keys, like database IDs:
 
 - **Factory (Layer 3, stable):** advisor roster, `_config/shared/` rules (including `version.md`
   soft-check and on-demand `updates.md`), `_config/setup/`, `_config/profile/CONTEXT.md`,
-  `_config/profile/entities/_template/`, root `CHANGELOG.md`.
+  `_config/profile/entities/CONTEXT.md`, `_config/profile/entities/_template/`,
+  root `CHANGELOG.md`.
 - **Product (Layer 4, per-run):** user records under `meetings/<topic>/`, and, after
   `_config/profile/entities/index.md` exists, new records under `meetings/<scope>/<topic>/`.
   Both layouts may coexist; do not relocate an existing folder. Tracked `meetings/CONTEXT.md` is
@@ -72,8 +73,9 @@ user-level store — otherwise it does not travel when the project moves to anot
 ## Recursive Layer-3 routing
 
 Large reference areas carry their own `CONTEXT.md` router (Layer-1 routing applied inside Layer 3):
-`_config/CONTEXT.md`, `_config/profile/CONTEXT.md`, `_config/profile/entities/CONTEXT.md` when
-that directory exists, `_config/profile/trust/CONTEXT.md` when that folder exists, and each
+`_config/CONTEXT.md`, `_config/profile/CONTEXT.md`, `_config/profile/entities/CONTEXT.md` (the
+tracked entity router; the entity layer is active only when `entities/index.md` exists),
+`_config/profile/trust/CONTEXT.md` when that folder exists, and each
 `advisors/NN-name/references/CONTEXT.md`. Keep these in sync when adding reference files.
 
 ## Keep files load-scoped (split at write time)
