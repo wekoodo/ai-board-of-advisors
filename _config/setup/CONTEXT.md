@@ -16,13 +16,20 @@ or similar estate vehicle, load `trust-onboarding.md` and follow its scoped inpu
 completion check. Do not restart the general questionnaire. Do not start this route unless they
 asked.
 
+**Entity registration route:** If the user explicitly asks to add or register an entity after
+general onboarding is complete, or asks to create a registry for holdings already listed in
+`businesses.md`, load `entity-registration.md`. Do not restart the household interview. Do not
+start in-depth onboarding unless they also asked to deepen. Do not start this route because
+`businesses.md` merely names a business.
+
 **Focused entity route:** If the user asks to begin or resume in-depth onboarding for a registered
 entity that already has an `entities/index.md` entry and `overview.md`, load `entity-onboarding.md`
-and that entity's `CONTEXT.md`. Follow **Current state**, **Resume inputs**, and **Next work** only
-when those resume sections exist. If the entity `CONTEXT.md` is already a completed meeting router,
+and that entity's `CONTEXT.md` if it exists. If the resume sections are missing, that contract creates them
+before asking in-depth questions. Follow **Current state**, **Resume inputs**, and **Next work**
+when those sections exist. If the entity `CONTEXT.md` is already a completed meeting router,
 do not start an interview unless the user explicitly asks to refresh. Do not recap or restart
 completed domains. Do not create a meeting. Do not start this route because general onboarding
-finished.
+finished, because a meeting mentioned the entity, or because a new source arrived.
 
 1. **Check existing profile content first.** Before beginning or resuming, inspect the relevant
    profile file and section for each domain. If a named path is a shim, follow
@@ -68,7 +75,9 @@ finished.
 6. **Keep entity and trust onboarding bounded.** General onboarding records identity, relationships,
    purpose, classification, available documents, and open questions. It does not collect full
    financial, tax, governance, operations, or risk detail for each entity. It does not run focused
-   trust intake. Use `entity-onboarding.md` or `trust-onboarding.md` only when the user asks.
+   trust intake. Use `entity-registration.md` to add an entity after general onboarding,
+   `entity-onboarding.md` to deepen one registered entity, or `trust-onboarding.md` for a living
+   trust — only when the user asks.
 
 7. **Verify onboarding completion before declaring it complete:**
    - Confirm all five required files exist: `personal.md`, `financial.md`, `businesses.md`,
@@ -107,6 +116,7 @@ finished.
 ## Files in This Directory
 
 - `questionnaire.md` — the full interview question bank
+- `entity-registration.md` — bounded basic registration after general onboarding
 - `entity-onboarding.md` — the optional in-depth interview for one selected entity
 - `trust-onboarding.md` — the optional focused living-trust interview
 - `onboarding.md` — human-readable installation and usage guide

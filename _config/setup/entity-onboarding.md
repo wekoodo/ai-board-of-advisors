@@ -8,7 +8,12 @@ scope to other entities unless a relationship is necessary to understand the sel
 This route is optional. General onboarding is complete with a basic `overview.md` per known entity.
 Do not start this interview because the general profile is complete, because a meeting mentioned
 the entity, or because `index.md` lists a next candidate. Start only when the user asks to deepen
-or refresh a registered entity that already has an index entry and `overview.md`.
+or to reopen a domain of a registered entity that already has an index entry and `overview.md`.
+A material event or new source is not that request: mark affected facts stale and write a scoped
+update; do not start this interview.
+
+If the user asked to deepen an entity that has no index entry or no `overview.md`, load
+`entity-registration.md` first, then return here.
 
 This contract is for in-progress onboarding and for an explicit refresh of a completed entity. A
 completed entity `CONTEXT.md` is a meeting router. Loading it during a meeting does not start this
@@ -40,16 +45,47 @@ interview.
 
 ## Interview
 
-If the selected entity `CONTEXT.md` has **Current state**, **Resume inputs**, and **Next work**,
-follow those sections. Do not restart a domain that file marks complete. On a fresh session, the
-first user-facing turn follows **Next work** exactly: ask the unanswered questions listed there, and
-do not recap completed domains. Ask no more than two or three closely related questions at a time.
-Keep those resume sections current so a later session can continue without recapping.
+**Create the resume contract when it is missing.** If the selected entity has an index entry and
+`overview.md` but no `CONTEXT.md`, or its `CONTEXT.md` is not a completed meeting router and
+lacks **Current state**, **Resume inputs**, and **Next work**, write that file as the resume
+contract *before* asking in-depth questions. Use this shape:
 
-If the selected entity `CONTEXT.md` is already a post-onboarding meeting router (Purpose, Scope
-boundary, Status, Scoped load, Action register, **Refresh / reopen**) and has no **Next work**, do
-not run this interview unless the user explicitly asks to refresh or reopen a domain. Then follow
-**Refresh / reopen** for the reopened domain only.
+```markdown
+# <Entity name> — in-depth onboarding (in progress)
+
+Last Updated: YYYY-MM-DD
+
+## Current state
+- Depth: `basic` (in-progress deepen; not yet `in-depth`)
+- Completed domains: none
+- Partial domain: none
+- Domain files written: none
+
+## Resume inputs
+- `overview.md`
+- `../index.md` row for this slug
+
+## Next work
+- Ask the first unanswered Governance questions (or the next unfinished domain).
+- Do not recap completed domains.
+```
+
+Reuse overview facts. Do not restart general onboarding. Do not copy this resume shape into a
+completed meeting router.
+
+**Resume.** If those three sections exist, follow them. Do not restart a domain that file marks
+complete. On a fresh session, the first user-facing turn follows **Next work** exactly: ask the
+unanswered questions listed there, and do not recap completed domains. Ask no more than two or
+three closely related questions at a time. After each answered cluster, and before pausing,
+update **Current state**, **Resume inputs**, **Next work**, and the domain file. Partial answers
+in an unfinished domain belong in **Next work** and in that domain file as known-so-far, not as
+a completed domain.
+
+**Completed router.** If the selected entity `CONTEXT.md` is already a post-onboarding meeting
+router (Purpose, Scope boundary, Status, Scoped load, Action register, **Refresh / reopen**) and
+has no **Next work**, do not run this interview unless the user explicitly asks to refresh or
+reopen a domain. Then reopen that domain only. Keep the meeting router; do not replace it with
+resume sections. A new source or material event is not that ask.
 
 Otherwise proceed conversationally and save each completed domain before moving on:
 
@@ -88,6 +124,12 @@ Before changing the entity status to `in-depth`:
   `goals.md` (the resolved action file when that path is a shim; never copy the register into the
   shim). Do not leave instructions that a fresh session should continue the interview. Do not
   add this onboarding contract to the completed router's scoped-load table.
-- Update `_config/profile/entities/index.md` with the status, available files, and next review.
+- Update `_config/profile/entities/index.md` with depth `in-depth`, freshness `current`,
+  available files, and next review.
 
-If any check fails, keep the entity at `basic` or mark it `needs-refresh`.
+If a first-time deepen is still incomplete, keep depth at `basic` and keep the resume contract.
+If an explicit reopen of a completed entity is still incomplete, keep depth `in-depth`, keep
+the meeting router, and checkpoint partial answers only in the reopened domain file. Do not
+convert the meeting router back into an interview resume. Do not replace depth with a
+freshness flag. If facts became unreliable, set freshness `stale` on the index Freshness
+column and keep the recorded depth.

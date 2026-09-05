@@ -24,11 +24,18 @@ If `index.md` is absent, the entity layer is inactive. Otherwise read `index.md`
 records each entity's stable slug, relationship, onboarding status, and available profile
 files. `index.md` is local-only.
 
-Allowed onboarding states:
+Allowed depth values (Status column — do not replace these with a freshness flag):
 
 - `basic` — `overview.md` exists and contains enough information to route a meeting.
 - `in-depth` — the relevant detailed profile files exist and the completion check passed.
-- `needs-refresh` — facts are older than 12 months or a material event made them unreliable.
+
+Freshness is a separate column. `current` is the default. If an older index has no Freshness
+column, treat missing values as `current`. `stale` means facts are older than 12 months or a
+material event made them unreliable. A stale `in-depth` entity is still in-depth. A
+new source or material event sets freshness `stale` on the index Freshness column (and the
+entity router Freshness line) and prompts a scoped fact update; it does not start an
+interview. After those facts are confirmed, set freshness `current`. Do not write freshness
+into overview onboarding status.
 
 Suggested `index.md` shape (create on first entity; do not commit real names):
 
@@ -37,9 +44,9 @@ Suggested `index.md` shape (create on first entity; do not commit real names):
 
 Last Updated: YYYY-MM-DD
 
-| Entity | Slug | Relationship | Status | Available files |
-| --- | --- | --- | --- | --- |
-| Legal Name, LLC | `legal-name-llc` | Owner and role | `basic` | `overview.md` |
+| Entity | Slug | Relationship | Status | Freshness | Available files |
+| --- | --- | --- | --- | --- | --- |
+| Legal Name, LLC | `legal-name-llc` | Owner and role | `basic` | `current` | `overview.md` |
 ```
 
 ## Load an entity
@@ -76,15 +83,21 @@ Last Updated: YYYY-MM-DD
 
 ## Create or deepen an entity
 
-- For basic registration, create only `<entity-slug>/overview.md` and update `index.md`.
+- After general onboarding, register a new entity with `../../setup/entity-registration.md`.
+  Reuse `../businesses.md`. Do not restart household onboarding. Preserve every existing
+  entity's status.
+- For basic registration during general onboarding or that later route, create only
+  `<entity-slug>/overview.md` and update `index.md`.
 - Do not add a Personal or household slug under this directory.
 - For in-depth onboarding, follow `../../setup/entity-onboarding.md` and create only the
   detailed files that apply. In-depth onboarding is optional. General onboarding is complete
   without it.
-- If `<entity-slug>/CONTEXT.md` has **Current state**, **Resume inputs**, and **Next work**,
-  it is the in-progress resume contract: follow those sections and do not restart completed
-  domains. After the completion check, replace those resume sections with the meeting-router
-  shape in `_template/CONTEXT.md`.
+- On an explicit deepen request, if `<entity-slug>/CONTEXT.md` is missing or is not a
+  completed meeting router and lacks **Current state**, **Resume inputs**, and **Next work**,
+  that onboarding contract creates the resume sections before asking in-depth questions.
+- If those resume sections exist, follow them and do not restart completed domains. After the
+  completion check, replace those resume sections with the meeting-router shape in
+  `_template/CONTEXT.md`.
 - During in-depth onboarding, keep all output in the selected entity folder. Do not create a
   meeting record. Create `goals.md` when the first actionable item appears and use it as the
   single canonical action register across every domain.

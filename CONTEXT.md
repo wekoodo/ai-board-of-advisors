@@ -38,11 +38,17 @@ At any time, if the user explicitly asks to begin or resume focused onboarding f
 or similar estate vehicle, load `_config/setup/trust-onboarding.md`. Do not start that route from
 a meeting mention.
 
+At any time, if the user explicitly asks to add or register an entity after general onboarding
+is complete, load `_config/setup/entity-registration.md`. Do not restart the household
+interview. Do not start in-depth onboarding unless they also asked to deepen.
+
 At any time, if the user explicitly asks to begin or resume in-depth onboarding for an entity that
 already has an entry in `entities/index.md` and an `overview.md`, load
-`_config/setup/entity-onboarding.md` and that entity's `CONTEXT.md` if it exists. Do not start
-that route because general onboarding finished, because `index.md` lists a candidate, or because
-a meeting mentioned the entity.
+`_config/setup/entity-onboarding.md` and that entity's `CONTEXT.md` if it exists. If that
+`CONTEXT.md` is missing, that contract creates the resume sections before asking in-depth
+questions. Do not start that route because general onboarding finished, because `index.md`
+lists a candidate, because a meeting mentioned the entity, or because a new source arrived.
+If they asked to deepen an unregistered entity, load `_config/setup/entity-registration.md` first.
 
 Onboarding is profile maintenance, not a board meeting. While any onboarding route is active,
 write all durable output under `_config/profile/`, do not create a `meetings/` record, and do not

@@ -41,7 +41,9 @@ General onboarding is complete without `index.md` or `trust.md`.
    relationship. Do not preload every entity.
 6. When an entity has only `overview.md`, use the known facts and identify missing detail. Offer
    in-depth onboarding when the missing facts affect the work. Do not start it unless the user
-   asks.
+   asks. If the user names an entity that is not in `entities/index.md` and general onboarding
+   is already complete, offer `../setup/entity-registration.md` rather than restarting the
+   household interview.
 7. If `entities/index.md` is absent, there is no entity layer. Keep meetings at
    `meetings/<topic-slug>/`. If that index is created later, leave existing flat meeting
    folders in place; follow `../../meetings/CONTEXT.md` **Existing records stay put**.

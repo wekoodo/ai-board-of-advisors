@@ -66,8 +66,10 @@ holding companies, land trusts, disregarded entities, or joint ventures.
 > **[Agent instruction]:** When entities exist, write `_config/profile/businesses.md` as the
 > high-level map only. Write `_config/profile/entities/index.md`, then create one
 > `_config/profile/entities/<entity-slug>/overview.md` per known entity from
-> `entities/_template/overview.md`. Mark each entity `basic`. Do not start in-depth entity
-> onboarding during this domain. Do not require the user to pick a next entity to deepen.
+> `entities/_template/overview.md`. Mark each entity `basic` with freshness `current`. Do not
+> start in-depth entity onboarding during this domain. Do not require the user to pick a next
+> entity to deepen. After this interview, adding another entity uses
+> `_config/setup/entity-registration.md`.
 
 ### Living trust
 
@@ -164,7 +166,8 @@ trusts already listed as entities.
 > asking an advisor to update it during a session.
 >
 > If you registered entities, you can deepen one later by asking — that is not required to use
-> the board. Same for a living-trust profile.
+> the board. You can also add another entity later without repeating this interview. Same for a
+> living-trust profile.
 >
 > To begin using the Board of Advisors, return to the root `CONTEXT.md` and tell your agent what
 > you'd like to discuss."

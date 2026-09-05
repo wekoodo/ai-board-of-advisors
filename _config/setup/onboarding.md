@@ -48,8 +48,9 @@ and a `trust.md` file appear only when you have those. Real profile data is excl
 by default. Cloning the repository does not restore it. Content sent to a cloud model follows
 that provider's policies and your account settings.
 
-After general onboarding you can ask to deepen one entity or a living-trust profile. That is
-optional; the board is ready to use without it.
+After general onboarding you can ask to register a newly acquired entity without repeating the
+household interview, deepen one registered entity, or onboard a living-trust profile. Those
+routes are optional; the board is ready to use without them.
 
 ### Connect product updates (end of onboarding)
 

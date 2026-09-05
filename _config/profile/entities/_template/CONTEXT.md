@@ -27,7 +27,8 @@ and without restarting onboarding.
 
 ## Status
 
-- Entity status: `basic` | `in-depth` | `needs-refresh`
+- Entity status (depth): `basic` | `in-depth`
+- Freshness: `current` | `stale`
 - Next review: YYYY-MM-DD, or earlier after a material event.
 - Do not restart onboarding unless the user asks to refresh or correct the profile.
 
@@ -61,13 +62,17 @@ into the shim). Domain files keep supporting facts.
 
 Entity-scoped meetings live under `meetings/<entity-slug>/<topic-slug>/`, not in this profile
 folder. Follow `../../../../meetings/CONTEXT.md` **Existing records stay put**. Create the scope
-folder only with the first meeting, and only when that path is not already a meeting record. When a meeting changes standing facts for this entity, write those facts into the
-matching files in this folder in the same session. Follow `../../../shared/meeting-process.md`
+folder only with the first meeting, and only when that path is not already a meeting record.
+When a meeting changes standing facts for this entity, write those facts into the matching
+files in this folder in the same session. Follow `../../../shared/meeting-process.md`
 **Profile write-back**. Do not leave standing state only in `minutes.md`.
 
 ## Refresh / reopen
 
-Reopen a completed domain only after a material event, a new source, or an explicit user request
-to refresh. Then load `../../../setup/entity-onboarding.md` and follow that contract for the
-reopened domain only. Do not recap completed domains. Do not treat a meeting load of this file as
-an onboarding session.
+A material event or new source marks affected facts stale (index Freshness column and this
+router's Freshness line, not overview onboarding status) and prompts a scoped fact review in
+the current meeting (write-back). After those facts are confirmed, set Freshness `current`.
+That is not an interview. Do not load
+`../../../setup/entity-onboarding.md` unless the user explicitly asks to refresh or reopen a
+domain. Then follow that contract for the reopened domain only. Do not recap completed domains.
+Do not treat a meeting load of this file as an onboarding session.

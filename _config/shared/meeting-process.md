@@ -192,7 +192,8 @@ exists, `_config/profile/entities/CONTEXT.md`:
 | --- | --- |
 | Household standing facts or household actions | `personal.md`, `financial.md`, `investments.md`, `goals.md` (resolved owning sections when a named path is a shim) |
 | High-level entity map | `businesses.md` — summary only; details stay in the entity folder when one exists |
-| Entity identity, purpose, relationship, status | `<entity-slug>/overview.md`, and `entities/index.md` when routing status changes |
+| Entity identity, purpose, relationship, status | `<entity-slug>/overview.md`, and `entities/index.md` when routing status (depth) changes |
+| Entity freshness (`current` / `stale`) | `entities/index.md` Freshness column, and the entity router's Freshness line. Not overview onboarding status. After scoped facts are confirmed, set `current`. |
 | Ownership, control, agreements, succession | `<entity-slug>/governance.md` (resolved owning section when a shim) |
 | Activities, people, systems, operating model | `<entity-slug>/operations.md` (resolved owning section when a shim) |
 | Revenue, cash, assets, liabilities, reporting | `<entity-slug>/financial.md` (resolved owning section when a shim) |
@@ -233,8 +234,12 @@ how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `art
 ### Do not
 
 - Start or restart onboarding because a meeting happened. A write-back is a scoped fact update.
-  Use an entity **Refresh / reopen** only when a domain needs a re-interview after a material event
-  or an explicit user request.
+  A material event or new source is written here. Set that entity's index Freshness column (and
+  the entity router's Freshness line) to `stale`; do not change depth or overview onboarding
+  status. After the scoped facts are confirmed and written, set Freshness back to `current`.
+  If some facts could not be confirmed, keep `stale` and list them as open questions. Do not
+  start an entity interview. Load `../setup/entity-onboarding.md` only when the user asks to
+  reopen a domain.
 - Duplicate an action into more than one register.
 - Invent `sources.md` for an ordinary fact update.
 
