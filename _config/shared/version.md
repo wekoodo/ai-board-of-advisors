@@ -4,8 +4,8 @@ Product (system/factory) release stamp. Not personal data.
 
 | Field | Value |
 |-------|--------|
-| **version** | `0.2.0` |
-| **released** | `2026-08-27` |
+| **version** | `0.3.0` |
+| **released** | `2026-09-05` |
 | **product_repo** | `https://github.com/wekoodo/ai-board-of-advisors` |
 | **upstream_remote_name** | `upstream` |
 | **changelog** | `CHANGELOG.md` (repo root) |

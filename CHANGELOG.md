@@ -8,6 +8,8 @@ section *Keeping your board up to date*.
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-09-05
+
 ### Added
 
 - Add a chair convening map (`_config/shared/convening.md`) so the host can pick the fewest
