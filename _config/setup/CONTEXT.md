@@ -58,7 +58,9 @@ finished, because a meeting mentioned the entity, or because a new source arrive
      (or the resolved owning section if that path is already a shim)
    - Business domain → `_config/profile/businesses.md` (record that none are owned when applicable).
      If the user names any businesses, LLCs, land trusts, or similar: also write
-     `_config/profile/entities/index.md` and one basic `<entity-slug>/overview.md` per known entity.
+     `_config/profile/entities/index.md` and one basic `<entity-slug>/overview.md` per known
+     entity, assigning each slug with `../profile/entities/CONTEXT.md` **Slugs** before
+     creating the folder.
      If the user has a living trust or similar estate vehicle: also write
      `_config/profile/trust.md` (resolved owning sections if a shim). Neither extra file is
      required to complete general onboarding when the answer is no.
@@ -94,8 +96,10 @@ finished, because a meeting mentioned the entity, or because a new source arrive
    - Confirm the folder router for `goals.md` (when it is a shim) maps `Current Concerns` to a
      section file that contains that heading; if the path is flat, the heading is in `goals.md`.
      Completeness does not require every file under `goals/`.
-   - If `entities/index.md` exists, confirm every listed entity has a stable slug, an onboarding
-     status, and a matching `overview.md` with a valid `Last Updated` line. Do not require
+   - If `entities/index.md` exists, confirm every listed entity has an index slug, a matching
+     `overview.md`, and a valid `Last Updated` line. Apply `../profile/entities/CONTEXT.md`
+     **Slugs** only when assigning a *new* slug; do not rename an established slug to pass
+     this gate. Do not require
      detailed entity files for a `basic` entity. Do not require `entities/index.md` when the user
      owns no entities.
    - If `trust.md` was written, confirm it has a valid `Last Updated` line (resolve a shim the

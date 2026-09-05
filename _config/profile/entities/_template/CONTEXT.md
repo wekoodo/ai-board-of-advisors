@@ -2,8 +2,9 @@
 
 Last Updated: YYYY-MM-DD
 
-Copy this folder to a stable lowercase slug under `entities/`. General onboarding requires only
-`overview.md`. Create the remaining files during in-depth onboarding when they apply.
+Copy this folder to a slug under `entities/` that follows `../CONTEXT.md` **Slugs**. General
+onboarding requires only `overview.md`. Create the remaining files during in-depth onboarding
+when they apply.
 
 Every file answers one question and begins with `Last Updated: YYYY-MM-DD`.
 

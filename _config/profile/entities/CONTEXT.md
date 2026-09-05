@@ -49,6 +49,32 @@ Last Updated: YYYY-MM-DD
 | Legal Name, LLC | `legal-name-llc` | Owner and role | `basic` | `current` | `overview.md` |
 ```
 
+## Slugs
+
+Assign a slug before creating `entities/<slug>/` or using it as a meeting scope. The slug is
+the stable identity. Never rename an assigned slug.
+
+**Format.** One path segment. Lowercase ASCII letters, digits, and internal hyphens:
+start with a letter; `^[a-z][a-z0-9]*(-[a-z0-9]+)*$`. Reject `/`, `\`, `..`, `.`, spaces,
+uppercase, underscores, and empty values.
+
+**Reserved.** Do not use `personal`, `trust`, `index`, `context`, `_template`, `template`,
+`entities`, `none`, or any name matching `example-*`. Those collide with meeting scopes,
+factory files, or shipped examples.
+
+**Uniqueness.** Apply this check only when assigning a *new* slug, before writing. Check
+`index.md`, `_config/profile/entities/<slug>/`, and `meetings/<slug>/` (including a path that
+is already a meeting record). If the candidate is reserved, occupied, off-format, or a
+duplicate short name, build a new candidate (append `-2`, `-3`, or a lowercase legal-form
+token such as `-llc`; if the stem is `example` or does not start with a letter, pick a
+different stem that starts with a letter). Re-check format, reserved names, and occupancy
+until it is free. Every candidate, including suffixes, must match the format regex. Do not
+overwrite. Do not write real data into `_template/`. Do not rename a slug that is already in
+the index.
+
+Private entity folders under this rule stay gitignored. Do not choose a slug that would land
+under a tracked factory path.
+
 ## Load an entity
 
 1. Select the entity or entities from `index.md`.
@@ -87,7 +113,8 @@ Last Updated: YYYY-MM-DD
   Reuse `../businesses.md`. Do not restart household onboarding. Preserve every existing
   entity's status.
 - For basic registration during general onboarding or that later route, create only
-  `<entity-slug>/overview.md` and update `index.md`.
+  `<entity-slug>/overview.md` and update `index.md`. Follow **Slugs** before creating the
+  folder.
 - Do not add a Personal or household slug under this directory.
 - For in-depth onboarding, follow `../../setup/entity-onboarding.md` and create only the
   detailed files that apply. In-depth onboarding is optional. General onboarding is complete

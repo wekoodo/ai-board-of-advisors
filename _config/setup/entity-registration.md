@@ -18,6 +18,7 @@ A living trust is not an entity. If the user asked to onboard a living trust, lo
 
 - `_config/profile/CONTEXT.md` — confirm the core profile is complete; if it is not, load
   `CONTEXT.md` in this directory for general onboarding instead of this route.
+- `_config/profile/entities/CONTEXT.md` **Slugs** — assign a slug before creating a folder.
 - `_config/profile/businesses.md` — known holdings map. Reuse it.
 - `_config/profile/entities/index.md` — if it exists. Preserve every existing entity's status
   and files.
@@ -33,7 +34,8 @@ A living trust is not an entity. If the user asked to onboard a living trust, lo
    purpose/stage, open questions).
 3. If `entities/index.md` is absent, create it from `_config/profile/entities/CONTEXT.md`
    **Index**. Create `overview.md` only for entities being registered in this session.
-4. For each entity being added: write `<entity-slug>/overview.md` from
+4. For each entity being added: assign a slug first (`entities/CONTEXT.md` **Slugs**), then
+   write `<entity-slug>/overview.md` from
    `_template/overview.md`, set Status `basic` and Freshness `current`, and add one index
    row. If the existing table has no Freshness column, add it for every row (existing rows
    → `current`) rather than mixing shapes. Copy field structure from the template; do not
@@ -47,8 +49,9 @@ A living trust is not an entity. If the user asked to onboard a living trust, lo
 
 ## Completion
 
-- Each entity registered in this session has a stable slug, an index row, and an `overview.md`
-  with a valid `Last Updated` line.
+- Each entity registered in this session has a slug that follows
+  `_config/profile/entities/CONTEXT.md` **Slugs**, an index row, and an `overview.md` with a
+  valid `Last Updated` line.
 - Existing entities keep their prior depth, freshness, files, and resume or meeting router.
 - Tell the user that in-depth onboarding for a registered entity is available on request. Do
   not start `entity-onboarding.md` unless they asked to deepen in the same request. If they

@@ -26,7 +26,7 @@ meetings/<scope>/<topic-slug>/
 | --- | --- |
 | `personal` | Household or personal work, or portfolio-wide / multi-entity work with no single primary entity |
 | `trust` | A living trust (or similar estate vehicle in `_config/profile/trust.md`) is the primary subject |
-| `<entity-slug>` | One registered entity is the primary subject. Use the slug from `_config/profile/entities/index.md` |
+| `<entity-slug>` | One registered entity is the primary subject. Use the slug from `_config/profile/entities/index.md` (that slug must already have passed `_config/profile/entities/CONTEXT.md` **Slugs**) |
 
 Do not pre-create empty scope folders. Create `meetings/<scope>/` lazily with the first meeting in
 that scope, and only when that path is not already a meeting record. A path is a meeting record

@@ -66,10 +66,11 @@ holding companies, land trusts, disregarded entities, or joint ventures.
 > **[Agent instruction]:** When entities exist, write `_config/profile/businesses.md` as the
 > high-level map only. Write `_config/profile/entities/index.md`, then create one
 > `_config/profile/entities/<entity-slug>/overview.md` per known entity from
-> `entities/_template/overview.md`. Mark each entity `basic` with freshness `current`. Do not
-> start in-depth entity onboarding during this domain. Do not require the user to pick a next
-> entity to deepen. After this interview, adding another entity uses
-> `_config/setup/entity-registration.md`.
+> `entities/_template/overview.md`. Choose each slug by following
+> `_config/profile/entities/CONTEXT.md` **Slugs** before creating a folder. Mark each entity
+> `basic` with freshness `current`. Do not start in-depth entity onboarding during this domain.
+> Do not require the user to pick a next entity to deepen. After this interview, adding another
+> entity uses `_config/setup/entity-registration.md`.
 
 ### Living trust
 
