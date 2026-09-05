@@ -18,7 +18,7 @@ ICM supports two valid shapes. We use the second one, and the distinction matter
 | **Layer 1** — workspace routing | root `CONTEXT.md` — the board chair; convenes the right advisors per message |
 | **Layer 2** — control point (the work) | the **meeting lifecycle**: intake (`brief.md`) → deliberation (convene + `artifacts/`) → minutes (`minutes.md`), per `shared/meeting-process.md` |
 | **Layer 3** — stable reference | the **advisor roster library** (`advisors/`, `advisors-extended/`) + this `_config/` |
-| **Layer 4** — working artifacts | `meetings/CONTEXT.md` routes into `meetings/<topic>/` records; local `meetings/index.md` catalogs them |
+| **Layer 4** — working artifacts | `meetings/CONTEXT.md` routes into `meetings/<topic>/` or, when an entity index exists, `meetings/<scope>/<topic>/`; local `meetings/index.md` catalogs them |
 
 **The advisors are a Layer-3 reference library, not Layer-2 stages.** They are numbered for stable
 identity, *not* execution order, and are *selected by topic*, not run in sequence. Convening the
@@ -40,8 +40,10 @@ keys, like database IDs:
 ## Factory vs. product
 
 - **Factory (Layer 3, stable):** advisor roster, `_config/shared/` rules (including `version.md`
-  soft-check and on-demand `updates.md`), `_config/setup/`, root `CHANGELOG.md`.
-- **Product (Layer 4, per-run):** user records under `meetings/<topic>/`; tracked
+  soft-check and on-demand `updates.md`), `_config/setup/`, `_config/profile/CONTEXT.md`,
+  `_config/profile/entities/_template/`, root `CHANGELOG.md`.
+- **Product (Layer 4, per-run):** user records under `meetings/<topic>/`, or
+  `meetings/<scope>/<topic>/` when `_config/profile/entities/index.md` exists; tracked
   `meetings/CONTEXT.md` is recursive routing guidance for this area, and local-only
   `meetings/index.md` is evolving routing metadata. Meeting record files remain authoritative.
   Examples ship separately as reference factory content under `meetings/example-*/`.
@@ -61,15 +63,42 @@ Durable memory lives **inside the workspace as files**, never only in a harness-
 user-level store — otherwise it does not travel when the project moves to another harness.
 
 - The user profile (`_config/profile/`) is the worked example: a defined in-workspace location,
-  content gitignored for privacy, loaded every session via each advisor's "Always load".
+  content gitignored for privacy, loaded via `_config/profile/CONTEXT.md` scoped rules (not a
+  bulk directory read).
 - Apply the same pattern to any new durable memory: stable facts → Layer 3; evolving state →
   Layer 4. Gitignore the *content* if private, but keep the *location* in the structure.
 
 ## Recursive Layer-3 routing
 
 Large reference areas carry their own `CONTEXT.md` router (Layer-1 routing applied inside Layer 3):
-`_config/CONTEXT.md` and each `advisors/NN-name/references/CONTEXT.md`. Keep these in sync when
-adding reference files.
+`_config/CONTEXT.md`, `_config/profile/CONTEXT.md`, `_config/profile/entities/CONTEXT.md` when
+that directory exists, `_config/profile/trust/CONTEXT.md` when that folder exists, and each
+`advisors/NN-name/references/CONTEXT.md`. Keep these in sync when adding reference files.
+
+## Keep files load-scoped (split at write time)
+
+ICM treats a step that blows past a small token budget as a signal to re-scope Inputs, not to
+raise the budget. Apply the same rule when **writing** profile and reference files, not only when
+loading them.
+
+Every durable file answers one question. If a write would mix independently loadable concerns
+into a file that meetings or onboarding load as a whole, split **before** that write:
+
+1. Create a folder with its own `CONTEXT.md` router and section files.
+2. If a completeness gate or existing load path names the old file, keep that path as a thin
+   shim. Do not duplicate facts in the shim.
+3. Load and update only the sections the question needs. Do not bulk-load the folder, and do not
+   reconstitute one giant file later.
+
+Independently loadable concerns include identity, action registers, source inventories,
+open-question lists, and onboarding-status blocks. Short first-pass answers (for example an
+optional living-trust note during general onboarding) may share one file. A focused pass that
+would turn that file into a whole-binder dump must split at that pass.
+
+The optional trust profile is the worked example: start with `trust.md`; if focused onboarding
+would mix independently loadable concerns, split into `trust/` and keep `trust.md` as a shim.
+Entity in-depth files already follow one-question-per-file. Do not wait for a later structure
+cleanup to split.
 
 ## Tooling vs. workspace content (what is and isn't ICM)
 
@@ -118,8 +147,8 @@ advisor `references/`, `skills-lock.json`, or the `## Handoff` block shape. That
 | `icm` | `icm-conventions.md` (this file) | No. Structure and audit work should install it. | Chair or whoever is doing ICM / structure maintenance, on demand. Not advisor Always load. Not a normal meeting load. |
 
 **Always load** (shared protocol — every advisor, no skill involved): `disclaimer.md`,
-`collaboration.md`, `ethics.md`, `conventions.md`, plus `profile/` (all files, if the profile
-exists).
+`collaboration.md`, `ethics.md`, `conventions.md`, plus `profile/CONTEXT.md` (then follow its
+scoped load; do not bulk-load `entities/`).
 
 **Chair-only / on demand:** `meeting-process.md` and `convening.md` (hosting a meeting), this
 file (structure), `version.md` / `updates.md` (product update flow).

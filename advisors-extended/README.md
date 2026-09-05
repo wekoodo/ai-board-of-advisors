@@ -72,6 +72,6 @@ cross-references**, since advisors refer to each other by number + slug. To remo
 Extended advisors sit at the same depth as core advisors, so relative paths are unchanged:
 `../../_config/shared/disclaimer.md`, `../../_config/shared/conventions.md`,
 `../../_config/shared/google-doc-style-overlay.md`,
-`../../_config/profile/`, `../../meetings/[meeting-name]/artifacts/`. If you nest your advisor
+`../../_config/profile/CONTEXT.md`, `../../meetings/[meeting-name]/artifacts/`. If you nest your advisor
 deeper, you must adjust the `../` count accordingly — but the standard `advisors-extended/NN-name/`
 placement needs no change.

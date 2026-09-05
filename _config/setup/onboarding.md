@@ -39,10 +39,16 @@ The interview:
 
 - Takes ~10–20 minutes
 - Covers 7 domains: Personal, Employment, Business, Financial, Investments, Goals, Concerns
+- In Business, asks whether you own entities and whether you have a living trust. Neither
+  extra layer is required to finish onboarding.
 - Is conversational and can be paused/resumed — each completed domain is written immediately
 
-Your profile is stored in `_config/profile/`. All profile data files are gitignored and never
-committed. Your data stays on your machine.
+Your profile is stored in `_config/profile/`. Core files are always written. An entity registry
+and a `trust.md` file appear only when you have those. All real profile data files are
+gitignored and never committed. Your data stays on your machine.
+
+After general onboarding you can ask to deepen one entity or a living-trust profile. That is
+optional; the board is ready to use without it.
 
 ### Connect product updates (end of onboarding)
 
@@ -64,11 +70,13 @@ Agents: connect steps in `_config/shared/updates.md`; routine version checks use
 2. Ask your question. The chair convenes one advisor, several, or the whole board — whichever the
    topic actually touches — and they respond in character.
 3. The chair produces artifacts (worksheets, plans, checklists) as real files under
-   `meetings/<meeting>/artifacts/` whenever a document would help. You can read and edit them while
+   `meetings/<meeting>/artifacts/` whenever a document would help (`<topic>` or
+   `<scope>/<topic>` — see `meetings/CONTEXT.md`). You can read and edit them while
    the meeting is still running.
 4. The chair keeps a small, routed record of each meeting — a `brief.md` (what you asked), a
-   `minutes.md` (the decisions and how to use each artifact), and the `artifacts/` themselves. Ask to
-   keep the full `transcript.md` only when you want the complete back-and-forth.
+   `minutes.md` (the decisions, how to use each artifact, and profile updates), and the
+   `artifacts/` themselves. Ask to keep the full `transcript.md` only when you want the complete
+   back-and-forth. Standing facts are written back to `_config/profile/` in the same session.
 5. **Once a day at most** (or when you ask “any updates?”), the chair soft-checks versions via
    `version.md` — not the full update protocol, and not every session. If an update exists, you get
    a short notice; say you want to update for DIY commands or agent-apply (with consent).
@@ -116,6 +124,7 @@ See `advisors-extended/README.md`.
 
 ## Privacy note
 
-Your profile data (`_config/profile/*.md`) and user-created meetings (`meetings/<topic>/`)
-are gitignored and stay local. The shipped example meetings under `meetings/example-*/` are
-included in the repo as worked references.
+Your profile data (`_config/profile/` except the tracked routers and entity template) and
+user-created meetings (`meetings/<topic>/` or `meetings/<scope>/<topic>/`) are gitignored and
+stay local. The shipped example meetings under `meetings/example-*/` are included in the repo
+as worked references.

@@ -11,5 +11,6 @@ exists on a fresh clone.
 
 **What happens to them.** At the start of a meeting the board chair lists whatever
 is waiting here, asks which files are relevant to that meeting, and **moves** the
-ones you confirm into `meetings/<meeting>/inputs/`. Anything you don't pick stays
+ones you confirm into `meetings/<meeting>/inputs/` (`<topic-slug>` or
+`<scope>/<topic-slug>` — see `meetings/CONTEXT.md`). Anything you don't pick stays
 here for a future meeting.

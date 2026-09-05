@@ -24,13 +24,13 @@ Each advisor folder contains `CONTEXT.md` (role identity and contract) and `refe
 
 The structure is identical to a core advisor and the folder sits at the same depth, so all relative paths into `_config/` and `meetings/` resolve identically for core and extended advisors.
 
-**`meetings/`** — Holds **records of board meetings**. Each meeting is a topic-named folder holding a small, routed set of files — a `brief.md` (the question and context), `minutes.md` (decisions, the artifacts and how to use them, next steps), an `artifacts/` directory, and an optional `transcript.md` for digging deeper. The model is live: you talk to the board, the chair convenes the relevant advisor(s), and artifacts (worksheets, plans, checklists) are produced as the conversation needs them — real files you can read and edit while the meeting is still in progress. Fully fictional `example-…/` meetings ship as worked references.
+**`meetings/`** — Holds **records of board meetings**. Each meeting is a topic-named folder (no date in the folder name) holding a small, routed set of files — a `brief.md` (the question and context), `minutes.md` (decisions, the artifacts and how to use them, profile updates, next steps), an `artifacts/` directory, and an optional `transcript.md` for digging deeper. Folders stay flat at `meetings/<topic>/` until an entity registry exists; then they nest under `meetings/<scope>/<topic>/` (`personal`, `trust`, or an entity slug). The model is live: you talk to the board, the chair convenes the relevant advisor(s), and artifacts (worksheets, plans, checklists) are produced as the conversation needs them — real files you can read and edit while the meeting is still in progress. Fully fictional `example-…/` meetings ship as worked references.
 
 **`_config/`** — Shared rules and personalization:
 
 - `shared/` — disclaimer, advisor collaboration map, ethics, output conventions (durable-figures rule, Handoff format), and the meeting process (sub-agent and inline convening modes)
-- `setup/` — the onboarding interview that runs on first launch
-- `profile/` — the locally generated personal, financial, business, investment, and goals profile (gitignored; only `CONTEXT.md` ships)
+- `setup/` — the onboarding interview that runs on first launch, plus optional entity and trust deepen contracts
+- `profile/` — the locally generated personal, financial, business, investment, and goals profile (gitignored). Tracked: `CONTEXT.md` and `entities/_template/` (plus `entities/CONTEXT.md`). Optional local layers: `trust.md` and `entities/<slug>/`.
 
 ## Ground Rules
 
@@ -41,4 +41,4 @@ The structure is identical to a core advisor and the folder sits at the same dep
 
 ## Getting Started
 
-To begin, load `CONTEXT.md`. On first launch — before any profile exists — `CONTEXT.md` routes the agent to the onboarding interview, which writes the user's profile to `_config/profile/`. Every subsequent session then pre-loads that profile automatically, so each advisor opens with full personal and financial context already in hand.
+To begin, load `CONTEXT.md`. On first launch — before any profile exists — `CONTEXT.md` routes the agent to the onboarding interview, which writes the user's profile to `_config/profile/`. Every subsequent session then loads `_config/profile/CONTEXT.md` and only the files that match the question, so each advisor opens with personal and financial context already in hand.

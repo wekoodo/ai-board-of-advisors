@@ -27,7 +27,7 @@ energy-sector economics or a direct energy vehicle (hand to `09-oil-gas-speciali
 - `../../_config/shared/collaboration.md`
 - `../../_config/shared/ethics.md`
 - `../../_config/shared/conventions.md`
-- `../../_config/profile/` (all files, if profile exists)
+- `../../_config/profile/CONTEXT.md` (then follow its scoped load; do not bulk-load `entities/`)
 
 ### Load when writing to the user
 - `../../_config/shared/google-doc-style-overlay.md`

@@ -38,20 +38,48 @@ naturally on the user's answers.
 
 ## Domain 3: Business
 
-> **[Agent instruction]:** Ask whether the user owns any businesses first. If not, write
-> `_config/profile/businesses.md` noting the user owns no businesses, then skip to Domain 4.
+> **[Agent instruction]:** This domain has two optional branches. Neither is required to finish
+> general onboarding. Ask the entity gate first, then the living-trust gate.
 
-- What businesses do you own? (Name, industry, your role — sole owner, partner, shareholder?)
-- For each business:
-  - Legal entity type? (Sole prop, LLC, S-Corp, C-Corp, partnership?)
-  - Approximate annual gross revenue and net profit (after owner comp)?
-  - Stage? (Startup, growth, mature, considering exit?)
-  - Employees or contractors? Roughly how many?
-  - Significant business liabilities? Personal guarantees on business debt?
-  - Co-owners? Any buy-sell agreement in place?
+### Entities
 
-> **[Agent instruction]:** Write `_config/profile/businesses.md` with a structured summary of
-> each business after this domain.
+Ask whether the user owns, controls, manages, benefits from, or operates through any businesses,
+holding companies, land trusts, disregarded entities, or joint ventures.
+
+- If **no**: write `_config/profile/businesses.md` noting that none are owned. Do not create
+  `_config/profile/entities/`. Continue to the living-trust gate.
+- If **yes**, for each entity:
+  - What is its legal name and a stable short name?
+  - Is it an LLC, corporation, land trust, sole proprietorship, or another structure?
+  - Where was it formed, and where else is it registered?
+  - What is its known federal tax classification or election?
+  - Who owns, controls, manages, or benefits from it?
+  - What parent, subsidiary, trust, property, or partner relationships matter?
+  - What does it do, and what stage is it in?
+  - Which facts are uncertain or need confirmation?
+
+> **[Agent instruction]:** When entities exist, write `_config/profile/businesses.md` as the
+> high-level map only. Write `_config/profile/entities/index.md`, then create one
+> `_config/profile/entities/<entity-slug>/overview.md` per known entity from
+> `entities/_template/overview.md`. Mark each entity `basic`. Do not start in-depth entity
+> onboarding during this domain. Do not require the user to pick a next entity to deepen.
+
+### Living trust
+
+Ask whether the user has a revocable living trust or similar estate vehicle. Do not count land
+trusts already listed as entities.
+
+- If **no**: do not create `_config/profile/trust.md`. Continue to Domain 4.
+- If **yes**:
+  - What is the trust's legal name and general purpose?
+  - Who are the current trustees, and how do they share decision authority?
+  - Which family members or beneficiaries are relevant to board planning?
+  - Which major assets or entities connect to the trust?
+  - Are any funding, titling, amendment, or succession questions pending?
+
+> **[Agent instruction]:** Write `_config/profile/trust.md` with identity, trustees, beneficiaries,
+> connected assets, and open questions. Keep detailed operating-entity facts in the entity
+> registry. Do not start `_config/setup/trust-onboarding.md` during this domain.
 
 ---
 
@@ -110,13 +138,17 @@ naturally on the user's answers.
 
 ## Interview Complete
 
-> **[Agent instruction]:** When all domains are complete, verify all five profile files and their
-> required headers/sections using the completion gate in `_config/setup/CONTEXT.md`. Only after the
-> gate passes, tell the user:
+> **[Agent instruction]:** When all domains are complete, verify the five required profile files
+> and their required headers/sections using the completion gate in `_config/setup/CONTEXT.md`.
+> Confirm optional `trust.md` / `entities/` files only when this interview created them. Only
+> after the gate passes, tell the user:
 >
 > "Your profile is saved to `_config/profile/`. All profile files are gitignored and stay on your
 > machine only. You can update any section any time by editing the file directly or asking an
 > advisor to update it during a session.
+>
+> If you registered entities, you can deepen one later by asking — that is not required to use
+> the board. Same for a living-trust profile.
 >
 > To begin using the Board of Advisors, return to the root `CONTEXT.md` and tell your agent what
 > you'd like to discuss."

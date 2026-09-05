@@ -35,11 +35,16 @@ optional summary the chair may record. The block's format is unchanged:
 - **Action items:** [specific next steps for the client]
 - **Artifacts to produce:** [documents/plans/analyses still to write, if any]
 - **Files written:** [any files written under `meetings/<meeting>/artifacts/` this turn, if any]
+- **Profile updates:** [durable facts that belong in `_config/profile/`, with file and a one-line change; or `none`]
 ```
 
 The Handoff block carries dense context across the sub-agent → chair boundary without replaying
 the whole conversation. It is required when an advisor is convened as a sub-agent; in inline
 convening it is an optional summary the chair may record.
+
+**Profile updates** flags standing facts that belong in `_config/profile/` (core files, and
+entity or trust files when those layers exist). The chair applies them per `meeting-process.md`
+**Profile write-back** even when this line is missing or says `none`.
 
 ## Response Style
 

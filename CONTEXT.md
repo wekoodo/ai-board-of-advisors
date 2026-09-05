@@ -5,12 +5,30 @@
 Before anything else, check for your profile. A complete profile has:
 - All five required files: `personal.md`, `financial.md`, `businesses.md`, `investments.md`, and
   `goals.md`.
-- A valid `Last Updated: YYYY-MM-DD` line in every file.
+- A valid `Last Updated: YYYY-MM-DD` line in every required file.
 - An "Income & Employment" section in `financial.md` and a "Current Concerns" section in `goals.md`.
 
-If any condition fails, load `_config/setup/CONTEXT.md` to begin or resume onboarding. That setup
-contract owns repair and final verification. Return here only after its completion gate passes.
-Otherwise, proceed below.
+`trust.md` and `entities/index.md` are optional. Their absence does not fail this gate. If
+`entities/index.md` exists, every listed entity must have a matching `overview.md`; that check
+belongs to setup verification, not this gate.
+
+If any required condition fails, load `_config/setup/CONTEXT.md` to begin or resume onboarding. That
+setup contract owns repair and final verification. Return here only after its completion gate
+passes. Otherwise, proceed below.
+
+At any time, if the user explicitly asks to begin or resume focused onboarding for a living trust
+or similar estate vehicle, load `_config/setup/trust-onboarding.md`. Do not start that route from
+a meeting mention.
+
+At any time, if the user explicitly asks to begin or resume in-depth onboarding for an entity that
+already has an entry in `entities/index.md` and an `overview.md`, load
+`_config/setup/entity-onboarding.md` and that entity's `CONTEXT.md` if it exists. Do not start
+that route because general onboarding finished, because `index.md` lists a candidate, or because
+a meeting mentioned the entity.
+
+Onboarding is profile maintenance, not a board meeting. While any onboarding route is active,
+write all durable output under `_config/profile/`, do not create a `meetings/` record, and do not
+apply the meeting artifact or meeting-index rules below.
 
 ---
 
@@ -47,7 +65,8 @@ participant in the room. Each turn:
    - **Check `_inbox/`** — list any documents waiting there, surface them to the user, and ask
      which are relevant to this meeting. **Move** the confirmed files into
      `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
-     future meetings. `_inbox/` documents are local-only.
+     future meetings. `_inbox/` documents are local-only. Follow `meetings/CONTEXT.md` for whether
+     `<meeting>` is `<topic-slug>` or `<scope>/<topic-slug>`.
    - **Product-update check** — follow `_config/shared/version.md` (on demand, otherwise at most
      once daily; fail soft and never auto-merge). Load `_config/shared/updates.md` **only** to
      connect `upstream` or apply an update.
@@ -55,21 +74,26 @@ participant in the room. Each turn:
      read `meetings/CONTEXT.md` and follow its index-first, selective-loading flow. Do not list or
      preload the complete meeting history.
 2. **Read** the user's message.
-3. **Convene** the relevant advisor(s) — one, several, or the whole board. Load
+3. **Set the scope** — personal, a living trust (if `trust.md` exists), one entity, or several
+   entities. Follow `_config/profile/CONTEXT.md` and load only the relevant private profile files.
+4. **Convene** the relevant advisor(s) — one, several, or the whole board. Load
    `_config/shared/convening.md` before picking seats. Routing is per-message.
-4. **Let them respond in character**, each from its own domain.
-5. **Synthesize** briefly when several weighed in.
-6. **Produce an artifact** when a document would help — worksheet, checklist, comparison, plan,
+5. **Let them respond in character**, each from its own domain.
+6. **Synthesize** briefly when several weighed in.
+7. **Produce an artifact** when a document would help — worksheet, checklist, comparison, plan,
    memo — as a real file under `meetings/<meeting>/artifacts/`.
-7. **Let the user review, edit, or request changes**; the producing advisor revises the same file,
+8. **Let the user review, edit, or request changes**; the producing advisor revises the same file,
    others react when implicated.
-8. **Continue** turn by turn.
-9. **Capture the record.** As decisions land, write `meetings/<topic>/brief.md` (the question and
-   context) and `minutes.md` (the decisions, each artifact and how to use it, and next steps) next to
-   any `artifacts/`. At the existing lazy record-creation threshold, create or update that meeting's
-   single local index entry following `meetings/CONTEXT.md`; its minutes field may remain `pending`
-   until `minutes.md` is written. Write the full `transcript.md` only if the user asks to keep the
-   complete back-and-forth.
+9. **Continue** turn by turn.
+10. **Capture the record.** As decisions land, write `meetings/<meeting>/brief.md` (the question and
+    context) and `minutes.md` (the decisions, each artifact and how to use it, profile updates, and
+    next steps) next to any `artifacts/`. At the existing lazy record-creation threshold, create or
+    update that meeting's single local index entry following `meetings/CONTEXT.md`; its minutes
+    field may remain `pending` until `minutes.md` is written. Write the full `transcript.md` only
+    if the user asks to keep the complete back-and-forth.
+11. **Write standing facts back to the profile.** Follow `_config/shared/meeting-process.md`
+    **Profile write-back**. Run this as facts land and again when minutes are written. Do not skip
+    it because the user did not ask. Record the result in minutes.
 
 **Reader-facing prose.** Load `_config/shared/google-doc-style-overlay.md` when writing to the user
 or producing artifacts. It overrides the locked `google-doc-style` skill on this board (real
@@ -81,9 +105,18 @@ small. Otherwise, role-play the advisor **inline**. Either way, artifacts are re
 
 **Single advisor** is not a separate mode — just convene one; the synthesis step collapses.
 
-**Meeting folder.** Create `meetings/<topic-slug>/` lazily — a **topic-only** name, no date in the
-folder (the date lives inside `brief.md`/`minutes.md`). A substantive meeting leaves `brief.md` +
-`minutes.md` (+ `artifacts/`); the full `transcript.md` is optional, for digging deeper.
+**Meeting folder.** Create the meeting folder lazily — a **topic-only** name, no date in the
+folder (the date lives inside `brief.md`/`minutes.md`). Follow `meetings/CONTEXT.md`:
+
+- If `_config/profile/entities/index.md` is **absent**, use `meetings/<topic-slug>/`.
+- If that index **exists**, use `meetings/<scope>/<topic-slug>/` where scope is `personal`,
+  `trust` (only when `trust.md` exists and the trust is the primary subject), or an entity slug
+  from the index.
+
+A substantive meeting leaves `brief.md` + `minutes.md` (+ `artifacts/`); the full `transcript.md`
+is optional, for digging deeper. Standing facts from the meeting belong in `_config/profile/`,
+not only in minutes. A ranking of work already listed in profile `goals.md` files is conversation,
+not a meeting, unless the user asks to save it.
 
 Full protocol, including the fuller arc for a major multi-domain decision, is in
 `_config/shared/meeting-process.md`.
@@ -92,6 +125,7 @@ Full protocol, including the fuller arc for a major multi-domain decision, is in
 
 ## Profile
 
-Always load `_config/profile/` files alongside the advisor's `CONTEXT.md`. They provide your
-persistent personal and financial context. Advisors flag profile data older than 12 months.
-If the profile is incomplete, run or resume onboarding: `_config/setup/CONTEXT.md`.
+Load `_config/profile/CONTEXT.md` alongside the advisor's `CONTEXT.md`. It routes to the core
+profile and, when they exist, only the trust or entity files relevant to the meeting. Do not
+bulk-load all entity folders. Advisors flag loaded profile data older than 12 months.
+If the required profile is incomplete, run or resume onboarding: `_config/setup/CONTEXT.md`.

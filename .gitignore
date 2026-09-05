@@ -1,9 +1,13 @@
-# User profile — generated during onboarding, local-only, never committed
-_config/profile/personal.md
-_config/profile/financial.md
-_config/profile/businesses.md
-_config/profile/investments.md
-_config/profile/goals.md
+# User profile — generated during onboarding, local-only, never committed.
+# Keep the routers and blank entity template tracked; ignore all real profile data.
+# Optional layers: trust.md (or trust/ after a split) and entities/<slug>/ are local-only.
+_config/profile/*
+!_config/profile/CONTEXT.md
+!_config/profile/entities/
+_config/profile/entities/*
+!_config/profile/entities/CONTEXT.md
+!_config/profile/entities/_template/
+!_config/profile/entities/_template/**
 
 # Local update-check bookkeeping — last product-update check date; local-only, not profile data
 _config/profile/.update-check

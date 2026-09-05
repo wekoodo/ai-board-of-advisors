@@ -79,6 +79,6 @@ After success: local `version.md` should match upstream (via the merge). Custom 
 
 | From upstream (system) | Stays local |
 |------------------------|-------------|
-| Advisors, `_config/shared/`, setup, root chair/docs, examples | Profile, your meetings, `_inbox/*` (except tracked README) |
+| Advisors, `_config/shared/`, setup, root chair/docs, examples, `profile/CONTEXT.md`, `profile/entities/_template/` | Real profile data, your meetings, `_inbox/*` (except tracked README) |
 
 **Contribute to the product:** fork/clean clone → PR. Do not PR from a personal board with real life data.

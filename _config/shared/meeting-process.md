@@ -15,7 +15,8 @@ session — not every turn):
    which are relevant to this meeting. **Move** the confirmed files into
    `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
    future meetings. `_inbox/` documents are local-only (gitignored); they become part of the meeting
-   record once assigned. If `_inbox/` is empty, skip silently.
+   record once assigned. If `_inbox/` is empty, skip silently. Follow `meetings/CONTEXT.md` for
+   whether `<meeting>` is `<topic-slug>` or `<scope>/<topic-slug>`.
 
 2. **Product-update check** — follow `_config/shared/version.md`, the single source for the
    on-demand/daily, fail-soft check. Load `_config/shared/updates.md` only to **connect** `upstream`
@@ -48,8 +49,10 @@ A meeting unfolds turn by turn. Each cycle:
    going. There is no fixed length and no required end state.
 8. **The meeting is captured as a small record** — as the meeting reaches decisions, the chair writes
    a `brief.md` (the question and context) and a `minutes.md` (the decisions, each artifact and how to
-   use it, and next steps) alongside any `artifacts/`. The full turn-by-turn `transcript.md` is written
-   only if the user asks to keep it ("save the full transcript").
+   use it, profile updates, and next steps) alongside any `artifacts/`. The full turn-by-turn
+   `transcript.md` is written only if the user asks to keep it ("save the full transcript").
+9. **Standing facts go back to the profile** — follow **Profile write-back** below. Run this as
+   facts land and again when minutes are written. Do not skip it because the user did not ask.
 
 A "single-advisor consult" is not a separate mode of the system — it is simply a meeting in which the
 chair convenes one voice. The same loop applies; the synthesis step in (4) just collapses.
@@ -65,7 +68,8 @@ there is now one protocol with two execution modes.
 The chair convenes each advisor as an **isolated sub-agent**, handing it only its load list:
 
 - The advisor's own `CONTEXT.md`.
-- `_config/profile/` (the user's profile).
+- `_config/profile/CONTEXT.md`, then only the profile files that router names for this question.
+  Do not bulk-load `entities/`.
 - Shared protocol: `_config/shared/disclaimer.md`, `collaboration.md`, `ethics.md`, and
   `conventions.md`.
 - Skill overlay when writing: `google-doc-style-overlay.md`.
@@ -115,16 +119,18 @@ and memos advisors produce when a document will serve the user better than prose
 
 ## The Meeting Record
 
-A meeting record is a folder at `meetings/<topic-slug>/`, named from a short **topic slug only** —
-the date lives inside the files, not in the folder name. A substantive meeting leaves a small set of
+A meeting record is a folder named from a short **topic slug only** — the date lives inside the
+files, not in the folder name. Follow `meetings/CONTEXT.md`: `meetings/<topic-slug>/` when
+`_config/profile/entities/index.md` is absent; `meetings/<scope>/<topic-slug>/` when that index
+exists (`personal`, `trust`, or an entity slug). A substantive meeting leaves a small set of
 **routed, single-purpose files** rather than one monolithic document:
 
 - **`brief.md`** — *what the meeting was about*: the user's question, the relevant context, and the
   date. The entry point — read this first to know what was on the table.
 - **`minutes.md`** — *what happened and what to do now*: which advisors were convened, the key
   decisions and recommendations, each artifact with a one-line note on what it is and how to use it,
-  and the open questions / next steps. This is the scannable summary — read it instead of replaying
-  the whole conversation.
+  profile updates, and the open questions / next steps. This is the scannable summary — read it
+  instead of replaying the whole conversation.
 - **`artifacts/`** — present whenever the meeting produced one or more deliverables. Each file is a
   living document the user can read and edit.
 - **`inputs/`** — present whenever the user supplied pre-meeting documents. Holds the source files
@@ -141,12 +147,89 @@ A quick exchange that needs nothing written down leaves no record, and that is f
 meeting reaches a real decision or produces an artifact, capture it as a `brief.md` + `minutes.md`
 pair so the user can return to a small, scannable summary instead of re-reading everything.
 
+Do not create a folder for a test, an exploratory question, or a ranking of work already listed on
+profile action registers (`goals.md`, an entity `goals.md`, or trust planning actions). Those
+answers stay in conversation unless the user asks to save the ranking or then starts work on a
+named action.
+
 At that same lazy-creation threshold, create or update exactly one local `meetings/index.md` entry,
 keyed by the meeting folder path, following `meetings/CONTEXT.md`. The minutes field may remain
 `pending` until `minutes.md` exists; do not create empty minutes solely to satisfy the index. Update
 the same entry when minutes are written, the meeting status changes, or material routing metadata
 changes. Meeting record files are authoritative: when an entry is stale, missing, or duplicated,
 use the router's scoped search, trust the record files, and repair or consolidate the entry.
+
+## Profile write-back
+
+Meetings are working records. Profiles are standing facts. When a meeting establishes, changes, or
+completes a standing fact, write that fact to the owning profile file **in the same session**. Do
+not wait for the user to ask.
+
+This is a **chair duty**. Convened advisors flag candidates in the `## Handoff` **Profile updates**
+line. The chair still runs this check if that line is missing or says `none` incorrectly.
+
+### When
+
+1. As soon as a standing fact is established — a decision, executed instrument, new or changed
+   coverage, ownership or tax status, completed or new action, or other material event.
+2. Whenever `minutes.md` is written or updated. Minutes are not complete until this check has run.
+3. When the user ends a meeting that already has a record.
+
+If nothing standing changed (analysis, options not chosen, ranking, exploratory Q&A), write
+`none — profiles already current` in minutes and stop. Do not invent a profile edit.
+
+A durable fact stated in conversation still belongs in the profile even when no meeting folder is
+created. Write the profile file; do not create a meeting only to hold that fact.
+
+### What belongs in the profile
+
+Write the **smallest owning file or files**, following `_config/profile/CONTEXT.md` and, when it
+exists, `_config/profile/entities/CONTEXT.md`:
+
+| Change | Typical home |
+| --- | --- |
+| Household standing facts or household actions | `personal.md`, `financial.md`, `investments.md`, `goals.md` |
+| High-level entity map | `businesses.md` — summary only; details stay in the entity folder when one exists |
+| Entity identity, purpose, relationship, status | `<entity-slug>/overview.md`, and `entities/index.md` when routing status changes |
+| Ownership, control, agreements, succession | `<entity-slug>/governance.md` |
+| Activities, people, systems, operating model | `<entity-slug>/operations.md` |
+| Revenue, cash, assets, liabilities, reporting | `<entity-slug>/financial.md` |
+| Tax classification, elections, filings, payroll | `<entity-slug>/tax.md` |
+| Contracts, liabilities, licensing, coverage | `<entity-slug>/risk-insurance.md` |
+| Entity actions added, completed, or retargeted | `<entity-slug>/goals.md` |
+| Evidence inventory for a reviewed source | `<entity-slug>/sources.md` (create only when that inventory is needed) |
+| Living-trust standing facts or trust actions | `trust.md`, or files under `trust/` when that folder exists |
+
+Record each action once, in the profile that owns it. Link the meeting folder from the profile when
+the meeting is the provenance of a standing fact. Do not copy the minutes or artifacts into the
+profile.
+
+### What stays in the meeting
+
+Analysis, options not chosen, worksheets, drafts, recommendations not adopted, and the narrative of
+how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `artifacts/`.
+
+### How
+
+1. Identify scopes from the brief (`personal`, `trust`, entity slugs) plus any related profile the
+   decision actually changed.
+2. Load only the profile files that would own the new facts. Do not bulk-load every entity folder.
+3. Compare those files to the decisions, executed instruments, and completed actions from this
+   session.
+4. Write the delta. Stamp `Last Updated: YYYY-MM-DD` on each edited file. Follow
+   `icm-conventions.md` **Keep files load-scoped**.
+5. If a fact is still hypothetical, or the user has not decided, do not write it. Ask once when
+   file ownership is unclear.
+6. Record the result in `minutes.md` under **Profile updates**: each path and a one-line change, or
+   `none — profiles already current`.
+
+### Do not
+
+- Start or restart onboarding because a meeting happened. A write-back is a scoped fact update.
+  Use an entity **Refresh / reopen** only when a domain needs a re-interview after a material event
+  or an explicit user request.
+- Duplicate an action into more than one register.
+- Invent `sources.md` for an ordinary fact update.
 
 ## A Bigger Decision
 

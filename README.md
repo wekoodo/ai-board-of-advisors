@@ -77,7 +77,7 @@ git remote add upstream https://github.com/wekoodo/ai-board-of-advisors.git
 
 ## Talk to your board
 
-Open the project in your AI agent harness and load `CONTEXT.md`. Ask your question — the board chair convenes the relevant advisor(s), they respond in character, and the chair produces artifacts (worksheets, plans, checklists) as the conversation needs them. Those artifacts are real files under `meetings/<meeting>/artifacts/` that you can read and edit while the meeting is still running; the advisors will react to your edits. The chair keeps a small record of each meeting — a `brief.md` (what you asked), a `minutes.md` (the decisions and how to use each artifact), and the `artifacts/` themselves; ask to keep the full `transcript.md` only when you want the complete back-and-forth.
+Open the project in your AI agent harness and load `CONTEXT.md`. Ask your question — the board chair convenes the relevant advisor(s), they respond in character, and the chair produces artifacts (worksheets, plans, checklists) as the conversation needs them. Those artifacts are real files under `meetings/<meeting>/artifacts/` (flat `meetings/<topic>/` until you have an entity registry, then `meetings/<scope>/<topic>/`) that you can read and edit while the meeting is still running; the advisors will react to your edits. The chair keeps a small record of each meeting — a `brief.md` (what you asked), a `minutes.md` (the decisions, how to use each artifact, and any profile updates), and the `artifacts/` themselves; ask to keep the full `transcript.md` only when you want the complete back-and-forth. Standing facts from a meeting are written back to `_config/profile/` in the same session.
 
 Consulting a single advisor is just a meeting with one voice convened — there is no separate mode.
 
@@ -117,7 +117,7 @@ If you customized **system** files in place, merges can conflict — prefer addi
 
 ## Your profile stays local
 
-The onboarding interview writes your personal, financial, business, investment, and goals data into `_config/profile/`. Those files are listed in `.gitignore`. They never get committed, never leave your machine, and never sync upstream. Merging product updates does not require or overwrite them.
+The onboarding interview writes your personal, financial, business, investment, and goals data into `_config/profile/`. If you own entities or a living trust, optional local files appear under `entities/` and `trust.md`. Real profile data is gitignored. The tracked factory pieces are `profile/CONTEXT.md` and `profile/entities/_template/`. Profile files never get committed, never leave your machine, and never sync upstream. Merging product updates does not require or overwrite them.
 
 ## Add your own advisor
 
