@@ -6,6 +6,13 @@
 |------|----------|
 | `frameworks.md` | Self-storage frameworks: site selection & market saturation, development pro forma, operations & revenue management, acquisition due-diligence checklist |
 
+## Artifacts this advisor typically writes
+
+- Site/market screen
+- Development pro forma
+- Acquisition due-diligence
+- Ops/revenue checklist
+
 ## When to Load
 
 Load `frameworks.md` when:

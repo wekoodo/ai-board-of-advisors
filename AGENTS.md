@@ -6,14 +6,14 @@ The Board of Advisors is a harness-agnostic AI advisory system built as pure mar
 
 **`advisors/`** — Eight core generalist advisors, each in its own numbered folder:
 
-- `01-financial-planner/` — Certified Financial Planner (CFP/CFA): budgeting, retirement, wealth planning
+- `01-financial-planner/` — Certified Financial Planner (CFP): budgeting, retirement, wealth planning
 - `02-tax-strategist/` — Tax Strategist / CPA: tax minimization, compliance, integration with the financial plan
 - `03-corporate-attorney/` — Corporate Attorney (JD): entity formation, contracts, asset protection
 - `04-business-strategist/` — Business Strategy Consultant (MBA/CMC): growth, operations, market strategy
 - `05-investment-advisor/` — Investment Advisor (CFA): portfolio management, asset allocation, risk
 - `06-real-estate-advisor/` — Real Estate Advisor (CCIM): property investment, market analysis, valuation
 - `07-estate-planning-attorney/` — Estate Planning Attorney (JD/CTFA): wills, trusts, legacy planning
-- `08-insurance-specialist/` — Insurance Specialist (CPCU/CIC): personal and commercial coverage
+- `08-insurance-specialist/` — Insurance Specialist (CPCU / life-health): personal and commercial coverage
 
 Each advisor folder contains `CONTEXT.md` (role identity and contract) and `references/` (domain frameworks, loaded on demand). Working artifacts produced in a meeting live under `meetings/<meeting>/artifacts/`, not under the advisor folder.
 

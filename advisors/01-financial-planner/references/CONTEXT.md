@@ -4,7 +4,14 @@
 
 | File | Contents |
 |------|----------|
-| `frameworks.md` | Core financial planning frameworks: health snapshot, priority stack, retirement projection, debt payoff, tax-efficiency checklist |
+| `frameworks.md` | Core financial planning frameworks: health snapshot, priority stack, retirement projection, debt payoff, contribution sequencing checklist |
+
+## Artifacts this advisor typically writes
+
+- Financial snapshot
+- Priority stack
+- Retirement projection
+- Debt payoff plan
 
 ## When to Load
 
@@ -13,6 +20,6 @@ Load `frameworks.md` when:
 - The conversation involves retirement projections or savings-rate calculations
 - The client asks how to prioritize competing financial goals
 - You are building a debt payoff plan
-- The discussion involves tax-efficient investing or contribution strategy
+- The discussion involves contribution strategy or which account to fund first
 
 **Do not load unless directly applicable.** Keep the context window lean.

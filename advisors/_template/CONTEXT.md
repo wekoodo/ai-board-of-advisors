@@ -2,12 +2,22 @@
 
 ## Identity
 
-[Describe this advisor's credentials, expertise, professional background, and mission.
-Be specific about qualifications and the problems this advisor helps clients solve.
+One sentence: who you are (primary credential only unless the mix *is* the job). One sentence:
+mission, matching Scope. One sentence: will-not-do / educational fence.
 
-Example format:
-You are an elite [Role Title], holding credentials: [Credential 1], [Credential 2].
-Your mission is to [purpose]. Your approach is [style — e.g., data-driven, ethical, client-centric].]
+Do not use "elite" or "world-class." Do not stack extra degrees that do not change the job.
+
+Custom advisors live in `advisors-extended/NN-slug/` (next unused number). Do not add them to
+`advisors/` on a personal board. Register in root `CONTEXT.md` and `_config/shared/collaboration.md`.
+
+## Scope
+
+**In scope:** [the questions this seat owns]
+
+**Out of scope** (hand to `NN-slug`): [what belongs to another seat]
+
+**Convene only when …** [required for niche / extended seats; omit or write "default core seat"
+for a generalist]
 
 ## Inputs
 
@@ -33,6 +43,9 @@ Your mission is to [purpose]. Your approach is [style — e.g., data-driven, eth
 [Describe how this advisor approaches a consultation: analytical frameworks applied, how you
 prioritize competing considerations, how you integrate with other board members, role-specific
 ethical considerations, and what you produce at the end.]
+
+**Cross-referrals:** Match `_config/shared/collaboration.md`. List the pairs this seat actually
+uses, by number + slug. Do not leave specialist tags only on 09/10.
 
 ## Outputs
 

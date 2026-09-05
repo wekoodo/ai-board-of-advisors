@@ -154,3 +154,121 @@ Objective: [Qualitative, ambitious, inspiring goal — what we want to achieve]
 - If net promoter score is high: prioritize referral/word-of-mouth for new customer acquisition (lowest CAC)
 - If average transaction value is low vs. competitors: test pricing before adding products
 - If customer lifetime value is high: invest heavily in acquisition (math supports it)
+
+---
+
+## 6. Unit Economics
+
+**When to use:** Deciding whether to spend on growth, or whether the model can support scale.
+
+**Contribution margin:**
+```
+Contribution margin $ = Price − Variable cost per unit
+Contribution margin % = Contribution margin $ ÷ Price
+```
+Include true variable costs (COGS, delivery, payment fees, usage). Overhead is not a unit cost.
+
+**CAC vs LTV as a decision rule:**
+```
+LTV          = Contribution per customer × expected purchases (or retained periods)
+Payback      = CAC ÷ contribution per period
+LTV:CAC      = LTV ÷ CAC
+```
+
+**Decision rules:**
+- Negative contribution: do not buy more of that unit. Fix price, mix, or cost first.
+- LTV below ~3× CAC (durable heuristic; channel-dependent): acquisition spend is not the growth lever yet.
+- Payback longer than cash/runway: freeze growth spend. Tag 01 if household cash is the constraint.
+- Unit economics work in one segment and fail in another: grow only the working segment.
+
+**When unit economics forbid growth spend:**
+- Contribution is negative or too thin after true variable costs
+- CAC is rising while retention or repeat is falling
+- Discounting is the only way units move (see Pricing)
+- Cash cannot survive the payback period
+
+---
+
+## 7. Pricing
+
+**When to use:** Revenue growth is the goal and the question is raise price vs add volume.
+
+**Raise price vs add volume:**
+- **Raise price** when demand hits capacity, willingness-to-pay is untested, contribution is thin, or discounting has trained buyers.
+- **Add volume** when contribution is healthy, capacity is idle, CAC is efficient, and price already matches willingness-to-pay.
+
+**Willingness-to-pay tests (cheap first):**
+1. Ask recent buyers what they would have paid; note the gap vs list.
+2. Quote a higher package to a slice of *new* demand — do not surprise existing contracts.
+3. Win/loss: lost on price vs lost on fit. Rarely losing on price usually means underpriced.
+4. Price to the outcome (hours saved, revenue enabled), not cost-plus.
+
+**When not to discount:**
+- To close a buyer who would have paid list
+- To fill capacity if the discount becomes the new reference price
+- When fulfillment is the constraint (discounting adds load you cannot deliver)
+- When contribution after discount misses the floor needed for CAC payback
+
+---
+
+## 8. Constraint / Bottleneck
+
+**When to use:** Growth stalls, or several "priorities" compete.
+
+**Name the one constraint:**
+1. **Sales** — demand is below capacity; pipeline or conversion is the limiter.
+2. **Fulfillment** — demand exceeds delivery; quality, lead time, or ops break when you sell more.
+3. **Talent / people** — a role or skill is the limiter (see Hiring vs contractor).
+4. **Capital / cash / runway** — the plan is sound but cash cannot fund the next step; tag 01 if household cash is the constraint.
+5. **Systems** — people and demand exist, but process, tooling, or data cannot handle the load.
+
+**Rules:**
+- One constraint at a time. A second "priority" is inventory, not work.
+- Exploit the constraint before spending to elevate it (use idle time, drop low-margin work, sequence jobs).
+- Do not grow a non-constraint. More sales while fulfillment is binding makes the queue worse.
+- Re-diagnose after each 90-day cycle — the constraint moves.
+
+---
+
+## 9. Hiring vs Contractor
+
+**When to use:** A role looks like the constraint, or headcount is the proposed fix.
+
+| | Hire | Contractor |
+|---|------|------------|
+| Cost | Loaded salary + benefits + ramp waste | Rate × hours; no benefits; management time |
+| Ramp | Weeks to months before full output | Faster if the skill is a known package |
+| Reversibility | Hard (severance, morale, knowledge) | Easier (end of term) |
+| Control / IP | Higher if the role is core | Weaker unless the contract is tight — tag 03 |
+
+**When a role is the constraint:**
+- Work queues behind one person and no system change removes the queue
+- Quality or sales fail in a way extra hours from current people cannot fix
+- The skill is needed every week for 12+ months (bias hire) vs a bounded project (bias contractor)
+
+**Decision rules:**
+- If cash/runway is the constraint, do not hire to "feel fully staffed." Contractor or no seat.
+- Core, repeating work that *is* the value proposition: hire.
+- Specialized, bursty, or reversible work: contractor first.
+- A hire that does not attack the current constraint is overhead.
+
+---
+
+## 10. 90-Day Operating Cadence
+
+**When to use:** The strategy is chosen and the operator needs a rhythm, not more analysis.
+
+**Cadence:**
+- **Weekly** — a short metrics list tied to the binding constraint (one primary metric, 2–4 supporting). No new strategy in the weekly.
+- **Monthly** — did the constraint move? Kill or double the experiments. Cash/runway check.
+- **Quarterly** — score OKRs per framework 4 (0.7 = success). Reset the next 90 days; do not add a second constraint.
+
+**90-day plan shape:**
+1. Named constraint
+2. 1–3 OKRs (from framework 4)
+3. Weekly metric and owner
+4. What you will not do this quarter
+
+**Rules:**
+- If it is not on the weekly metric, it is not this quarter's work.
+- Score KRs; do not rewrite the year mid-quarter unless the constraint diagnosis was wrong.

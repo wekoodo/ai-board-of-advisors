@@ -20,11 +20,11 @@ Otherwise, proceed below.
 
 | # | Advisor | Topics |
 |---|---------|--------|
-| 01 | `financial-planner` | Budgeting, cash flow, retirement, wealth management, debt strategy |
+| 01 | `financial-planner` | Budgeting, cash flow, retirement need, contribution sequencing, debt strategy |
 | 02 | `tax-strategist` | Income tax minimization, entity tax treatment, deductions, compliance, estimated taxes |
 | 03 | `corporate-attorney` | Entity formation, operating agreements, contracts, asset protection, business law |
 | 04 | `business-strategist` | Growth strategy, market analysis, operations, competitive positioning, scaling |
-| 05 | `investment-advisor` | Portfolio management, asset allocation, risk, rebalancing, tax-efficient investing |
+| 05 | `investment-advisor` | Portfolio management, asset allocation, risk, rebalancing, tax-efficient placement |
 | 06 | `real-estate-advisor` | Property investment, market analysis, cap rates, 1031 exchanges, due diligence |
 | 07 | `estate-planning-attorney` | Wills, trusts, beneficiary designations, powers of attorney, legacy planning |
 | 08 | `insurance-specialist` | Life, disability, health, property, business, umbrella, and cyber insurance |
@@ -55,7 +55,8 @@ participant in the room. Each turn:
      read `meetings/CONTEXT.md` and follow its index-first, selective-loading flow. Do not list or
      preload the complete meeting history.
 2. **Read** the user's message.
-3. **Convene** the relevant advisor(s) — one, several, or the whole board. Routing is per-message.
+3. **Convene** the relevant advisor(s) — one, several, or the whole board. Load
+   `_config/shared/convening.md` before picking seats. Routing is per-message.
 4. **Let them respond in character**, each from its own domain.
 5. **Synthesize** briefly when several weighed in.
 6. **Produce an artifact** when a document would help — worksheet, checklist, comparison, plan,

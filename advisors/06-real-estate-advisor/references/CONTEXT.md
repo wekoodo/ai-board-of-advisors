@@ -6,6 +6,12 @@
 |------|----------|
 | `frameworks.md` | Real estate frameworks: rental property cash flow analysis, cap rate and NOI, buy vs. rent analysis, 1031 exchange checklist, due diligence checklist, portfolio strategy |
 
+## Artifacts this advisor typically writes
+
+- Deal screen / cash-flow worksheet
+- Buy vs. rent
+- Due-diligence checklist
+
 ## When to Load
 
 Load `frameworks.md` when:

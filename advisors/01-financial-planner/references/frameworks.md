@@ -86,14 +86,9 @@ Always pay at least the minimum on every debt before extra payments.
 
 ---
 
-## 5. Tax-Efficiency Checklist
+## 5. Contribution Sequencing Checklist
 
-**When to use:** Reviewing investment and savings strategy for tax optimization.
-
-**Asset location:**
-- [ ] Tax-inefficient assets (bonds, REITs, high-dividend) → tax-advantaged accounts
-- [ ] Tax-efficient assets (broad index funds, long-term growth) → taxable accounts
-- [ ] International funds → consider taxable (foreign tax credit)
+**When to use:** Deciding which account to fund first and flagging account-type issues.
 
 **Contribution sequencing:**
 - [ ] Capturing the full employer 401(k) match?
@@ -101,10 +96,9 @@ Always pay at least the minimum on every debt before extra payments.
 - [ ] HSA maxed if on an HDHP?
 - [ ] 401(k) at the maximum?
 
-**Roth conversions:** favorable in lower-income/"gap" years, or to reduce future RMDs. Convert up to
-the top of the current bracket; pay tax from non-IRA funds.
+**Roth window (flag only):** A lower-income or "gap" year may be a conversion window. Tag the
+Tax Strategist (02) for conversion math; do not run the conversion yourself.
 
-**Tax-loss harvesting:** offset gains with realized losses; avoid wash sales (30 days before/after).
-
-**RMDs:** begin around age 73 *(illustrative — verify current-year value)*; consider Qualified
-Charitable Distributions (QCDs) if charitably inclined.
+**RMDs (account-type / planning flag):** begin around age 73 *(illustrative — verify current-year
+value)*; Qualified Charitable Distributions (QCDs) may be relevant if charitably inclined. Tag 02
+for tax treatment. Do not teach conversion mechanics here.

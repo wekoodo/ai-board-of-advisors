@@ -47,10 +47,10 @@ ESTIMATED GROSS ESTATE:     $________
 ESTIMATED NET ESTATE:       $________
 ```
 
-**Estate tax exposure note:** Compare the net estate to the federal estate tax exemption
-(approximately $13.99M per person in 2025 *(illustrative — verify current-year value)*, set to
-fall to roughly $7M in 2026 if the TCJA sunsets *(illustrative — verify current-year value)*) and
-to any applicable state estate tax threshold *(illustrative — verify current-year value)*.
+**Estate tax exposure note:** Compare the net estate to the federal basic exclusion amount
+of $15,000,000 per person for decedents dying in calendar year 2026
+*(illustrative — verify current-year value)*, and to any applicable state estate tax
+threshold *(illustrative — verify current-year value)*.
 
 ---
 

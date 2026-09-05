@@ -6,6 +6,13 @@
 |------|----------|
 | `frameworks.md` | Legal frameworks: entity selection matrix, asset protection layers, operating agreement checklist, contract risk review, buy-sell agreement guide |
 
+## Artifacts this advisor typically writes
+
+- Entity comparison
+- Asset-protection map
+- Contract-risk review
+- Buy-sell outline
+
 ## When to Load
 
 Load `frameworks.md` when:

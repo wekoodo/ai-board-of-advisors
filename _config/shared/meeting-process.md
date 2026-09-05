@@ -29,9 +29,10 @@ A meeting unfolds turn by turn. Each cycle:
 
 1. **The user asks** — a question, a topic, a decision they're weighing, a problem they want a fresh
    look at.
-2. **The chair routes** — names which advisor(s) the topic actually touches (one, several, or
-   occasionally the whole board) and convenes them. Routing is per-message, not per-meeting: a later
-   turn may pull in a different mix.
+2. **The chair routes** — load `convening.md` before picking seats. Names which advisor(s) the
+   topic actually touches (one, several, or occasionally the whole board) and convenes them.
+   Default to the fewest seats that can own the question. Routing is per-message, not per-meeting:
+   a later turn may pull in a different mix.
 3. **The advisors respond in character** — each convened advisor answers from its own domain, following
    the response style in `conventions.md` and grounded in the user's profile.
 4. **The chair synthesizes when several weighed in** — a short integration call-out: where the advisors

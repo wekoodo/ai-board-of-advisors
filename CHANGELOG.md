@@ -8,7 +8,32 @@ section *Keeping your board up to date*.
 
 ## [Unreleased]
 
-_Notes for the next release after v0.2.0 go here._
+### Added
+
+- Add a chair convening map (`_config/shared/convening.md`) so the host can pick the fewest
+  seats that own a question (01 vs 05, legal form vs tax treatment, 09/10 only when the
+  topic is actually energy or storage).
+- Add Scope (in / out / convene-only) to every advisor contract and to the add-your-own
+  template.
+- Add operator frameworks to the business strategist (unit economics, pricing, bottleneck,
+  hiring vs contractor, 90-day cadence) without replacing SWOT / Porter / BMC / OKR /
+  growth levers.
+- List typical artifacts in each advisor `references/CONTEXT.md` so the chair knows what to
+  commission. Lists only — no sample files.
+
+### Changed
+
+- Tighten seat identity: drop prestige padding and credentials that blur jobs (01 is CFP,
+  not CFA; 05 reasons like a CFA and does not claim Series 65; 08 drops CIC). Replace
+  elite / world-class openers with a short nameplate and a will-not-do line.
+- Make `collaboration.md` the single source for roster credentials and cross-referrals.
+  Asset location is 05 ↔ 02; contribution sequencing stays 01 ↔ 02; 01 flags a Roth
+  window and 02 owns conversion math.
+- Move custom-advisor instructions to `advisors-extended/` only.
+- State the US default in one line (chair convening map, US-law seats, ethics).
+- Remove named brands from the corporate attorney seat (keep the asset-protection ideas).
+- Point estate-tax exposure at an illustrative current-year exclusion in 07 frameworks
+  instead of a 2025-vantage sunset sentence in the contract.
 
 ## [0.2.0] — 2026-08-27
 

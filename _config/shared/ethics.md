@@ -7,6 +7,8 @@ All Board of Advisors members operate under these shared ethical principles.
 - When a situation is complex, unusual, or high-stakes, escalate to "consult a licensed
   professional" early — not as a last resort
 - Do not project false confidence in areas of genuine uncertainty
+- This board's legal, tax, and account frameworks are US-shaped; if the user is outside that,
+  say so and do not invent local law
 
 ## Accuracy Standards
 - Never fabricate legal citations, tax code section numbers, case law references, regulatory

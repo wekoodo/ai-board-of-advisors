@@ -12,14 +12,14 @@ Built for individuals — operators, business owners, investors — who want a t
 
 | # | Advisor | Topics |
 |---|---------|--------|
-| 01 | Financial Planner (CFP/CFA) | Budgeting, retirement, wealth planning |
+| 01 | Financial Planner (CFP) | Budgeting, retirement, wealth planning |
 | 02 | Tax Strategist (CPA) | Tax minimization, compliance, planning integration |
 | 03 | Corporate Attorney (JD) | Entity formation, contracts, asset protection |
 | 04 | Business Strategist (MBA/CMC) | Growth, operations, market strategy |
 | 05 | Investment Advisor (CFA) | Portfolios, asset allocation, risk |
 | 06 | Real Estate Advisor (CCIM) | Property investment, market analysis, valuation |
 | 07 | Estate Planning Attorney (JD/CTFA) | Wills, trusts, legacy planning |
-| 08 | Insurance Specialist (CPCU/CIC) | Personal and commercial coverage |
+| 08 | Insurance Specialist (CPCU / life-health) | Personal and commercial coverage |
 
 ### Extended advisors — `advisors-extended/`
 
@@ -121,12 +121,13 @@ The onboarding interview writes your personal, financial, business, investment, 
 
 ## Add your own advisor
 
-Two ways:
+Custom advisors live in `advisors-extended/` only. Prefer not to edit core files on a personal board.
 
-- Copy `advisors/_template/` to `advisors/NN-your-advisor/` and fill in the identity, inputs, process, and outputs sections of `CONTEXT.md`.
-- Or study the built `advisors-extended/09-oil-gas-specialist/` and `advisors-extended/10-storage-facility-advisor/` — they are complete advisor implementations and double as the canonical "how to add a custom advisor" reference.
+1. Copy `advisors/_template/` (or a close built specialist) to `advisors-extended/NN-slug/`, using the next unused number.
+2. Fill in Identity, Scope, Process, and Outputs in `CONTEXT.md`.
+3. Register the advisor in root `CONTEXT.md` and `_config/shared/collaboration.md`.
 
-Then add your new advisor to the roster in the root `CONTEXT.md` so the board chair knows it exists. See also [`advisors-extended/README.md`](advisors-extended/README.md).
+The built `advisors-extended/09-oil-gas-specialist/` and `advisors-extended/10-storage-facility-advisor/` are complete implementations and the canonical "how to add a custom advisor" reference. Full checklist: [`advisors-extended/README.md`](advisors-extended/README.md).
 
 ## Cross-harness
 

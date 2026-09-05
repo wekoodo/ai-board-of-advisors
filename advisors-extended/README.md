@@ -35,10 +35,12 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    copy one of the built advisors here (`09-oil-gas-specialist/` or `10-storage-facility-advisor/`)
    if your new advisor is close in spirit. Place the copy in `advisors-extended/NN-your-slug/`,
    using the next available number and a short kebab-case slug.
-2. **Fill in `CONTEXT.md`.** Write the Identity (credentials, mission, approach), keep the v2
-   **Always load** list and **Load when writing to the user** overlay line as-is, write the Process
-   (analytical steps + cross-referrals to other advisors by number + slug), keep the Outputs Handoff
-   reference, and adapt the Disclaimer to your domain.
+2. **Fill in `CONTEXT.md`.** Write the Identity (primary credential unless the mix *is* the job;
+   mission; will-not-do — no "elite" / "world-class"), add **Scope** (in scope, out of scope with
+   handoff seats, and "convene only when …" for a niche seat), keep the **Always load** list and
+   **Load when writing to the user** overlay line as-is, write the Process (analytical steps +
+   cross-referrals to other advisors by number + slug, matching `collaboration.md`), keep the
+   Outputs Handoff reference, and adapt the Disclaimer to your domain.
 3. **Fill in `references/CONTEXT.md` and `references/frameworks.md`.** Give your advisor the
    frameworks, checklists, and analytical tools it needs. Obey the durable-figures rule: express
    formulas and ratios, and label any concrete year-specific or market-specific figure

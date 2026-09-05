@@ -121,8 +121,8 @@ advisor `references/`, `skills-lock.json`, or the `## Handoff` block shape. That
 `collaboration.md`, `ethics.md`, `conventions.md`, plus `profile/` (all files, if the profile
 exists).
 
-**Chair-only / on demand:** `meeting-process.md` (hosting a meeting), this file (structure),
-`version.md` / `updates.md` (product update flow).
+**Chair-only / on demand:** `meeting-process.md` and `convening.md` (hosting a meeting), this
+file (structure), `version.md` / `updates.md` (product update flow).
 
 **Harness-bundled skills.** The host may also fire skills that are not in `skills-lock.json`
 (for example PDF, slides, or image tools). Those are host tooling. They must not rewrite

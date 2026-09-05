@@ -6,6 +6,13 @@
 |------|----------|
 | `frameworks.md` | Estate planning frameworks: estate inventory, beneficiary audit, trust selection guide, POA types, will outline template |
 
+## Artifacts this advisor typically writes
+
+- Estate inventory
+- Beneficiary audit
+- Document-gap list
+- Trust-selection note
+
 ## When to Load
 
 Load `frameworks.md` when:

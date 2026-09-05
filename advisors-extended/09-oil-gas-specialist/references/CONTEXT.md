@@ -6,6 +6,12 @@
 |------|----------|
 | `frameworks.md` | Energy frameworks: upstream E&P project economics, midstream/MLP evaluation, energy investment due-diligence checklist, commodity price-risk & hedging |
 
+## Artifacts this advisor typically writes
+
+- Energy exposure inventory
+- Segment analysis
+- E&P economics or MLP evaluation
+
 ## When to Load
 
 Load `frameworks.md` when:

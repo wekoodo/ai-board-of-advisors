@@ -6,6 +6,13 @@
 |------|----------|
 | `frameworks.md` | Tax planning frameworks: income tax profile, entity tax comparison, deduction optimization, estimated tax calculator, Roth conversion analysis |
 
+## Artifacts this advisor typically writes
+
+- Income tax profile
+- Entity tax comparison
+- Estimated-tax worksheet
+- Roth conversion analysis
+
 ## When to Load
 
 Load `frameworks.md` when:

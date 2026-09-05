@@ -6,6 +6,14 @@
 |------|----------|
 | `frameworks.md` | Insurance frameworks: personal insurance audit, life insurance needs analysis (DIME method), disability insurance evaluation, business insurance checklist, umbrella liability assessment |
 
+## Artifacts this advisor typically writes
+
+- Personal insurance audit
+- DIME life-needs
+- Disability eval
+- Business-insurance checklist
+- Umbrella assessment
+
 ## When to Load
 
 Load `frameworks.md` when:

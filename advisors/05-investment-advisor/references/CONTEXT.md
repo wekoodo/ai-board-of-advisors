@@ -6,6 +6,16 @@
 |------|----------|
 | `frameworks.md` | Investment frameworks: asset allocation by risk profile, asset location, rebalancing rules, diversification checklist, annual portfolio review checklist |
 
+## Artifacts this advisor typically writes
+
+Living documents this seat usually commissions into `meetings/<meeting>/artifacts/`.
+Lists only — do not add sample artifact files under the advisor folder.
+
+- Allocation snapshot
+- Asset-location map
+- Concentration checklist
+- Rebalancing plan
+
 ## When to Load
 
 Load `frameworks.md` when:

@@ -97,13 +97,15 @@ merge after you confirm. See `_config/shared/updates.md` and root `CHANGELOG.md`
 
 ## Adding custom advisors
 
-1. Copy `advisors/_template/` to `advisors/NN-my-advisor/` — or study the built `advisors-extended/`
-   examples (oil & gas, storage), which are fully working advisors and reference implementations of the template
-2. Fill in `CONTEXT.md` (identity, inputs, process, outputs)
-3. Add the advisor to the routing map in the root `CONTEXT.md`
+Custom advisors live in `advisors-extended/` only. Prefer not to edit core files on a personal board.
+
+1. Copy `advisors/_template/` to `advisors-extended/NN-slug/` (next unused number) — or study the
+   built oil & gas and storage examples, which are fully working advisors and the template's
+   reference implementations
+2. Fill in `CONTEXT.md` (identity, Scope, inputs, process, outputs)
+3. Register the advisor in the root `CONTEXT.md` roster and `_config/shared/collaboration.md`
 4. Optionally seed `references/frameworks.md` with domain knowledge
 
-Prefer **new** advisor folders over editing core system files — future product merges stay easier.
 See `advisors-extended/README.md`.
 
 ## Contributing to the product
