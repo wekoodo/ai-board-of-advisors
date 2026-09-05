@@ -18,7 +18,8 @@ naturally on the user's answers.
 - How would you describe your current health? (General — relevant for insurance and estate planning)
 
 > **[Agent instruction]:** When the Personal domain is answered, write `_config/profile/personal.md`
-> with a clean summary before proceeding to Employment.
+> with a clean summary before proceeding to Employment. If that named path is already a shim, write
+> the resolved owning sections and do not copy facts into the shim.
 
 ---
 
@@ -32,7 +33,11 @@ naturally on the user's answers.
 - Secondary income sources? (Freelance, rental, side business, dividends) Approximate amounts?
 
 > **[Agent instruction]:** Include Employment as an "Income & Employment" section within
-> `_config/profile/financial.md`. Do not create a separate file.
+> `_config/profile/financial.md` when that path is still a single file. If it is already a shim,
+> write the resolved `Income & Employment` owning section and do not copy facts into the shim
+> (`_config/shared/icm-conventions.md` **Resolve a named profile path**). Do not create a
+> separate file during a first-write interview. A later focused write may split that named path;
+> follow `_config/shared/icm-conventions.md` **Keep files load-scoped**.
 
 ---
 
@@ -78,8 +83,9 @@ trusts already listed as entities.
   - Are any funding, titling, amendment, or succession questions pending?
 
 > **[Agent instruction]:** Write `_config/profile/trust.md` with identity, trustees, beneficiaries,
-> connected assets, and open questions. Keep detailed operating-entity facts in the entity
-> registry. Do not start `_config/setup/trust-onboarding.md` during this domain.
+> connected assets, and open questions. If that named path is already a shim, write the resolved
+> owning sections and do not copy facts into the shim. Keep detailed operating-entity facts in the
+> entity registry. Do not start `_config/setup/trust-onboarding.md` during this domain.
 
 ---
 
@@ -95,7 +101,11 @@ trusts already listed as entities.
 - Approximate monthly cash flow — saving, breaking even, or spending more than you earn?
 
 > **[Agent instruction]:** Write `_config/profile/financial.md` including the Income & Employment
-> section from Domain 2 and all financial information from Domain 4.
+> section from Domain 2 and all financial information from Domain 4 when that path is still a
+> single file. If it is already a shim, write only Domain 4 facts into the owning section for each
+> heading being written (`_config/shared/icm-conventions.md` **Resolve a named profile path**).
+> Do not rewrite Income & Employment; Domain 2 already owns that section. Do not copy facts into
+> the shim.
 
 ---
 
@@ -108,7 +118,9 @@ trusts already listed as entities.
 - Any investment restrictions or preferences? (ESG, sector exclusions, concentration limits?)
 - Working with an advisor/manager, or self-directed?
 
-> **[Agent instruction]:** Write `_config/profile/investments.md` with a structured summary.
+> **[Agent instruction]:** Write `_config/profile/investments.md` with a structured summary. If
+> that named path is already a shim, write the resolved owning sections and do not copy facts into
+> the shim.
 
 ---
 
@@ -120,7 +132,9 @@ trusts already listed as entities.
 - **Education funding:** saving for children's or your own education? Ages and target funding level?
 
 > **[Agent instruction]:** Write `_config/profile/goals.md` with Short-Term, Medium-Term,
-> Long-Term, and Education sections.
+> Long-Term, and Education sections. If that named path is already a shim, write each of those
+> headings only to the section the folder router maps for that heading. Do not write them into
+> the Current Concerns or action-register files. Do not copy facts into the shim.
 
 ---
 
@@ -132,7 +146,8 @@ trusts already listed as entities.
 - Anything else — financial, legal, personal, or business — the board should know?
 
 > **[Agent instruction]:** Append a "Current Concerns" section to `_config/profile/goals.md`
-> with the user's concerns, upcoming decisions, and areas of uncertainty.
+> with the user's concerns, upcoming decisions, and areas of uncertainty. If that named path is
+> already a shim, write the resolved owning section.
 
 ---
 

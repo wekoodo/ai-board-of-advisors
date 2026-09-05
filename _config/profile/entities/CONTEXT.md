@@ -48,8 +48,9 @@ Last Updated: YYYY-MM-DD
    resume sections exist *and* the user asked to continue that entity's in-depth onboarding.
    A completed router is not an interview. Do not start in-depth onboarding because a
    meeting mentioned the entity.
-3. Load `overview.md` from each selected folder.
-4. Load only the detailed files that match the question:
+3. Load `overview.md` from each selected folder. If a named path is a shim, follow
+   `../../shared/icm-conventions.md` **Resolve a named profile path**.
+4. Load only the detailed files that match the question (resolve shims the same way):
    - `governance.md` — ownership, control, formation, agreements, and succession.
    - `operations.md` — activities, people, systems, customers, vendors, and operating model.
    - `financial.md` — revenue, expenses, balance sheet, cash, debt, and source documents.
@@ -95,11 +96,14 @@ When the user asks what to prioritize across entities or the whole profile:
 
 1. Read `index.md`.
 2. Load `../goals.md` for household actions. Load only `goals.md` from each registered entity
-   that has one. If `../trust.md` exists, load only its action list (the file itself, or
-   `../trust/planning-actions.md` when that folder exists).
+   that has one. If `../trust.md` exists, load only its action list (the resolved action file
+   the folder router names). If a named path is a shim, follow
+   `../../shared/icm-conventions.md` **Resolve a named profile path** and load the resolved
+   action register, not the shim alone.
 3. Rank unchecked actions using deadlines, legal or compliance exposure, dependency order,
    cash-flow effect, downside severity, reversibility, and the user's available time.
 4. Answer in conversation. Do not create a `meetings/` folder for the ranking unless the user
    asks to save it or then starts work on a named action.
 5. Record household actions in `../goals.md` and entity actions in that entity's `goals.md`.
-   Do not create a duplicate global action register.
+   If a named path is a shim, edit the resolved action file; never copy the register into the
+   shim. Do not create a duplicate global action register.

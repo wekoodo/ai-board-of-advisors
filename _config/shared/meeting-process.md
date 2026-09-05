@@ -188,17 +188,17 @@ exists, `_config/profile/entities/CONTEXT.md`:
 
 | Change | Typical home |
 | --- | --- |
-| Household standing facts or household actions | `personal.md`, `financial.md`, `investments.md`, `goals.md` |
+| Household standing facts or household actions | `personal.md`, `financial.md`, `investments.md`, `goals.md` (resolved owning sections when a named path is a shim) |
 | High-level entity map | `businesses.md` — summary only; details stay in the entity folder when one exists |
 | Entity identity, purpose, relationship, status | `<entity-slug>/overview.md`, and `entities/index.md` when routing status changes |
-| Ownership, control, agreements, succession | `<entity-slug>/governance.md` |
-| Activities, people, systems, operating model | `<entity-slug>/operations.md` |
-| Revenue, cash, assets, liabilities, reporting | `<entity-slug>/financial.md` |
-| Tax classification, elections, filings, payroll | `<entity-slug>/tax.md` |
-| Contracts, liabilities, licensing, coverage | `<entity-slug>/risk-insurance.md` |
-| Entity actions added, completed, or retargeted | `<entity-slug>/goals.md` |
+| Ownership, control, agreements, succession | `<entity-slug>/governance.md` (resolved owning section when a shim) |
+| Activities, people, systems, operating model | `<entity-slug>/operations.md` (resolved owning section when a shim) |
+| Revenue, cash, assets, liabilities, reporting | `<entity-slug>/financial.md` (resolved owning section when a shim) |
+| Tax classification, elections, filings, payroll | `<entity-slug>/tax.md` (resolved owning section when a shim) |
+| Contracts, liabilities, licensing, coverage | `<entity-slug>/risk-insurance.md` (resolved owning section when a shim) |
+| Entity actions added, completed, or retargeted | `<entity-slug>/goals.md` (resolved action file when that path is a shim) |
 | Evidence inventory for a reviewed source | `<entity-slug>/sources.md` (create only when that inventory is needed) |
-| Living-trust standing facts or trust actions | `trust.md`, or files under `trust/` when that folder exists |
+| Living-trust standing facts or trust actions | `trust.md` (resolved owning section when a shim; never copy facts into the shim) |
 
 Record each action once, in the profile that owns it. Link the meeting folder from the profile when
 the meeting is the provenance of a standing fact. Do not copy the minutes or artifacts into the
@@ -213,11 +213,14 @@ how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `art
 
 1. Identify scopes from the brief (`personal`, `trust`, entity slugs) plus any related profile the
    decision actually changed.
-2. Load only the profile files that would own the new facts. Do not bulk-load every entity folder.
+2. Load only the profile files that would own the new facts. If a named path is a shim, follow
+   `icm-conventions.md` **Resolve a named profile path** at load; do not compare facts against
+   the shim body. Do not bulk-load every entity folder.
 3. Compare those files to the decisions, executed instruments, and completed actions from this
    session.
-4. Write the delta. Stamp `Last Updated: YYYY-MM-DD` on each edited file. Follow
-   `icm-conventions.md` **Keep files load-scoped**.
+4. Write the delta to the resolved owning file (if a named path is a shim, follow
+   `icm-conventions.md` **Resolve a named profile path**). Stamp `Last Updated: YYYY-MM-DD`
+   on each edited file. Follow `icm-conventions.md` **Keep files load-scoped**.
 5. If a fact is still hypothetical, or the user has not decided, do not write it. Ask once when
    file ownership is unclear.
 6. Record the result in `minutes.md` under **Profile updates**: each path and a one-line change, or

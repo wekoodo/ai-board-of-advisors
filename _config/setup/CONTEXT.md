@@ -25,9 +25,14 @@ completed domains. Do not create a meeting. Do not start this route because gene
 finished.
 
 1. **Check existing profile content first.** Before beginning or resuming, inspect the relevant
-   profile file and section for each domain. Skip a domain only when its required content is
-   complete, unless the user explicitly wants to update it. File presence alone is not completion:
-   Employment and Financial share `financial.md`, and Goals and Concerns share `goals.md`.
+   profile file and section for each domain. If a named path is a shim, follow
+   `../shared/icm-conventions.md` **Resolve a named profile path** and inspect the section files
+   that folder router lists, not the shim and not the router. If a shim target is missing or
+   cyclic, repair that pointer or missing section first and re-check. Do not enter the domain
+   interview for that split unless a required heading is still absent after the repair. Skip a
+   domain only when its required content is complete, unless the user explicitly wants to update
+   it. File presence alone is not completion: Employment and Financial share `financial.md`, and
+   Goals and Concerns share `goals.md`.
 
 2. **Proceed domain by domain.** Load `questionnaire.md` and work through each domain in order:
    Personal → Employment → Business → Financial → Investments → Goals → Concerns.
@@ -37,21 +42,28 @@ finished.
 
 4. **Write profile files as you go.** After completing each domain, write the corresponding file
    to `_config/profile/` before proceeding. If the session is interrupted, completed domains are
-   already saved. Stamp each file with a "Last Updated: YYYY-MM-DD" line at the top.
+   already saved. Stamp each file with a "Last Updated: YYYY-MM-DD" line at the top. If a named
+   path is already a shim, write the resolved owning section; do not reconstitute a single file.
 
 5. **Profile files to write:**
-   - Personal domain → `_config/profile/personal.md`
+   - Personal domain → `_config/profile/personal.md` (resolved owning sections if a shim)
    - Employment domain → "Income & Employment" section within `_config/profile/financial.md`
+     (or the resolved owning section if that path is already a shim)
    - Business domain → `_config/profile/businesses.md` (record that none are owned when applicable).
      If the user names any businesses, LLCs, land trusts, or similar: also write
      `_config/profile/entities/index.md` and one basic `<entity-slug>/overview.md` per known entity.
      If the user has a living trust or similar estate vehicle: also write
-     `_config/profile/trust.md`. Neither extra file is required to complete general onboarding
-     when the answer is no.
-   - Financial domain → `_config/profile/financial.md`
-   - Investments domain → `_config/profile/investments.md`
-   - Goals domain → `_config/profile/goals.md`
+     `_config/profile/trust.md` (resolved owning sections if a shim). Neither extra file is
+     required to complete general onboarding when the answer is no.
+   - Financial domain → `_config/profile/financial.md`. If that path is a shim, write only this
+     domain's facts into the owning section for each heading being written; do not rewrite
+     Income & Employment.
+   - Investments domain → `_config/profile/investments.md` (resolved owning sections if a shim)
+   - Goals domain → `_config/profile/goals.md`. If that path is a shim, write each heading only
+     to the section the folder router maps for that heading; do not write into Current Concerns
+     or the action register.
    - Concerns domain → "Current Concerns" section appended to `_config/profile/goals.md`
+     (or the resolved owning section if that path is already a shim)
 
 6. **Keep entity and trust onboarding bounded.** General onboarding records identity, relationships,
    purpose, classification, available documents, and open questions. It does not collect full
@@ -61,18 +73,28 @@ finished.
 7. **Verify onboarding completion before declaring it complete:**
    - Confirm all five required files exist: `personal.md`, `financial.md`, `businesses.md`,
      `investments.md`, and `goals.md`.
-   - Confirm each of those files contains a valid `Last Updated: YYYY-MM-DD` line reflecting the
-     current onboarding write.
-   - Confirm `financial.md` contains an "Income & Employment" section.
-   - Confirm `goals.md` contains a "Current Concerns" section.
+   - Apply `../shared/icm-conventions.md` **Resolve a named profile path** to each named path
+     before judging headings or dates. A thin shim without those headings is complete when the
+     resolved files have them.
+   - Confirm each required named path has a valid `Last Updated: YYYY-MM-DD` line reflecting
+     the current onboarding write, or that each resolved owning section this check needs has
+     that line when the named path is a shim.
+   - Confirm the folder router for `financial.md` (when it is a shim) maps `Income & Employment`
+     to a section file that contains that heading; if the path is flat, the heading is in
+     `financial.md`. Completeness does not require every file under `financial/`.
+   - Confirm the folder router for `goals.md` (when it is a shim) maps `Current Concerns` to a
+     section file that contains that heading; if the path is flat, the heading is in `goals.md`.
+     Completeness does not require every file under `goals/`.
    - If `entities/index.md` exists, confirm every listed entity has a stable slug, an onboarding
      status, and a matching `overview.md` with a valid `Last Updated` line. Do not require
      detailed entity files for a `basic` entity. Do not require `entities/index.md` when the user
      owns no entities.
-   - If `trust.md` was written, confirm it has a valid `Last Updated` line. Do not require
-     `trust.md` when the user has no living trust.
+   - If `trust.md` was written, confirm it has a valid `Last Updated` line (resolve a shim the
+     same way). Do not require `trust.md` when the user has no living trust.
    - If any required check fails, repair the missing or incomplete profile file and repeat this
-     verification.
+     verification. A missing or cyclic shim target is a scoped repair of that split: restore the
+     pointer or the missing section. Do not reconstruct complete unrelated profile files or
+     restart the whole interview.
 
 8. **Connect product updates (after the verified profile interview).** For a personal board only: load
    `../shared/updates.md` and follow **Connect `upstream`**. (Skip on the product/contributor

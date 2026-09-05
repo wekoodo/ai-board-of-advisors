@@ -33,7 +33,8 @@ and without restarting onboarding.
 
 ## Scoped load
 
-Load this file and only the rows that match the task.
+Load this file and only the rows that match the task. If a named path is a shim, follow
+`../../../shared/icm-conventions.md` **Resolve a named profile path**.
 
 | Layer | Path | Load for |
 | --- | --- | --- |
@@ -53,7 +54,8 @@ after onboarding is complete.
 ## Action register
 
 `goals.md` is the canonical action register. Load it for follow-up work, prioritization, and
-next-review timing. Domain files keep supporting facts.
+next-review timing (the resolved action file when that path is a shim; never copy the register
+into the shim). Domain files keep supporting facts.
 
 ## Board meetings
 

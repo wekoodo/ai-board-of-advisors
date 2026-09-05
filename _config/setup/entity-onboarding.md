@@ -73,17 +73,20 @@ Create only the files that apply. Use the matching files in
 
 Before changing the entity status to `in-depth`:
 
-- Confirm `overview.md` and every applicable detailed file exist.
-- Confirm each file has a valid `Last Updated: YYYY-MM-DD` line.
+- Confirm `overview.md` and every applicable detailed file exist. If a named path is a shim,
+  follow `_config/shared/icm-conventions.md` **Resolve a named profile path**; the named path
+  must still exist.
+- Confirm each resolved owning file has a valid `Last Updated: YYYY-MM-DD` line.
 - Confirm contradictions and unavailable facts are visible as open questions rather than guesses.
 - When documents were used, confirm `sources.md` identifies what was reviewed and what remains
   outstanding. Do not require `sources.md` for an entity with no reviewed materials.
-- Confirm `goals.md` contains the canonical action register and every actionable item discovered
-  during onboarding.
+- Confirm `goals.md` (the named path, or its resolved action register if that path is a shim)
+  contains the canonical action register and every actionable item discovered during onboarding.
 - Replace any interview-resume sections in `CONTEXT.md` (**Current state**, **Resume inputs**,
   **Next work**, session checkpoints) with the post-onboarding meeting-router shape from
   `_template/CONTEXT.md`. Stamp `Last Updated: YYYY-MM-DD`. Put remaining operational follow-up in
-  `goals.md`. Do not leave instructions that a fresh session should continue the interview. Do not
+  `goals.md` (the resolved action file when that path is a shim; never copy the register into the
+  shim). Do not leave instructions that a fresh session should continue the interview. Do not
   add this onboarding contract to the completed router's scoped-load table.
 - Update `_config/profile/entities/index.md` with the status, available files, and next review.
 

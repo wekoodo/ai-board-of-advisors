@@ -24,7 +24,8 @@ entities belong under `_config/profile/entities/`.
 1. If `trust.md` does not exist yet, create it with identity, trustees, beneficiaries, connected
    assets, professionals, open questions, and a short action list. Stamp
    `Last Updated: YYYY-MM-DD`.
-2. If `trust.md` is already a shim to `trust/`, write facts to the named section files. Do not
+2. If `trust.md` is already a shim to `trust/`, write facts to the resolved owning sections.
+   Follow `_config/shared/icm-conventions.md` **Resolve a named profile path**. Do not
    reconstitute a single file.
 3. Follow `_config/shared/icm-conventions.md` **Keep files load-scoped**. A first-pass
    `trust.md` may hold short answers. If a focused pass would mix independently loadable
@@ -34,8 +35,10 @@ entities belong under `_config/profile/entities/`.
 4. Ask one conversational question at a time. Save each answer before moving on.
 5. Distinguish document facts, user confirmations, legal inferences, and unresolved professional
    determinations.
-6. Keep trust actions in `trust.md` or, after a split, in `trust/planning-actions.md`. Do not
-   create a duplicate action register.
+6. Keep trust actions in the resolved action file the folder router names (worked example:
+   `trust/planning-actions.md`). If `trust.md` is still a single file, keep them there. Never
+   copy that register into `trust.md` once it is a shim. Do not create a duplicate action
+   register.
 7. Do not create a `meetings/` record, meeting artifact, transcript, or meeting-index entry.
 
 ## Completion check

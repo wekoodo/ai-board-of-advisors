@@ -11,19 +11,28 @@ If the user is using the board as a personal advisor, skip this block and contin
 
 ## First Launch Check
 
-Before anything else, check for your profile. A complete profile has:
+Before anything else, check for your profile. Apply `_config/shared/icm-conventions.md`
+**Resolve a named profile path** to each named file (a thin shim is not the facts). A complete
+profile has:
 - All five required files: `personal.md`, `financial.md`, `businesses.md`, `investments.md`, and
   `goals.md`.
-- A valid `Last Updated: YYYY-MM-DD` line in every required file.
-- An "Income & Employment" section in `financial.md` and a "Current Concerns" section in `goals.md`.
+- A valid `Last Updated: YYYY-MM-DD` line in every required file, or in each resolved owning
+  section this check needs when that named file is a shim.
+- An "Income & Employment" section in the owning section that `financial.md` resolves to, and a
+  "Current Concerns" section in the owning section that `goals.md` resolves to.
+
+A missing or cyclic shim target is scoped repair of that split, not a reason to rebuild the
+profile. If that is the only failure, load `_config/setup/CONTEXT.md` and repair the pointer or
+missing section first; do not begin the domain interview unless a required heading is still
+absent after that repair.
 
 `trust.md` and `entities/index.md` are optional. Their absence does not fail this gate. If
 `entities/index.md` exists, every listed entity must have a matching `overview.md`; that check
 belongs to setup verification, not this gate.
 
-If any required condition fails, load `_config/setup/CONTEXT.md` to begin or resume onboarding. That
-setup contract owns repair and final verification. Return here only after its completion gate
-passes. Otherwise, proceed below.
+If any other required condition fails, load `_config/setup/CONTEXT.md` to begin or resume
+onboarding. That setup contract owns repair and final verification. Return here only after its
+completion gate passes. Otherwise, proceed below.
 
 At any time, if the user explicitly asks to begin or resume focused onboarding for a living trust
 or similar estate vehicle, load `_config/setup/trust-onboarding.md`. Do not start that route from

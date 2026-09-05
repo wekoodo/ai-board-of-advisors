@@ -91,14 +91,66 @@ into a file that meetings or onboarding load as a whole, split **before** that w
    reconstitute one giant file later.
 
 Independently loadable concerns include identity, action registers, source inventories,
-open-question lists, and onboarding-status blocks. Short first-pass answers (for example an
-optional living-trust note during general onboarding) may share one file. A focused pass that
+open-question lists, and onboarding-status blocks. Split at those retrieval boundaries. Several
+short related sections in one file do not justify a split. Short first-pass answers (for example
+an optional living-trust note during general onboarding) may share one file. A focused pass that
 would turn that file into a whole-binder dump must split at that pass.
+
+General onboarding still writes the five core files as single files. Split later, when a focused
+write would mix independently loadable concerns.
 
 The optional trust profile is the worked example: start with `trust.md`; if focused onboarding
 would mix independently loadable concerns, split into `trust/` and keep `trust.md` as a shim.
-Entity in-depth files already follow one-question-per-file. Do not wait for a later structure
-cleanup to split.
+The same pattern applies to any named profile path (`financial.md`, `goals.md`, an entity
+`goals.md`, and other domain files). Entity in-depth files already follow one-question-per-file.
+Do not wait for a later structure cleanup to split.
+
+### Resolve a named profile path
+
+Gates, load tables, action ranking, and write-back keep using the stable named path
+(`financial.md`, `goals.md`, `trust.md`, `<entity-slug>/goals.md`, and other domain files). After
+a split, that named file is a **shim**: it points at a same-stem folder that contains `CONTEXT.md`,
+and it does not hold the durable facts.
+
+**Recognize a shim.** The named file exists, a sibling folder of the same stem exists with
+`CONTEXT.md`, and the named file does not itself contain the durable sections. Example shim body:
+
+```markdown
+# Financial profile
+
+Last Updated: YYYY-MM-DD
+
+This file is a shim. Facts live under `financial/`. Load `financial/CONTEXT.md` and only the
+sections the question needs.
+```
+
+The folder router lists owning section files and the headings they carry (for example
+`Income & Employment` → `income-employment.md`). Section files hold the facts. Do not nest
+another shim under a section file.
+
+**Resolve (one hop).** One hop is one split level: the named shim, that folder's `CONTEXT.md`,
+and the section files that router lists. Do not stop at the folder router. Heading, date, and
+action-register checks run against those section files, not the shim and not the router. Follow
+only targets named in the shim or that folder's `CONTEXT.md`. Then:
+
+- A required heading is present when the folder router maps it to a section file that contains
+  that heading. Completeness needs that owning section (and its date), not every file in the
+  folder. `financial.md` must resolve to a section that contains `Income & Employment`;
+  `goals.md` must resolve to a section that contains `Current Concerns`.
+- An action register is the section file the folder router names for actions, not the shim
+  and not the folder router.
+- `Last Updated: YYYY-MM-DD` is valid when each resolved owning section this check or load
+  needs has that line. The shim's own stamp does not stand in for a missing section date.
+
+If the named file still holds the facts (flat, not a shim), use it as-is.
+
+**Write.** Edit the resolved owning section. Stamp `Last Updated` only on files actually edited.
+Do not copy the updated facts into the shim. Do not reconstitute one file.
+
+**Repair, do not rebuild.** A missing target, a missing required heading after resolution, or a
+cycle (a target already in the resolution chain) is a scoped repair of that split: restore the
+pointer or the missing section, keep other complete profile files in place, and do not restart
+general onboarding.
 
 ## Tooling vs. workspace content (what is and isn't ICM)
 

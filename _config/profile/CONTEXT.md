@@ -22,12 +22,12 @@ complete without either file.
 ## Scoped load rules
 
 1. For every consultation, load this router and the core files relevant to the question from
-   `personal.md`, `financial.md`, `businesses.md`, `investments.md`, and `goals.md`. Do not
-   recursively load the directory.
+   `personal.md`, `financial.md`, `businesses.md`, `investments.md`, and `goals.md`. If a named
+   file is a shim, follow `../shared/icm-conventions.md` **Resolve a named profile path** and
+   load only the resolved sections this question needs. Do not recursively load the directory.
 2. If `trust.md` exists and the question is about that estate vehicle, ownership, succession,
-   titling, or family governance, also load `trust.md`. If that file is a shim, follow it into
-   `trust/` and load only the sections this question needs. Do not load the complete `trust/`
-   folder unless the user asked for a full trust review.
+   titling, or family governance, also load `trust.md`. Resolve a shim the same way. Do not load
+   the complete `trust/` folder unless the user asked for a full trust review.
 3. For explicit trust onboarding, load `../setup/trust-onboarding.md` only when the user asked
    to begin or resume it. Do not start that interview from a meeting mention.
 4. If `entities/index.md` exists and the matter is entity-scoped, load `entities/CONTEXT.md`,
@@ -46,7 +46,8 @@ complete without either file.
 
 1. Follow the scoped load rules; do not bulk-load `entities/`.
 2. If a loaded file's "Last Updated" date is more than 12 months ago, note it at the start of the
-   session and offer to update.
+   session and offer to update. For a shim, use the resolved owning section's date, not the shim
+   stamp alone.
 3. `businesses.md` is required as an onboarding-completion signal. If it says "no businesses
    owned," no further action is needed. When entities exist, treat `businesses.md` as the
    high-level map and `entities/index.md` as the authoritative entity router.
@@ -58,11 +59,13 @@ complete without either file.
 ## Updating Profile Files
 
 Edit any file directly, or ask an advisor to update a section. When writing or updating a profile
-file, include a "Last Updated: YYYY-MM-DD" line at the top so the staleness check works. Follow
-`entities/CONTEXT.md` for entity status and file ownership when that directory exists. Follow
-`../shared/icm-conventions.md` **Keep files load-scoped**: if a write would mix independently
-loadable concerns into a file that is loaded as a whole, split into a folder with a `CONTEXT.md`
-router now. Keep a thin shim when a completeness gate or existing load path names the old file.
+file, include a "Last Updated: YYYY-MM-DD" line at the top of the file you edited so the staleness
+check works. If the named path is a shim, edit the resolved owning section; do not duplicate
+facts in the shim. Follow `entities/CONTEXT.md` for entity status and file ownership when that
+directory exists. Follow `../shared/icm-conventions.md` **Keep files load-scoped** and **Resolve
+a named profile path**: if a write would mix independently loadable concerns into a file that is
+loaded as a whole, split into a folder with a `CONTEXT.md` router now. Keep a thin shim when a
+completeness gate or existing load path names the old file.
 
 A board meeting that changes standing facts must write those facts here in the same session. Do
 not leave standing state only in `meetings/`. Follow `../shared/meeting-process.md`
