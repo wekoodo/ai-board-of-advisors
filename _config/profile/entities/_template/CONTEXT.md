@@ -73,11 +73,9 @@ files in this folder in the same session. Follow `../../../shared/meeting-proces
 
 ## Refresh / reopen
 
-A material event or new source marks affected facts stale (index Freshness and Stale
-reasons, and this router's matching lines — not overview onboarding status) and prompts a
-scoped fact review in the current meeting (write-back). After those facts are confirmed,
-remove only those reasons. Set Freshness `current` only when no stale reasons remain. If
-reasons are unknown, a partial update must not set `current`. That is not an interview. Do not load
+A material event or new source marks affected facts stale and prompts a scoped fact review
+in the current meeting (write-back). Apply `../CONTEXT.md` **Freshness**. That is not an
+interview. Do not load
 `../../../setup/entity-onboarding.md` unless the user explicitly asks to refresh or reopen a
 domain. That contract owns the reopen. Do not treat a meeting load of this file as an
 onboarding session.

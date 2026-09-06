@@ -196,7 +196,7 @@ exists, `_config/profile/entities/CONTEXT.md`:
 | Household standing facts or household actions | `personal.md`, `financial.md`, `investments.md`, `goals.md` (resolved owning sections when a named path is a shim) |
 | High-level entity map | `businesses.md` — summary only; details stay in the entity folder when one exists |
 | Entity identity, purpose, relationship, status | `<entity-slug>/overview.md`, and `entities/index.md` when routing status (depth) changes |
-| Entity freshness (`current` / `stale` / `unknown`) | `entities/index.md` Freshness and Stale reasons, and the entity router's matching lines. Not overview onboarding status. After scoped facts are confirmed, drop only those reasons; set `current` only when none remain. |
+| Entity freshness (`current` / `stale` / `unknown`) | `entities/index.md` Freshness and Stale reasons, and the entity router's matching lines. Follow `_config/profile/entities/CONTEXT.md` **Freshness**. Not overview onboarding status. |
 | Ownership, control, agreements, succession | `<entity-slug>/governance.md` (resolved owning section when a shim) |
 | Activities, people, systems, operating model | `<entity-slug>/operations.md` (resolved owning section when a shim) |
 | Revenue, cash, assets, liabilities, reporting | `<entity-slug>/financial.md` (resolved owning section when a shim) |
@@ -248,13 +248,9 @@ how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `art
 ### Do not
 
 - Start or restart onboarding because a meeting happened. A write-back is a scoped fact update.
-  A material event or new source is written here. Set that entity's index Freshness to
-  `stale`, add the affected domains to Stale reasons, and do not change depth or overview
-  onboarding status. After confirming scoped facts, remove only those reasons. Set Freshness
-  `current` only when no stale reasons remain. If Stale reasons are unknown, a partial
-  update must not set `current`. Do not load every domain to clear the flag. Do not start
-  an entity interview. Load `../setup/entity-onboarding.md` only when the user asks to
-  reopen a domain.
+  A material event or new source is written here. Apply `_config/profile/entities/CONTEXT.md`
+  **Freshness**. Do not start an entity interview. Load `../setup/entity-onboarding.md` only
+  when the user asks to reopen a domain.
 - Duplicate an action into more than one register.
 - Write an adopted plan as an effective tax, ownership, or coverage fact before
   implementation is confirmed.

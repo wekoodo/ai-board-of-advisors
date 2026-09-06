@@ -28,10 +28,11 @@ Allowed depth values (Status column — do not replace these with a freshness fl
 - `basic` — `overview.md` exists and contains enough information to route a meeting.
 - `in-depth` — the relevant detailed profile files exist and the completion check passed.
 
-Freshness is a separate column: `current` | `stale` | `unknown`. New rows default to
-`current`. A missing Freshness column is `unknown`, not `current`, unless **Legacy rows**
-below applies. `stale` means facts are older than 12 months or a material event made them
-unreliable. A stale `in-depth` entity is still in-depth.
+**Freshness.** Freshness is a separate column: `current` | `stale` | `unknown`. New rows
+default to `current`. A missing Freshness column is `unknown`, not `current`, unless
+**Legacy rows** below applies. `stale` means facts are older than 12 months or a material
+event made them unreliable. A stale `in-depth` entity is still in-depth. Do not change
+depth or overview onboarding status when updating freshness.
 
 Record why an entity is stale (`Stale reasons` on the index row and the entity router):
 domain names or a short note, for example `tax` or `risk-insurance`. A new source or material

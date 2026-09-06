@@ -136,5 +136,5 @@ If a first-time deepen is still incomplete, keep depth at `basic` and keep the r
 If an explicit reopen of a completed entity is still incomplete, keep depth `in-depth`, keep
 the meeting router, and checkpoint partial answers only in the reopened domain file. Do not
 convert the meeting router back into an interview resume. Do not replace depth with a
-freshness flag. If facts became unreliable, set freshness `stale` and the affected Stale reasons; keep
-the recorded depth.
+freshness flag. If facts became unreliable, apply `_config/profile/entities/CONTEXT.md`
+**Freshness**; keep the recorded depth.
