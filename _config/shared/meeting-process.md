@@ -124,11 +124,9 @@ and memos advisors produce when a document will serve the user better than prose
 
 ## The Meeting Record
 
-A meeting record is a folder named from a short **topic slug only** — the date lives inside the
-files, not in the folder name. Follow `meetings/CONTEXT.md`: `meetings/<topic-slug>/` when
-`_config/profile/entities/index.md` is absent; new meetings use `meetings/<scope>/<topic-slug>/`
-when that index exists (`personal`, `trust`, or an entity slug). Resume an existing record at its
-current path; do not move a flat folder after the index appears. A substantive meeting leaves a small set of
+A meeting record is a folder named from a short **topic slug only**. Follow
+`meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**) for the path.
+A substantive meeting leaves a small set of
 **routed, single-purpose files** rather than one monolithic document:
 
 - **`brief.md`** — *what the meeting was about*: the user's question, the relevant context, and the

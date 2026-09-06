@@ -65,9 +65,8 @@ into the shim). Domain files keep supporting facts.
 
 ## Board meetings
 
-Entity-scoped meetings live under `meetings/<entity-slug>/<topic-slug>/`, not in this profile
-folder. Follow `../../../../meetings/CONTEXT.md` **Existing records stay put**. Create the scope
-folder only with the first meeting, and only when that path is not already a meeting record.
+Entity-scoped meetings live in `meetings/`, not in this profile folder. Follow
+`../../../../meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
 When a meeting changes standing facts for this entity, write those facts into the matching
 files in this folder in the same session. Follow `../../../shared/meeting-process.md`
 **Profile write-back**. Do not leave standing state only in `minutes.md`.

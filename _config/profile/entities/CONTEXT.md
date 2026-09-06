@@ -14,9 +14,8 @@ has been split). Do not register that estate vehicle as an entity. Land trusts, 
 corporations, and other operating or holding structures belong here.
 
 Tracked router and template files ship in this directory. The entity layer is active only
-when `index.md` exists. If `index.md` is absent, stay on the core profile files and keep
-meeting folders flat under `meetings/<topic-slug>/`. If `index.md` is created later, leave
-existing flat meeting folders in place.
+when `index.md` exists. If `index.md` is absent, stay on the core profile files. Follow
+`../../../meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
 
 ## Index
 
@@ -116,12 +115,8 @@ under a tracked factory path.
    - `sources.md` — reviewed and outstanding evidence. Load only for source provenance,
      document review, or outstanding-record work.
 5. Do not load files from unrelated entity folders.
-6. Entity-scoped board meetings live at `meetings/<entity-slug>/<topic-slug>/`, not in this
-   profile folder. Follow `../../../meetings/CONTEXT.md` **Existing records stay put** (including
-   occupancy: do not nest inside a path that is already a meeting record). Create the scope
-   folder only with the first meeting in that scope, and only when that path is not already a
-   meeting record. Household meetings use `meetings/personal/`. A living-trust meeting uses
-   `meetings/trust/` when `../trust.md` exists.
+6. Entity-scoped board meetings live in `meetings/`, not in this profile folder. Follow
+   `../../../meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
 7. When a meeting changes this entity's standing facts, write the delta into the matching
    files in that entity folder in the same session. Follow `../../shared/meeting-process.md`
    **Profile write-back**. That is a scoped fact update, not onboarding. Do not restart an

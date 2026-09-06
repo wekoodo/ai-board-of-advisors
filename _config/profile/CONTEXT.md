@@ -34,9 +34,8 @@ General onboarding is complete without `index.md` or `trust.md`.
 3. For explicit trust onboarding, load `../setup/trust-onboarding.md` only when the user asked
    to begin or resume it. That contract owns start conditions.
 4. If `entities/index.md` exists and the matter is entity-scoped, load `entities/CONTEXT.md`,
-   `entities/index.md`, and only the named entity folder or folders. Entity-scoped meeting
-   records live at `meetings/<entity-slug>/<topic-slug>/`, not inside the profile folder.
-   Follow `../../meetings/CONTEXT.md`.
+   `entities/index.md`, and only the named entity folder or folders. Do not put meeting records
+   inside the profile folder. Follow `../../meetings/CONTEXT.md` **Folder layout**.
 5. For a cross-entity matter, load the smallest set of entity profiles needed to understand the
    relationship. Do not preload every entity.
 6. When an entity has only `overview.md`, use the known facts and identify missing detail. Offer
@@ -44,9 +43,8 @@ General onboarding is complete without `index.md` or `trust.md`.
    asks. If the user names an entity that is not in `entities/index.md` and general onboarding
    is already complete, offer `../setup/entity-registration.md` rather than restarting the
    household interview.
-7. If `entities/index.md` is absent, there is no entity layer. Keep meetings at
-   `meetings/<topic-slug>/`. If that index is created later, leave existing flat meeting
-   folders in place; follow `../../meetings/CONTEXT.md` **Existing records stay put**.
+7. If `entities/index.md` is absent, there is no entity layer. Follow
+   `../../meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
 
 ## Agent Instructions
 

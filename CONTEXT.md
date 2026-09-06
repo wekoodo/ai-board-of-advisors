@@ -127,15 +127,8 @@ small. Otherwise, role-play the advisor **inline**. Either way, artifacts are re
 
 **Single advisor** is not a separate mode — just convene one; the synthesis step collapses.
 
-**Meeting folder.** Create the meeting folder lazily — a **topic-only** name, no date in the
-folder (the date lives inside `brief.md`/`minutes.md`). Follow `meetings/CONTEXT.md`:
-
-- If `_config/profile/entities/index.md` is **absent**, use `meetings/<topic-slug>/`.
-- If that index **exists**, new meetings use `meetings/<scope>/<topic-slug>/` where scope is
-  `personal`, `trust` (only when `trust.md` exists and the trust is the primary subject), or an
-  entity slug from the index.
-- Resume an existing record at its current path. Flat folders created before the index stay
-  put; do not move them.
+**Meeting folder.** Create the meeting folder lazily — a **topic-only** name. Follow
+`meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
 
 A substantive meeting leaves `brief.md` + `minutes.md` (+ `artifacts/`); the full `transcript.md`
 is optional, for digging deeper. Standing facts from the meeting belong in `_config/profile/`,
