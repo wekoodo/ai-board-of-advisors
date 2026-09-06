@@ -121,9 +121,9 @@ participant in the room. Each turn:
 or producing artifacts. It overrides the locked `google-doc-style` skill on this board (real
 profile data, board voice, no restyle of code or agent contracts).
 
-**Convening modes.** Prefer **one sub-agent per advisor** when your harness supports it — you
-carry only the running transcript and each advisor's `## Handoff` return, keeping your own context
-small. Otherwise, role-play the advisor **inline**. Either way, artifacts are real files on disk.
+**Convening modes.** Prefer **one sub-agent per advisor** when your harness supports it;
+otherwise role-play **inline**. Follow `_config/shared/meeting-process.md` **Convening Modes**.
+Either way, artifacts are real files on disk.
 
 **Single advisor** is not a separate mode — just convene one; the synthesis step collapses.
 
