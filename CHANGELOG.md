@@ -8,6 +8,8 @@ section *Keeping your board up to date*.
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-09-06
+
 ### Added
 
 - Add an optional entity registry (`_config/profile/entities/`) with a tracked `_template/`,
