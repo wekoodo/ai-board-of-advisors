@@ -8,6 +8,13 @@ section *Keeping your board up to date*.
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-09-06
+
+### Changed
+
+- Prefix new meeting folders with the host's local `YYYY-MM-DD-HHMM` stamp plus the topic
+  slug. Existing unstamped folders and shipped `example-*` records stay put.
+
 ## [0.4.0] — 2026-09-06
 
 ### Added

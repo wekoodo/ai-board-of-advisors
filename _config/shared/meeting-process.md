@@ -16,8 +16,9 @@ session — not every turn):
    `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
    future meetings. `_inbox/` documents are local-only (gitignored); they become part of the meeting
    record once assigned. If `_inbox/` is empty, skip silently. Follow `meetings/CONTEXT.md` for
-   whether `<meeting>` is the existing record's path, a new `<topic-slug>/`, or a new
-  `<scope>/<topic-slug>/`. Choose the meeting path before moving files.
+   whether `<meeting>` is the existing record's path, a new
+   `<YYYY-MM-DD-HHMM>-<topic-slug>/`, or a new
+   `<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/`. Choose the meeting path before moving files.
 
 2. **Product-update check** — follow `_config/shared/version.md`, the single source for the
    on-demand/daily, fail-soft check. Load `_config/shared/updates.md` only to **connect** `upstream`
@@ -127,8 +128,9 @@ and memos advisors produce when a document will serve the user better than prose
 
 ## The Meeting Record
 
-A meeting record is a folder named from a short **topic slug only**. Follow
-`meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**) for the path.
+A meeting record is a folder named from a local **`YYYY-MM-DD-HHMM` stamp plus a short topic
+slug**. Follow `meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**)
+for the path.
 A substantive meeting leaves a small set of
 **routed, single-purpose files** rather than one monolithic document:
 

@@ -72,8 +72,9 @@ Agents: connect steps in `_config/shared/updates.md`; routine version checks use
 2. Ask your question. The chair convenes one advisor, several, or the whole board — whichever the
    topic actually touches — and they respond in character.
 3. The chair produces artifacts (worksheets, plans, checklists) as real files under
-   `meetings/<meeting>/artifacts/` whenever a document would help (`<topic>` or
-   `<scope>/<topic>` — see `meetings/CONTEXT.md`). You can read and edit them while
+   `meetings/<meeting>/artifacts/` whenever a document would help
+   (`<YYYY-MM-DD-HHMM>-<topic>` or `<scope>/<YYYY-MM-DD-HHMM>-<topic>` — see
+   `meetings/CONTEXT.md`). You can read and edit them while
    the meeting is still running.
 4. The chair keeps a small, routed record of each meeting — a `brief.md` (what you asked), a
    `minutes.md` (the decisions, how to use each artifact, and profile updates), and the
@@ -129,7 +130,8 @@ See `advisors-extended/README.md`.
 ## Privacy note
 
 Your profile data (`_config/profile/` except the tracked routers and entity template) and
-user-created meetings (`meetings/<topic>/` or `meetings/<scope>/<topic>/`) are stored locally
+user-created meetings (`meetings/<YYYY-MM-DD-HHMM>-<topic>/` or
+`meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic>/`) are stored locally
 and excluded from Git by default. Cloning does not restore them. The shipped example meetings
 under `meetings/example-*/` are included in the repo as worked references. Content sent to a
 cloud model follows that provider's policies and your account settings.

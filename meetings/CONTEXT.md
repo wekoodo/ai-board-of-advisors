@@ -7,19 +7,24 @@ Locate one relevant meeting first, then load only the record files needed for th
 
 ## Folder layout
 
-Meeting records use a **topic-only** folder name. The date lives inside `brief.md` and
-`minutes.md`, not in the folder name.
+New meeting records use a **local date-time prefix plus a topic slug**. The prefix is the
+host's local calendar date and 24-hour clock at the lazy-creation threshold, formatted
+`YYYY-MM-DD-HHMM` (zero-padded hour and minute; no colons, `T`, or timezone). The topic slug
+is a short kebab-case label for the question. The same calendar date also lives inside
+`brief.md` and `minutes.md`.
+
+Example: `2026-09-06-1430-property-review`.
 
 **No entity index** (`_config/profile/entities/index.md` is absent):
 
 ```text
-meetings/<topic-slug>/
+meetings/<YYYY-MM-DD-HHMM>-<topic-slug>/
 ```
 
 **Entity index exists:**
 
 ```text
-meetings/<scope>/<topic-slug>/
+meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/
 ```
 
 | Scope folder | Use when |
@@ -53,29 +58,36 @@ profile files in the same session. Follow `_config/shared/meeting-process.md` **
 ### Existing records stay put
 
 If a later session creates `entities/index.md` after meetings already sit at
-`meetings/<topic-slug>/`, leave those folders where they are. Do not move them into
-`meetings/<scope>/<topic-slug>/`. New meetings after the index exists use the scoped layout.
-The private index may list both layouts; the `Folder:` path is the meeting's identity.
+`meetings/<YYYY-MM-DD-HHMM>-<topic-slug>/` (or an older unstamped `meetings/<topic-slug>/`),
+leave those folders where they are. Do not move them into
+`meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/`. New meetings after the index exists use
+the scoped layout. The private index may list both layouts; the `Folder:` path is the
+meeting's identity.
 
-Resume an existing record at its current path. Do not relocate it to repair layout, to match a
-new entity index, or because the topic is touched again. Leaving it in place keeps inbound
-profile provenance links and outbound relative links valid.
+Resume an existing record at its current path — stamped or unstamped. Do not relocate it to
+repair layout, to match a new entity index, to add a stamp, or because the topic is touched
+again. Do not create a new stamped folder for work that is still that record. Leaving it in
+place keeps inbound profile provenance links and outbound relative links valid.
 
-A matching topic slug is not the same meeting. `meetings/property-review/` and
-`meetings/personal/property-review/` are distinct records. Never merge them, overwrite one with
-the other, or nest a flat folder under a scope because the names match.
+A matching topic slug is not the same meeting. `meetings/2026-09-06-1430-property-review/` and
+`meetings/personal/2026-09-06-1430-property-review/` are distinct records, as are an unstamped
+`meetings/property-review/` and a later stamped folder with the same slug. Never merge them,
+overwrite one with the other, or nest a flat folder under a scope because the names match.
 
-Before creating `meetings/<scope>/<topic-slug>/`, check occupancy at two levels:
+Before creating `meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/`, check occupancy at two
+levels:
 
 1. If `meetings/<scope>/` itself contains `brief.md` or `minutes.md`, it is a meeting record, not
    a scope folder. Do not write a child topic into it. Resume that record only when it is the
    same work. For other new work in that logical scope, create
-   `meetings/<scope>-<topic-slug>/` and set the index `Scope:` field to the logical scope
-   (`personal`, `trust`, or the entity slug). Do not nest.
-2. If `meetings/<scope>/<topic-slug>/` already exists, resume that record only when it is the
-   same work; otherwise choose a different topic slug.
+   `meetings/<scope>-<YYYY-MM-DD-HHMM>-<topic-slug>/` and set the index `Scope:` field to the
+   logical scope (`personal`, `trust`, or the entity slug). Do not nest.
+2. If `meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/` already exists, resume that record only
+   when it is the same work; otherwise append `-2` (then `-3`, …) to the topic slug. A later
+   meeting on the same topic is a new stamped folder, not a rename of the earlier one.
 
-Never move or create a meeting onto a shipped `example-*` path.
+Never move or create a meeting onto a shipped `example-*` path. Never add a date-time prefix
+to a shipped `example-*` folder.
 
 ## Private Index
 
@@ -87,7 +99,7 @@ Each substantive user meeting has exactly one entry, keyed by its folder path fr
 
 ```markdown
 ### <Meeting title>
-- Folder: `<topic-slug>/` or `<scope>/<topic-slug>/`
+- Folder: `<YYYY-MM-DD-HHMM>-<topic-slug>/` or `<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/` (older unstamped paths stay as stored)
 - Date: `YYYY-MM-DD`
 - Status: `active` | `completed` | `paused`
 - Scope: `personal` | `trust` | one or more entity slugs | `none` (flat layout)
@@ -111,8 +123,10 @@ Each substantive user meeting has exactly one entry, keyed by its folder path fr
 
 When the index is missing, has no useful match, or points to a missing file:
 
-1. Search both layouts: existing `meetings/<topic-slug>/` folders and, when present,
-   `meetings/<scope>/<topic-slug>/` folders. Do not treat a matching topic slug as one meeting.
+1. Search both layouts: existing `meetings/<YYYY-MM-DD-HHMM>-<topic-slug>/` folders (and older
+   unstamped `meetings/<topic-slug>/` folders) and, when present,
+   `meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic-slug>/` folders (and older unstamped scoped
+   folders). Do not treat a matching topic slug as one meeting.
 2. If needed, search only `brief.md` and `minutes.md` files for relevant terms.
 3. Do not search transcripts or bulk-load artifacts by default.
 4. Trust meeting record files over conflicting index metadata.

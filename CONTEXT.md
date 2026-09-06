@@ -95,8 +95,8 @@ profile data, board voice, no restyle of code or agent contracts).
 otherwise role-play **inline**. Follow `_config/shared/meeting-process.md` **Convening Modes**.
 Either way, artifacts are real files on disk.
 
-**Meeting folder.** Create the meeting folder lazily — a **topic-only** name. Follow
-`meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
+**Meeting folder.** Create the meeting folder lazily — a local `YYYY-MM-DD-HHMM` prefix plus
+topic slug. Follow `meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
 
 ---
 
