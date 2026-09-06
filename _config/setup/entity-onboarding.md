@@ -42,6 +42,8 @@ interview.
 - Record every reviewed, deferred, superseded, or outstanding source in the entity's `sources.md`.
   Move a confirmed local source from `_inbox/` to
   `_config/profile/entities/<entity-slug>/sources/`; do not create a meeting `inputs/` folder.
+  Classify extracted facts per `_config/shared/conventions.md` **Evidence and calculation**.
+  `sources.md` inventories documents; it is not a place to store assumed or illustrative figures.
 
 ## Interview
 

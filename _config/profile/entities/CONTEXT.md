@@ -175,7 +175,9 @@ fact in the file was re-verified. Do not stamp unrelated files. Follow `../CONTE
   meeting record. Create `goals.md` when the first actionable item appears and use it as the
   single canonical action register across every domain.
 - When source documents are used, create `<entity-slug>/sources.md` from `_template/sources.md`.
-  A basic entity with no reviewed sources does not require `sources.md`.
+  A basic entity with no reviewed sources does not require `sources.md`. Classify extracted
+  facts per `../../shared/conventions.md` **Evidence and calculation**. The inventory lists
+  documents, not assumed or illustrative figures.
 - Copy field structure from `_template/`; do not place real data in the template.
 - Stamp every private profile file with `Last Updated: YYYY-MM-DD`.
 - Update the entity's status in `index.md` after verification.

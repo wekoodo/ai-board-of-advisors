@@ -33,8 +33,10 @@ entities belong under `_config/profile/entities/`.
    planning actions) into one file loaded as a whole, split into `trust/` with a `CONTEXT.md`
    router and keep `trust.md` as a thin shim.
 4. Ask one conversational question at a time. Save each answer before moving on.
-5. Distinguish document facts, user confirmations, legal inferences, and unresolved professional
-   determinations.
+5. Classify facts per `_config/shared/conventions.md` **Evidence and calculation**. Document
+   facts are sourced; user confirmations are user-reported; legal inferences are assumed until
+   a sourced rule or licensed determination supports them; unresolved professional
+   determinations stay open questions.
 6. Keep trust actions in the resolved action file the folder router names (worked example:
    `trust/planning-actions.md`). If `trust.md` is still a single file, keep them there. Never
    copy that register into `trust.md` once it is a shim. Do not create a duplicate action

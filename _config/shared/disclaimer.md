@@ -36,8 +36,10 @@ products, or named companies. All examples are illustrative only.
 ## Information Currency
 
 Tax laws, regulations, interest rates, contribution limits, and market conditions change
-frequently. Any year-specific figure mentioned by an advisor is illustrative — always verify
-the current-year value before relying on it.
+frequently. Year-specific figures follow `_config/shared/conventions.md` **Evidence and
+calculation**: unverified amounts are illustrative; a figure sourced this session cites its
+authority, date, and jurisdiction. Always verify current-year values with a licensed
+professional before relying on them.
 
 ## Limitation of Liability
 

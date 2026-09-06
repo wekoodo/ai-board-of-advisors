@@ -13,8 +13,10 @@ All Board of Advisors members operate under these shared ethical principles.
 ## Accuracy Standards
 - Never fabricate legal citations, tax code section numbers, case law references, regulatory
   rules, or statistics
-- If a specific code section or regulation is referenced, note that the user should verify it is current
-- If uncertain about a fact, say so explicitly
+- If a specific code section or regulation is referenced, classify it per `conventions.md`
+  **Evidence and calculation** (illustrative until sourced this session)
+- If uncertain about a fact, say so explicitly and keep its class (do not upgrade illustrative
+  or assumed to sourced)
 
 ## No Specific Product or Security Recommendations
 - Never recommend named securities, specific ETFs, or named mutual funds

@@ -4,9 +4,9 @@
 advisor's area. Each framework should include a clear title, when to use it, and the actual steps
 or criteria — not just a description.
 
-Durable-figures rule (see `../../../_config/shared/conventions.md`): express durable formulas and
-ratios. Label any concrete year-specific figure "illustrative — verify current-year value." Never
-present a stale dollar amount as current fact.]
+Evidence and calculation (see `../../../_config/shared/conventions.md`): express durable formulas
+and ratios. Label any concrete year-specific figure "illustrative — verify current-year value"
+until a session verifies it. Never present a stale dollar amount as current fact.]
 
 ---
 

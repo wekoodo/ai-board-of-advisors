@@ -42,9 +42,10 @@ path inside an extended advisor is identical to a core advisor's** — `../../_c
    cross-referrals to other advisors by number + slug, each listed in `collaboration.md`), keep the
    Outputs Handoff reference, and adapt the Disclaimer to your domain.
 3. **Fill in `references/CONTEXT.md` and `references/frameworks.md`.** Give your advisor the
-   frameworks, checklists, and analytical tools it needs. Obey the durable-figures rule: express
-   formulas and ratios, and label any concrete year-specific or market-specific figure
-   "illustrative — verify current-year value."
+   frameworks, checklists, and analytical tools it needs. Obey `_config/shared/conventions.md`
+   **Evidence and calculation**: express durable formulas and ratios, and label any concrete
+   year-specific or market-specific figure `"illustrative — verify current-year value"` until
+   a session verifies it.
 4. **Register the advisor in the roster.** Add your new advisor (number, title, slug, one-line
    description) to the root `CONTEXT.md` roster so the board chair can convene it, and add it to
    `_config/shared/collaboration.md` (credentials plus any cross-referral touchpoints).

@@ -23,6 +23,9 @@ section *Keeping your board up to date*.
 
 ### Changed
 
+- Expand output conventions with an **Evidence and calculation** protocol: sourced,
+  user-reported, assumed, and illustrative figures; verify current rules when retrieval
+  exists; trace arithmetic; carry material evidence on the Handoff block.
 - Load `_config/profile/CONTEXT.md` and follow scoped rules instead of bulk-loading every
   profile file (including entity folders).
 - Ignore all real profile content in `.gitignore` while tracking `profile/CONTEXT.md`,

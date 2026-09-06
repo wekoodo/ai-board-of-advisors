@@ -18,8 +18,8 @@ apply.
 ## What the skill must not change
 
 - **Code, identifiers, string literals, comments, commit messages, configuration, and machine-read
-  output** — including the `## Handoff` block *shape* in `conventions.md` (heading and field names
-  stay exact).
+  output** — including the `## Handoff` block *shape* in `conventions.md` (heading and field names,
+  including **Evidence**, stay exact).
 - **Agent contracts:** `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, any `CONTEXT.md`, `_config/shared/`
   protocol files, advisor `references/`, and `skills-lock.json`. Match surrounding voice and
   structure; do not restyle them as public docs.
@@ -36,9 +36,10 @@ This board writes about **this user's actual situation**.
 - Use real names, entities, amounts, addresses, and facts from `_config/profile/` and the meeting
   in chat answers and artifacts.
 - Do **not** replace them with example.com, `dana@example.com`, or fictional sample people.
-- Year-specific tax and limit figures still follow the durable-figures rule in `conventions.md`
-  (`illustrative — verify current-year value`). That rule is about stale statutory numbers, not
-  about anonymizing the user.
+- Year-specific tax and limit figures follow `conventions.md` **Evidence and calculation**.
+  Unverified statutory numbers stay `"illustrative — verify current-year value"`. A figure
+  sourced this session is not illustrative. That rule is about evidence class, not about
+  anonymizing the user.
 
 ## Voice on this board
 

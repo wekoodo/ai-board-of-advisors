@@ -38,8 +38,9 @@ A meeting unfolds turn by turn. Each cycle:
 3. **The advisors respond in character** — each convened advisor answers from its own domain, following
    the response style in `conventions.md` and grounded in the user's profile.
 4. **The chair synthesizes when several weighed in** — a short integration call-out: where the advisors
-   agree, where they diverge, and what the user should take away. When only one advisor was convened,
-   no synthesis is needed.
+   agree, where they diverge, and what the user should take away. Preserve unresolved disagreement
+   about evidence class, sources, or assumptions (`conventions.md` **Evidence and calculation**).
+   When only one advisor was convened, no synthesis is needed.
 5. **An artifact is produced when a document would help** — a worksheet, checklist, comparison, plan,
    model, or memo. The producing advisor writes it as a real file under the meeting's `artifacts/`
    directory and the chair surfaces it in the conversation.
@@ -105,10 +106,11 @@ and memos advisors produce when a document will serve the user better than prose
 - **Location.** Every artifact lives at `meetings/<meeting>/artifacts/<name>.md`. There is no other
   artifact home; the per-advisor `output/` directories from earlier versions of this system are
   retired.
-- **Authoring rules.** Artifacts follow `conventions.md`: durable formulas and ratios are stated
-  plainly, but any concrete year-specific figure (contribution limits, tax brackets, exemption
-  amounts, premium ranges, rate assumptions) is labeled **"illustrative — verify current-year
-  value."** Format follows the response style guidance — lead with the answer, use numbered lists for
+- **Authoring rules.** Artifacts follow `conventions.md` **Evidence and calculation**: durable
+  formulas and ratios are stated plainly; each consequential input is classified; unverified
+  year-specific figures stay **"illustrative — verify current-year value"**; sourced figures
+  cite source, date, and jurisdiction. Show formula and classified inputs for a numerical
+  conclusion. Format follows the response style guidance — lead with the answer, use numbered lists for
   steps and tables for comparisons. Use the user's real profile facts; do not substitute sample
   names or example.com data. See `google-doc-style-overlay.md`.
 - **The user may edit them directly.** The user can open an artifact in their editor and change it.
@@ -133,8 +135,9 @@ current path; do not move a flat folder after the index appears. A substantive m
   date. The entry point — read this first to know what was on the table.
 - **`minutes.md`** — *what happened and what to do now*: which advisors were convened, the key
   decisions and recommendations, each artifact with a one-line note on what it is and how to use it,
-  profile updates, and the open questions / next steps. This is the scannable summary — read it
-  instead of replaying the whole conversation.
+  profile updates, and the open questions / next steps. Record unresolved evidence-class, source,
+  or assumption disagreement under open questions (`conventions.md` **Evidence and calculation**).
+  This is the scannable summary — read it instead of replaying the whole conversation.
 - **`artifacts/`** — present whenever the meeting produced one or more deliverables. Each file is a
   living document the user can read and edit.
 - **`inputs/`** — present whenever the user supplied pre-meeting documents. Holds the source files
@@ -232,7 +235,11 @@ how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `art
    files actually edited. Set or update `As of` only on facts or sections this write
    confirmed (`_config/profile/CONTEXT.md` **Fact dates**). Do not copy `Last Updated` onto
    untouched facts. Follow `icm-conventions.md` **Keep files load-scoped**.
-5. If a fact is still hypothetical, or the user has not decided, do not write it as standing
+5. Follow `conventions.md` **Evidence and calculation** for what may become standing memory:
+   sourced and user-reported *user* facts may be written; assumed and illustrative figures
+   must not; public-rule figures (limits, brackets, RMDs, exemptions, published stats) stay
+   out of the profile even when sourced this session.
+   If a fact is still hypothetical, or the user has not decided, do not write it as standing
    fact and do not add it to the action register. If the user adopted an intention (pursue an
    election, change coverage, form an entity) but it is not yet implemented, record that
    intention in the owning action register as pending — not as an effective fact. Ask once

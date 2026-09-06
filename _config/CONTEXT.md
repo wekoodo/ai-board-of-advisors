@@ -9,7 +9,7 @@ This directory contains shared infrastructure loaded by all advisors and the onb
 | `shared/disclaimer.md` | Legal/educational disclaimer loaded by every advisor |
 | `shared/collaboration.md` | Cross-advisor referral map loaded by every advisor |
 | `shared/ethics.md` | Shared ethical guidelines loaded by every advisor |
-| `shared/conventions.md` | Durable-figures rule, the `## Handoff` block format, and response style |
+| `shared/conventions.md` | Evidence and calculation (including durable figures), the `## Handoff` block format, and response style |
 | `shared/google-doc-style-overlay.md` | Overlay on the locked `google-doc-style` skill (real data, voice, no restyle of contracts) — not Always-load protocol |
 | `shared/meeting-process.md` | The live-meeting protocol and convening modes (sub-agent / inline) |
 | `shared/convening.md` | Chair seat-selection map (fewest owners; 01 vs 05 vs 09/10 disambiguation) |
