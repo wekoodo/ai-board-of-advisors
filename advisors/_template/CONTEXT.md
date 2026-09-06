@@ -52,7 +52,8 @@ you do not use.
 
 ## Outputs
 
-Every response ends with a `## Handoff` block. Use the format defined in
+Return a `## Handoff` block when this advisor is convened as a sub-agent. In inline
+convening the block is optional. Use the format and applicability rule in
 `../../_config/shared/conventions.md`.
 
 ## Disclaimer

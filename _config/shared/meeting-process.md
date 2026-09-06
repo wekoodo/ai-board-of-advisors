@@ -115,8 +115,10 @@ and memos advisors produce when a document will serve the user better than prose
   The meeting reads those edits on the next turn — the chair and advisors react to the artifact as it
   now is, not as it was when produced.
 - **Revisions overwrite the same file.** When the user requests a change in conversation, the
-  producing advisor revises the artifact and writes back to the same path. The history of edits lives
-  in git; the file always reflects the current state.
+  producing advisor revises the artifact and writes back to the same path. The file always
+  reflects the current state. Private meeting records are gitignored, so Git does not keep
+  their revision history. For a consequential change, record the prior decision or assumption
+  in `minutes.md` or in the artifact; do not commit personal data to the product repository.
 
 ## The Meeting Record
 
