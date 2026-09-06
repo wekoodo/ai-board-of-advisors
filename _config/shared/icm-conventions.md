@@ -148,6 +148,7 @@ only targets named in the shim or that folder's `CONTEXT.md`. Then:
 If the named file still holds the facts (flat, not a shim), use it as-is.
 
 **Write.** Edit the resolved owning section. Stamp `Last Updated` only on files actually edited.
+Set `As of` only on facts or sections this write confirmed (`../profile/CONTEXT.md` **Fact dates**).
 Do not copy the updated facts into the shim. Do not reconstitute one file.
 
 **Repair, do not rebuild.** A missing target, a missing required heading after resolution, or a

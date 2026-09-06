@@ -35,24 +35,29 @@ A living trust is not an entity. If the user asked to onboard a living trust, lo
 3. If `entities/index.md` is absent, create it from `_config/profile/entities/CONTEXT.md`
    **Index**. Create `overview.md` only for entities being registered in this session.
 4. For each entity being added: assign a slug first (`entities/CONTEXT.md` **Slugs**), then
-   write `<entity-slug>/overview.md` from
-   `_template/overview.md`, set Status `basic` and Freshness `current`, and add one index
-   row. If the existing table has no Freshness column, add it for every row (existing rows
-   → `current`) rather than mixing shapes. Copy field structure from the template; do not
-   write real data into `_template/`. Do not change another row's depth or freshness.
+   write `<entity-slug>/overview.md` from `_template/overview.md`. Set that new row to Status
+   `basic`, Freshness `current`, and empty Stale reasons. If the existing table has no
+   Freshness or Stale reasons column, add them and rewrite every *existing* row using
+   `_config/profile/entities/CONTEXT.md` **Legacy rows** (`needs-refresh` → recovered depth,
+   Freshness `stale`, Stale reasons `unknown`; other existing rows → Freshness `unknown`,
+   Stale reasons `unknown`). Do not set an existing row to `current`. Copy field structure
+   from the template; do not write real data into `_template/`.
 5. If the user pointed at an entity that is already in the index but whose `overview.md` is
    missing, repair that overview from known facts. Do not rebuild unrelated entities.
 6. Do not change an existing entity from `in-depth` (or in-progress deepen) back to `basic`.
    Do not create detailed domain files on this route.
 7. Update `businesses.md` as the high-level map only. Details stay in the entity folder.
-8. Stamp `Last Updated: YYYY-MM-DD` on each file written.
+8. Stamp `Last Updated: YYYY-MM-DD` on each file written, and `As of: YYYY-MM-DD` on each
+   overview section just confirmed (`_config/profile/CONTEXT.md` **Fact dates**).
 
 ## Completion
 
 - Each entity registered in this session has a slug that follows
   `_config/profile/entities/CONTEXT.md` **Slugs**, an index row, and an `overview.md` with a
   valid `Last Updated` line.
-- Existing entities keep their prior depth, freshness, files, and resume or meeting router.
+- Existing entities keep their files, resume or meeting router, and assigned slug. Index
+  depth and freshness follow **Legacy rows** when those columns were just added; they do
+  not keep an unsupported `needs-refresh` Status.
 - Tell the user that in-depth onboarding for a registered entity is available on request. Do
   not start `entity-onboarding.md` unless they asked to deepen in the same request. If they
   did, load `entity-onboarding.md` for that entity next.

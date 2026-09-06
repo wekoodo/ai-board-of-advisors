@@ -4,6 +4,8 @@ Last Updated: YYYY-MM-DD
 
 ## Identity
 
+As of: YYYY-MM-DD
+
 - Legal name:
 - Stable slug:
 - Entity or trust type:
@@ -14,16 +16,22 @@ Last Updated: YYYY-MM-DD
 
 ## Relationship
 
+As of: YYYY-MM-DD
+
 - Owner, member, beneficiary, or parent:
 - Subsidiaries or controlled structures:
 - Managers, trustees, or other control roles:
 
 ## Purpose
 
+As of: YYYY-MM-DD
+
 - Primary activities:
 - Current stage:
 
 ## Known material facts
+
+As of: YYYY-MM-DD
 
 -
 

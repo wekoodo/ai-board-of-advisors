@@ -91,7 +91,9 @@ convening modes.
 ## Updating your profile
 
 - Edit any file in `_config/profile/` directly, or ask an advisor to update a section.
-- Each profile file owns its `Last Updated: YYYY-MM-DD` value; advisors flag data older than 12 months.
+- Each profile file owns its `Last Updated: YYYY-MM-DD` (last edit). Consequential facts and
+  sections use `As of: YYYY-MM-DD`; advisors flag those dates when they are older than 12
+  months or unknown (`_config/profile/CONTEXT.md` **Fact dates**).
 
 ## Keeping the product system up to date
 

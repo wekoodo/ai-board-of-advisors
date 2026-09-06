@@ -4,6 +4,10 @@ This is the question bank for the Board of Advisors onboarding interview. Work t
 domain in order. Ask questions conversationally — do not read this file verbatim. Follow up
 naturally on the user's answers.
 
+> **[Agent instruction]:** When writing a domain, stamp `Last Updated` on the file and `As of`
+> on each section just confirmed (`_config/profile/CONTEXT.md` **Fact dates**). Do not use one
+> file-level `As of` for a file that holds several standing sections.
+
 ---
 
 ## Domain 1: Personal

@@ -32,7 +32,8 @@ and without restarting onboarding.
 ## Status
 
 - Entity status (depth): `basic` | `in-depth`
-- Freshness: `current` | `stale`
+- Freshness: `current` | `stale` | `unknown`
+- Stale reasons: (domain names, or `unknown`; empty when current)
 - Next review: YYYY-MM-DD, or earlier after a material event.
 - Do not restart onboarding unless the user asks to refresh or correct the profile.
 
@@ -73,10 +74,11 @@ files in this folder in the same session. Follow `../../../shared/meeting-proces
 
 ## Refresh / reopen
 
-A material event or new source marks affected facts stale (index Freshness column and this
-router's Freshness line, not overview onboarding status) and prompts a scoped fact review in
-the current meeting (write-back). After those facts are confirmed, set Freshness `current`.
-That is not an interview. Do not load
+A material event or new source marks affected facts stale (index Freshness and Stale
+reasons, and this router's matching lines — not overview onboarding status) and prompts a
+scoped fact review in the current meeting (write-back). After those facts are confirmed,
+remove only those reasons. Set Freshness `current` only when no stale reasons remain. If
+reasons are unknown, a partial update must not set `current`. That is not an interview. Do not load
 `../../../setup/entity-onboarding.md` unless the user explicitly asks to refresh or reopen a
 domain. Then follow that contract for the reopened domain only. Do not recap completed domains.
 Do not treat a meeting load of this file as an onboarding session.

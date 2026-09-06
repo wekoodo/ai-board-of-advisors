@@ -29,13 +29,32 @@ Allowed depth values (Status column — do not replace these with a freshness fl
 - `basic` — `overview.md` exists and contains enough information to route a meeting.
 - `in-depth` — the relevant detailed profile files exist and the completion check passed.
 
-Freshness is a separate column. `current` is the default. If an older index has no Freshness
-column, treat missing values as `current`. `stale` means facts are older than 12 months or a
-material event made them unreliable. A stale `in-depth` entity is still in-depth. A
-new source or material event sets freshness `stale` on the index Freshness column (and the
-entity router Freshness line) and prompts a scoped fact update; it does not start an
-interview. After those facts are confirmed, set freshness `current`. Do not write freshness
-into overview onboarding status.
+Freshness is a separate column: `current` | `stale` | `unknown`. New rows default to
+`current`. A missing Freshness column is `unknown`, not `current`, unless **Legacy rows**
+below applies. `stale` means facts are older than 12 months or a material event made them
+unreliable. A stale `in-depth` entity is still in-depth.
+
+Record why an entity is stale (`Stale reasons` on the index row and the entity router):
+domain names or a short note, for example `tax` or `risk-insurance`. A new source or material
+event sets Freshness `stale`, adds the affected domains to Stale reasons, and prompts a
+scoped fact update; it does not start an interview. After confirming scoped facts, remove
+only those reasons. Set Freshness `current` only when no stale reasons remain. If reasons
+are `unknown` or unspecified, a partial update must not set `current`. Do not load every
+domain merely to clear the flag. Do not write freshness into overview onboarding status.
+
+**Legacy rows.** When adding Freshness or Stale reasons columns, or when rewriting a
+`needs-refresh` Status, apply this now (do not wait for a later session):
+
+- `needs-refresh` → recover depth from files (overview-only → `basic`; completed meeting
+  router or in-depth domain set → `in-depth`; else leave depth unknown and ask only that).
+  Set Freshness `stale` and Stale reasons `unknown`. Do not invent `in-depth` or rerun the
+  interview.
+- Any other existing row that lacked those columns → Freshness `unknown`, Stale reasons
+  `unknown`. Do not set `current` because the column was missing.
+- Only a row created in this session defaults to Freshness `current` with empty Stale
+  reasons.
+
+Keep the assigned slug and unrelated files.
 
 Suggested `index.md` shape (create on first entity; do not commit real names):
 
@@ -44,9 +63,9 @@ Suggested `index.md` shape (create on first entity; do not commit real names):
 
 Last Updated: YYYY-MM-DD
 
-| Entity | Slug | Relationship | Status | Freshness | Available files |
-| --- | --- | --- | --- | --- | --- |
-| Legal Name, LLC | `legal-name-llc` | Owner and role | `basic` | `current` | `overview.md` |
+| Entity | Slug | Relationship | Status | Freshness | Stale reasons | Available files |
+| --- | --- | --- | --- | --- | --- | --- |
+| Legal Name, LLC | `legal-name-llc` | Owner and role | `basic` | `current` | | `overview.md` |
 ```
 
 ## Slugs
@@ -118,7 +137,7 @@ a matching one-liner or a link. Do not copy the full detail into every file.
 | Tax classification and elections | `tax.md` when that file exists; until then the overview line | `overview.md` one-liner or `see tax.md` |
 | Ownership fractions, control, agreements | `governance.md` when that file exists; until then overview Relationship | `overview.md` and index Relationship as routing one-liners |
 | Depth (`basic` / `in-depth`) | index Status column | overview Onboarding status (depth only, not freshness) |
-| Freshness | index Freshness column | entity `CONTEXT.md` Freshness line |
+| Freshness | index Freshness column and Stale reasons | entity `CONTEXT.md` Freshness and Stale reasons lines |
 | Coverage and contractual risk | `risk-insurance.md` when that file exists | overview one-liner only if it still repeats the fact |
 
 An adopted intention (pursue an election, form an entity, change coverage) belongs in
@@ -131,7 +150,8 @@ If a confirmed fact needs a domain file that does not exist yet, create that sma
 That does not complete in-depth onboarding and does not change depth from `basic`.
 
 `Last Updated` on a file is the date of the last edit to that file. It does not mean every
-fact in the file was re-verified. Do not stamp unrelated files.
+fact in the file was re-verified. Do not stamp unrelated files. Follow `../CONTEXT.md`
+**Fact dates** for `As of` on confirmed facts.
 
 ## Create or deepen an entity
 

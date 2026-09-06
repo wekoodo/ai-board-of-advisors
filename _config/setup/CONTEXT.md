@@ -49,8 +49,10 @@ finished, because a meeting mentioned the entity, or because a new source arrive
 
 4. **Write profile files as you go.** After completing each domain, write the corresponding file
    to `_config/profile/` before proceeding. If the session is interrupted, completed domains are
-   already saved. Stamp each file with a "Last Updated: YYYY-MM-DD" line at the top. If a named
-   path is already a shim, write the resolved owning section; do not reconstitute a single file.
+   already saved. Stamp each file with a "Last Updated: YYYY-MM-DD" line at the top, and set
+   `As of: YYYY-MM-DD` on each section just confirmed (`../profile/CONTEXT.md`
+   **Fact dates**). Do not put a single `As of` at the top of a multi-section file. If a named path is already a shim, write the resolved owning section; do
+   not reconstitute a single file.
 
 5. **Profile files to write:**
    - Personal domain → `_config/profile/personal.md` (resolved owning sections if a shim)

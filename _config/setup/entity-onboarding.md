@@ -87,7 +87,9 @@ has no **Next work**, do not run this interview unless the user explicitly asks 
 reopen a domain. Then reopen that domain only. Keep the meeting router; do not replace it with
 resume sections. A new source or material event is not that ask.
 
-Otherwise proceed conversationally and save each completed domain before moving on:
+Otherwise proceed conversationally and save each completed domain before moving on. Stamp
+`Last Updated` on the file and `As of` on each section just confirmed
+(`_config/profile/CONTEXT.md` **Fact dates**):
 
 1. **Governance** — formation, ownership, control, managers, governing documents, registrations,
    decision authority, transfer restrictions, succession, and related entities.
@@ -125,11 +127,11 @@ Before changing the entity status to `in-depth`:
   shim). Do not leave instructions that a fresh session should continue the interview. Do not
   add this onboarding contract to the completed router's scoped-load table.
 - Update `_config/profile/entities/index.md` with depth `in-depth`, freshness `current`,
-  available files, and next review.
+  empty Stale reasons, available files, and next review.
 
 If a first-time deepen is still incomplete, keep depth at `basic` and keep the resume contract.
 If an explicit reopen of a completed entity is still incomplete, keep depth `in-depth`, keep
 the meeting router, and checkpoint partial answers only in the reopened domain file. Do not
 convert the meeting router back into an interview resume. Do not replace depth with a
-freshness flag. If facts became unreliable, set freshness `stale` on the index Freshness
-column and keep the recorded depth.
+freshness flag. If facts became unreliable, set freshness `stale` and the affected Stale reasons; keep
+the recorded depth.

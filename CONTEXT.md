@@ -154,5 +154,7 @@ Full protocol, including the fuller arc for a major multi-domain decision, is in
 
 Load `_config/profile/CONTEXT.md` alongside the advisor's `CONTEXT.md`. It routes to the core
 profile and, when they exist, only the trust or entity files relevant to the meeting. Do not
-bulk-load all entity folders. Advisors flag loaded profile data older than 12 months.
-If the required profile is incomplete, run or resume onboarding: `_config/setup/CONTEXT.md`.
+bulk-load all entity folders. Follow that file's **Fact dates**: flag loaded `As of` dates
+that are more than 12 months old or missing/`unknown`. Do not use `Last Updated` for that
+check. If the required profile is incomplete, run or resume onboarding:
+`_config/setup/CONTEXT.md`.

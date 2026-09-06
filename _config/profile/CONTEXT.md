@@ -51,9 +51,11 @@ General onboarding is complete without `index.md` or `trust.md`.
 ## Agent Instructions
 
 1. Follow the scoped load rules; do not bulk-load `entities/`.
-2. If a loaded file's "Last Updated" date is more than 12 months ago, note it at the start of the
-   session and offer to update. For a shim, use the resolved owning section's date, not the shim
-   stamp alone.
+2. Judge freshness from **Fact dates** below, not from `Last Updated` alone. If an `As of`
+   date this question uses is more than 12 months ago, note it and offer to update those
+   facts. If `As of` is missing or `unknown`, treat verification as unknown — do not inherit
+   the file's `Last Updated`. A recent edit stamp does not make untouched facts current. For
+   a shim, use the resolved owning section's dates, not the shim stamp alone.
 3. `businesses.md` is required as an onboarding-completion signal. If it says "no businesses
    owned," no further action is needed. When entities exist, treat `businesses.md` as the
    high-level map and `entities/index.md` as the authoritative entity router.
@@ -62,16 +64,30 @@ General onboarding is complete without `index.md` or `trust.md`.
 5. If no required profile files exist yet, stop and direct the user to run onboarding: load
    `_config/setup/CONTEXT.md` to begin.
 
+## Fact dates
+
+`Last Updated: YYYY-MM-DD` at the top of a file is the last edit to that file. It is not
+confirmation of every fact in the file.
+
+For consequential standing facts or a coherent section (balances, income, ownership,
+classification, coverage, allocation), include `As of: YYYY-MM-DD` on that heading, not as
+the only date at the top of the file. `Last Updated` remains the sole file-level stamp. If
+the user cannot date a section, write `As of: unknown` or omit the line. Do not copy the
+file's `Last Updated` onto facts you did not confirm.
+
+When you confirm a fact, set or update only that section's `As of`. Stamp `Last Updated` only
+on files you edited. Leave other sections' `As of` values unchanged.
+
 ## Updating Profile Files
 
-Edit any file directly, or ask an advisor to update a section. When writing or updating a profile
-file, include a "Last Updated: YYYY-MM-DD" line at the top of the file you edited so the staleness
-check works. If the named path is a shim, edit the resolved owning section; do not duplicate
-facts in the shim. Follow `entities/CONTEXT.md` for entity status and file ownership when
-`entities/index.md` exists. Follow `../shared/icm-conventions.md` **Keep files load-scoped** and **Resolve
-a named profile path**: if a write would mix independently loadable concerns into a file that is
-loaded as a whole, split into a folder with a `CONTEXT.md` router now. Keep a thin shim when a
-completeness gate or existing load path names the old file.
+Edit any file directly, or ask an advisor to update a section. Stamp `Last Updated: YYYY-MM-DD`
+on the file you edited, and follow **Fact dates** for `As of`. If the named path is a shim, edit
+the resolved owning section; do not duplicate facts in the shim. Follow `entities/CONTEXT.md`
+for entity status and file ownership when `entities/index.md` exists. Follow
+`../shared/icm-conventions.md` **Keep files load-scoped** and **Resolve a named profile path**:
+if a write would mix independently loadable concerns into a file that is loaded as a whole,
+split into a folder with a `CONTEXT.md` router now. Keep a thin shim when a completeness gate
+or existing load path names the old file.
 
 A board meeting that changes standing facts must write those facts here in the same session. Do
 not leave standing state only in `meetings/`. Follow `../shared/meeting-process.md`
