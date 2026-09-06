@@ -80,5 +80,5 @@ scoped fact review in the current meeting (write-back). After those facts are co
 remove only those reasons. Set Freshness `current` only when no stale reasons remain. If
 reasons are unknown, a partial update must not set `current`. That is not an interview. Do not load
 `../../../setup/entity-onboarding.md` unless the user explicitly asks to refresh or reopen a
-domain. Then follow that contract for the reopened domain only. Do not recap completed domains.
-Do not treat a meeting load of this file as an onboarding session.
+domain. That contract owns the reopen. Do not treat a meeting load of this file as an
+onboarding session.

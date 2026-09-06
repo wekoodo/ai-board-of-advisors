@@ -86,8 +86,9 @@ a completed domain.
 **Completed router.** If the selected entity `CONTEXT.md` is already a post-onboarding meeting
 router (Purpose, Scope boundary, Status, Scoped load, Action register, **Refresh / reopen**) and
 has no **Next work**, do not run this interview unless the user explicitly asks to refresh or
-reopen a domain. Then reopen that domain only. Keep the meeting router; do not replace it with
-resume sections. A new source or material event is not that ask.
+reopen a domain. Then reopen that domain only. Do not recap or restart other completed domains.
+Keep the meeting router; do not replace it with resume sections. A new source or material event
+is not that ask.
 
 Otherwise proceed conversationally and save each completed domain before moving on. Stamp
 `Last Updated` on the file and `As of` on each section just confirmed

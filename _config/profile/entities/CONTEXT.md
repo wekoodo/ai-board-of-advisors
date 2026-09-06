@@ -100,8 +100,9 @@ under a tracked factory path.
 2. If the selected folder contains `CONTEXT.md`, load it as the entity's scoped meeting
    router. Follow **Current state**, **Resume inputs**, and **Next work** only when those
    resume sections exist *and* the user asked to continue that entity's in-depth onboarding.
-   A completed router is not an interview. Do not start in-depth onboarding because a
-   meeting mentioned the entity.
+   A completed router is not an interview. Load `../../setup/entity-onboarding.md` only when
+   the user asked to continue in-depth onboarding or to refresh or reopen a domain. That
+   contract owns start conditions.
 3. Load `overview.md` from each selected folder. If a named path is a shim, follow
    `../../shared/icm-conventions.md` **Resolve a named profile path**.
 4. Load only the detailed files that match the question (resolve shims the same way):

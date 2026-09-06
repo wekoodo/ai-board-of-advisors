@@ -3,9 +3,10 @@
 ## Purpose
 
 Deepen a living-trust (or similar estate-vehicle) profile when the user asks. This route is
-optional. General onboarding is complete without `trust.md`. Do not start this interview because
-the general profile is complete or because an estate-planning meeting mentioned a will or
-beneficiaries.
+optional. General onboarding is complete without `trust.md`. Start only when the user asks to
+begin or resume this interview. Do not restart the general questionnaire. Do not start this
+interview because the general profile is complete, because a meeting mentioned the trust, or
+because an estate-planning meeting mentioned a will or beneficiaries.
 
 A living trust is a household estate vehicle. It is not an entity. Land trusts and operating
 entities belong under `_config/profile/entities/`.

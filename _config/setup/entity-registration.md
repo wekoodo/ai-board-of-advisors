@@ -4,7 +4,8 @@
 
 Register one or more operating or holding entities when the five-file core profile already
 exists. Collect only missing basics. Do not restart household onboarding. Do not start in-depth
-entity onboarding unless the user also asked to deepen.
+entity onboarding unless the user also asked to deepen; `entity-onboarding.md` owns that
+interview's start conditions.
 
 Use this route when the user explicitly asks to add, register, or list an entity after general
 onboarding, or asks to create a registry for holdings already listed in `businesses.md`. Do not

@@ -32,7 +32,7 @@ General onboarding is complete without `index.md` or `trust.md`.
    titling, or family governance, also load `trust.md`. Resolve a shim the same way. Do not load
    the complete `trust/` folder unless the user asked for a full trust review.
 3. For explicit trust onboarding, load `../setup/trust-onboarding.md` only when the user asked
-   to begin or resume it. Do not start that interview from a meeting mention.
+   to begin or resume it. That contract owns start conditions.
 4. If `entities/index.md` exists and the matter is entity-scoped, load `entities/CONTEXT.md`,
    `entities/index.md`, and only the named entity folder or folders. Entity-scoped meeting
    records live at `meetings/<entity-slug>/<topic-slug>/`, not inside the profile folder.

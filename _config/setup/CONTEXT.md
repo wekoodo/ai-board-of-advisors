@@ -13,23 +13,18 @@ create a `meetings/` folder, meeting artifact, or meeting-index entry for onboar
 
 **Focused trust route:** If the user explicitly asks to onboard or resume onboarding a living trust
 or similar estate vehicle, load `trust-onboarding.md` and follow its scoped inputs, outputs, and
-completion check. Do not restart the general questionnaire. Do not start this route unless they
-asked.
+completion check.
 
 **Entity registration route:** If the user explicitly asks to add or register an entity after
 general onboarding is complete, or asks to create a registry for holdings already listed in
-`businesses.md`, load `entity-registration.md`. Do not restart the household interview. Do not
-start in-depth onboarding unless they also asked to deepen. Do not start this route because
-`businesses.md` merely names a business.
+`businesses.md`, load `entity-registration.md`.
 
 **Focused entity route:** If the user asks to begin or resume in-depth onboarding for a registered
 entity that already has an `entities/index.md` entry and `overview.md`, load `entity-onboarding.md`
-and that entity's `CONTEXT.md` if it exists. If the resume sections are missing, that contract creates them
-before asking in-depth questions. Follow **Current state**, **Resume inputs**, and **Next work**
-when those sections exist. If the entity `CONTEXT.md` is already a completed meeting router,
-do not start an interview unless the user explicitly asks to refresh. Do not recap or restart
-completed domains. Do not create a meeting. Do not start this route because general onboarding
-finished, because a meeting mentioned the entity, or because a new source arrived.
+and that entity's `CONTEXT.md` if it exists.
+
+Those contracts own start conditions, resume, and refresh. Do not start these routes without
+that explicit request.
 
 1. **Check existing profile content first.** Before beginning or resuming, inspect the relevant
    profile file and section for each domain. If a named path is a shim, follow
