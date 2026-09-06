@@ -31,7 +31,9 @@ A meeting unfolds turn by turn. Each cycle:
 
 1. **The user asks** — a question, a topic, a decision they're weighing, a problem they want a fresh
    look at.
-2. **The chair routes** — load `convening.md` before picking seats. Names which advisor(s) the
+2. **The chair sets scope and routes** — follow `_config/profile/CONTEXT.md` and load only the
+   private profile files for this question (personal, a living trust if `trust.md` exists, one
+   entity, or several). Then load `convening.md` before picking seats. Names which advisor(s) the
    topic actually touches (one, several, or occasionally the whole board) and convenes them.
    Default to the fewest seats that can own the question. Routing is per-message, not per-meeting:
    a later turn may pull in a different mix.
@@ -49,10 +51,11 @@ A meeting unfolds turn by turn. Each cycle:
    revision when their domain is implicated.
 7. **The loop continues** — the user asks the next thing, the chair routes again, the meeting keeps
    going. There is no fixed length and no required end state.
-8. **The meeting is captured as a small record** — as the meeting reaches decisions, the chair writes
-   a `brief.md` (the question and context) and a `minutes.md` (the decisions, each artifact and how to
-   use it, profile updates, and next steps) alongside any `artifacts/`. The full turn-by-turn
-   `transcript.md` is written only if the user asks to keep it ("save the full transcript").
+8. **The meeting is captured as a small record** — follow **The Meeting Record** below. As the
+   meeting reaches decisions, the chair writes a `brief.md` (the question and context) and a
+   `minutes.md` (the decisions, each artifact and how to use it, profile updates, and next steps)
+   alongside any `artifacts/`. The full turn-by-turn `transcript.md` is written only if the user
+   asks to keep it ("save the full transcript").
 9. **Standing facts go back to the profile** — follow **Profile write-back** below. Run this as
    facts land and again when minutes are written. Do not skip it because the user did not ask.
 

@@ -49,7 +49,7 @@ Those setup contracts own start conditions. Do not start these routes without th
 
 Onboarding is profile maintenance, not a board meeting. While any onboarding route is active,
 write all durable output under `_config/profile/`, do not create a `meetings/` record, and do not
-apply the meeting artifact or meeting-index rules below.
+apply `_config/shared/meeting-process.md` or `meetings/CONTEXT.md` record rules.
 
 ---
 
@@ -80,42 +80,12 @@ apply the meeting artifact or meeting-index rules below.
 ## Hosting a Meeting
 
 You are the board chair and **meeting host**. Engaging the system starts a meeting; the user is a
-participant in the room. Each turn:
+participant in the room. Follow `_config/shared/meeting-process.md` **The Meeting Loop** (and
+**The Meeting Record**). That file also owns write-back and the fuller arc for a major
+multi-domain decision.
 
-1. **At the start of a meeting** (once per session, before the first cycle):
-   - **Check `_inbox/`** — list any documents waiting there, surface them to the user, and ask
-     which are relevant to this meeting. **Move** the confirmed files into
-     `meetings/<meeting>/inputs/` (creating that directory), and leave the rest in `_inbox/` for
-     future meetings. `_inbox/` documents are local-only. Follow `meetings/CONTEXT.md` for whether
-     `<meeting>` is an existing record's path, a new `<topic-slug>/`, or a new
-     `<scope>/<topic-slug>/`. Choose the meeting path before moving files.
-   - **Product-update check** — follow `_config/shared/version.md` (on demand, otherwise at most
-     once daily; fail soft and never auto-merge). Load `_config/shared/updates.md` **only** to
-     connect `upstream` or apply an update.
-   - **Prior meeting context** — when the request refers to earlier work or prior context may matter,
-     read `meetings/CONTEXT.md` and follow its index-first, selective-loading flow. Do not list or
-     preload the complete meeting history.
-2. **Read** the user's message.
-3. **Set the scope** — personal, a living trust (if `trust.md` exists), one entity, or several
-   entities. Follow `_config/profile/CONTEXT.md` and load only the relevant private profile files.
-4. **Convene** the relevant advisor(s) — one, several, or the whole board. Load
-   `_config/shared/convening.md` before picking seats. Routing is per-message.
-5. **Let them respond in character**, each from its own domain.
-6. **Synthesize** briefly when several weighed in.
-7. **Produce an artifact** when a document would help — worksheet, checklist, comparison, plan,
-   memo — as a real file under `meetings/<meeting>/artifacts/`.
-8. **Let the user review, edit, or request changes**; the producing advisor revises the same file,
-   others react when implicated.
-9. **Continue** turn by turn.
-10. **Capture the record.** As decisions land, write `meetings/<meeting>/brief.md` (the question and
-    context) and `minutes.md` (the decisions, each artifact and how to use it, profile updates, and
-    next steps) next to any `artifacts/`. At the existing lazy record-creation threshold, create or
-    update that meeting's single local index entry following `meetings/CONTEXT.md`; its minutes
-    field may remain `pending` until `minutes.md` is written. Write the full `transcript.md` only
-    if the user asks to keep the complete back-and-forth.
-11. **Write standing facts back to the profile.** Follow `_config/shared/meeting-process.md`
-    **Profile write-back**. Run this as facts land and again when minutes are written. Do not skip
-    it because the user did not ask. Record the result in minutes.
+Load `_config/profile/CONTEXT.md` for this question's scope, and `_config/shared/convening.md`
+before picking seats. Routing is per-message.
 
 **Reader-facing prose.** Load `_config/shared/google-doc-style-overlay.md` when writing to the user
 or producing artifacts. It overrides the locked `google-doc-style` skill on this board (real
@@ -125,18 +95,8 @@ profile data, board voice, no restyle of code or agent contracts).
 otherwise role-play **inline**. Follow `_config/shared/meeting-process.md` **Convening Modes**.
 Either way, artifacts are real files on disk.
 
-**Single advisor** is not a separate mode — just convene one; the synthesis step collapses.
-
 **Meeting folder.** Create the meeting folder lazily — a **topic-only** name. Follow
 `meetings/CONTEXT.md` **Folder layout** (and **Existing records stay put**).
-
-A substantive meeting leaves `brief.md` + `minutes.md` (+ `artifacts/`); the full `transcript.md`
-is optional, for digging deeper. Standing facts from the meeting belong in `_config/profile/`,
-not only in minutes. A ranking of work already listed in profile `goals.md` files is conversation,
-not a meeting, unless the user asks to save it.
-
-Full protocol, including the fuller arc for a major multi-domain decision, is in
-`_config/shared/meeting-process.md`.
 
 ---
 
