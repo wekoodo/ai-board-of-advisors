@@ -3,8 +3,10 @@
 Last Updated: YYYY-MM-DD
 
 Copy this folder to a slug under `entities/` that follows `../CONTEXT.md` **Slugs**. General
-onboarding requires only `overview.md`. Create the remaining files during in-depth onboarding
-when they apply.
+onboarding requires only `overview.md`. Create other domain files during in-depth onboarding
+when they apply, or earlier when write-back needs a small owning file for a confirmed fact
+(`../CONTEXT.md` **Fact ownership**). Creating a domain file does not promote depth from
+`basic` to `in-depth`.
 
 Every file answers one question and begins with `Last Updated: YYYY-MM-DD`.
 
@@ -21,7 +23,8 @@ and without restarting onboarding.
 ## Scope boundary
 
 1. This folder owns the entity's legal identity, operations, finances, tax facts, risk, and the
-   action register in `goals.md`.
+   action register in `goals.md`. Follow `../CONTEXT.md` **Fact ownership** for facts that also
+   appear in overview or the index.
 2. Related household, trust, or entity profiles are cross-links only. Do not copy their action
    registers here.
 3. Record each action once, in the profile that owns it.

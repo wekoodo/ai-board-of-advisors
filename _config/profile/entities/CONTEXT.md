@@ -107,6 +107,32 @@ under a tracked factory path.
    **Profile write-back**. That is a scoped fact update, not onboarding. Do not restart an
    interview.
 
+## Fact ownership
+
+Repeated summaries must not disagree with the owning file. Write the owner first. Then update
+or replace any summary that still repeats the fact (overview, index, `../businesses.md`) with
+a matching one-liner or a link. Do not copy the full detail into every file.
+
+| Fact | Owner | Summary allowed in |
+| --- | --- | --- |
+| Tax classification and elections | `tax.md` when that file exists; until then the overview line | `overview.md` one-liner or `see tax.md` |
+| Ownership fractions, control, agreements | `governance.md` when that file exists; until then overview Relationship | `overview.md` and index Relationship as routing one-liners |
+| Depth (`basic` / `in-depth`) | index Status column | overview Onboarding status (depth only, not freshness) |
+| Freshness | index Freshness column | entity `CONTEXT.md` Freshness line |
+| Coverage and contractual risk | `risk-insurance.md` when that file exists | overview one-liner only if it still repeats the fact |
+
+An adopted intention (pursue an election, form an entity, change coverage) belongs in
+`goals.md` as pending. It is not an effective fact in `tax.md`, `governance.md`,
+`risk-insurance.md`, or overview until implementation is confirmed. A checkbox or advisor
+conclusion alone does not complete an action. Keep the entity `CONTEXT.md` depth line in
+sync with the index Status column.
+
+If a confirmed fact needs a domain file that does not exist yet, create that small file.
+That does not complete in-depth onboarding and does not change depth from `basic`.
+
+`Last Updated` on a file is the date of the last edit to that file. It does not mean every
+fact in the file was re-verified. Do not stamp unrelated files.
+
 ## Create or deepen an entity
 
 - After general onboarding, register a new entity with `../../setup/entity-registration.md`.

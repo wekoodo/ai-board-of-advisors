@@ -9,8 +9,8 @@ Last Updated: YYYY-MM-DD
 - Entity or trust type:
 - Formation jurisdiction:
 - Other registrations:
-- Tax classification:
-- Onboarding status: basic
+- Tax classification: (one-liner or `see tax.md` when that file exists; `tax.md` is the owner)
+- Onboarding status: basic (depth only; freshness lives on the index)
 
 ## Relationship
 

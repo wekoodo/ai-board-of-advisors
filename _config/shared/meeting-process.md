@@ -224,10 +224,16 @@ how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `art
 3. Compare those files to the decisions, executed instruments, and completed actions from this
    session.
 4. Write the delta to the resolved owning file (if a named path is a shim, follow
-   `icm-conventions.md` **Resolve a named profile path**). Stamp `Last Updated: YYYY-MM-DD`
-   on each edited file. Follow `icm-conventions.md` **Keep files load-scoped**.
-5. If a fact is still hypothetical, or the user has not decided, do not write it. Ask once when
-   file ownership is unclear.
+   `icm-conventions.md` **Resolve a named profile path**). Follow
+   `_config/profile/entities/CONTEXT.md` **Fact ownership** for entity facts: owner first,
+   then any summary that still repeats the fact. Stamp `Last Updated: YYYY-MM-DD` only on
+   files actually edited. That stamp does not re-verify unrelated facts in the file. Follow
+   `icm-conventions.md` **Keep files load-scoped**.
+5. If a fact is still hypothetical, or the user has not decided, do not write it as standing
+   fact and do not add it to the action register. If the user adopted an intention (pursue an
+   election, change coverage, form an entity) but it is not yet implemented, record that
+   intention in the owning action register as pending — not as an effective fact. Ask once
+   when file ownership is unclear.
 6. Record the result in `minutes.md` under **Profile updates**: each path and a one-line change, or
    `none — profiles already current`.
 
@@ -241,6 +247,8 @@ how a conclusion was reached. Those remain in `brief.md`, `minutes.md`, and `art
   start an entity interview. Load `../setup/entity-onboarding.md` only when the user asks to
   reopen a domain.
 - Duplicate an action into more than one register.
+- Write an adopted plan as an effective tax, ownership, or coverage fact before
+  implementation is confirmed.
 - Invent `sources.md` for an ordinary fact update.
 
 ## A Bigger Decision
