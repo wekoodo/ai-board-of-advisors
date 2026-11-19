@@ -166,7 +166,8 @@ trusts already listed as entities.
 > after the gate passes, tell the user:
 >
 > "Your profile is saved to `_config/profile/`. Real profile files are excluded from Git by
-> default. Cloning this repo does not restore them. Content you send to a cloud model follows
+> default. For remote access, see **Sync context to a private repository** in `README.md`.
+> Content you send to a cloud model follows
 > that provider's policies. You can update any section any time by editing the file directly or
 > asking an advisor to update it during a session.
 >

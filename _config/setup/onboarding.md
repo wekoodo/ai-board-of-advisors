@@ -43,10 +43,9 @@ The interview:
   extra layer is required to finish onboarding.
 - Is conversational and can be paused/resumed — each completed domain is written immediately
 
-Your profile is stored in `_config/profile/`. Core files are always written. An entity registry
-and a `trust.md` file appear only when you have those. Real profile data is excluded from Git
-by default. Cloning the repository does not restore it. Content sent to a cloud model follows
-that provider's policies and your account settings.
+The board saves your profile to `_config/profile/`. It writes the core files and adds an entity
+registry or `trust.md` when applicable. The board excludes real profile data from Git by default.
+For remote access, see [Sync context to a private repository](../../README.md#sync-context-to-a-private-repository).
 
 After general onboarding you can ask to register a newly acquired entity without repeating the
 household interview, deepen one registered entity, or onboard a living-trust profile. Those
@@ -98,15 +97,9 @@ convening modes.
 
 ## Keeping the product system up to date
 
-GitHub does not auto-notify template children. With `upstream` set:
-
-```bash
-git fetch upstream
-git merge upstream/main
-```
-
-Or ask the board: “update the board” — the agent will show these commands and offer to run the
-merge after you confirm. See `_config/shared/updates.md` and root `CHANGELOG.md`.
+Follow [Keeping your board up to date](../../README.md#keeping-your-board-up-to-date), including the
+first-update procedure if Git reports unrelated histories. You can also ask the board to update
+itself. The agent offers to run the merge after you confirm.
 
 ## Adding custom advisors
 
@@ -129,9 +122,6 @@ See `advisors-extended/README.md`.
 
 ## Privacy note
 
-Your profile data (`_config/profile/` except the tracked routers and entity template) and
-user-created meetings (`meetings/<YYYY-MM-DD-HHMM>-<topic>/` or
-`meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic>/`) are stored locally
-and excluded from Git by default. Cloning does not restore them. The shipped example meetings
-under `meetings/example-*/` are included in the repo as worked references. Content sent to a
-cloud model follows that provider's policies and your account settings.
+Clones include the board records you commit and push after opting in to private sync. The product
+includes the profile routers, blank entity template, and fictional meeting examples. Content sent
+to a cloud model follows that provider's policies and your account settings.

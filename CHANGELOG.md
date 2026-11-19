@@ -8,6 +8,12 @@ section *Keeping your board up to date*.
 
 ## [Unreleased]
 
+### Added
+
+- Document opt-in GitHub sync for profiles and meeting records in private personal boards.
+  Keep source documents and full transcripts excluded by default when sync is enabled.
+- Document the one-time upstream merge for boards created from the GitHub template.
+
 ## [0.5.0] — 2026-09-06
 
 ### Changed

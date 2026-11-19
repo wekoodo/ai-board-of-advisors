@@ -47,7 +47,7 @@ keys, like database IDs:
   after `_config/profile/entities/index.md` exists, new records under
   `meetings/<scope>/<YYYY-MM-DD-HHMM>-<topic>/`. Both layouts may coexist; do not relocate an
   existing folder or add a stamp to one. Tracked `meetings/CONTEXT.md` is
-  recursive routing guidance for this area, and local-only `meetings/index.md` is evolving
+  recursive routing guidance for this area, and `meetings/index.md` is evolving
   routing metadata. Meeting record files remain authoritative. Examples ship separately as
   reference factory content under `meetings/example-*/`.
 
@@ -69,7 +69,9 @@ user-level store — otherwise it does not travel when the project moves to anot
   content excluded from Git by default, loaded via `_config/profile/CONTEXT.md` scoped rules
   (not a bulk directory read). Gitignore does not keep facts off a cloud model that reads them.
 - Apply the same pattern to any new durable memory: stable facts → Layer 3; evolving state →
-  Layer 4. Gitignore the *content* if private, but keep the *location* in the structure.
+  Layer 4. Gitignore private content by default and keep its location in the structure. The root
+  `README.md` **Sync context to a private repository** procedure covers personal boards that
+  opt in to versioning their profile and meeting records on a private remote.
 
 ## Recursive Layer-3 routing
 

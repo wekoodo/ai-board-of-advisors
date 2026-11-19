@@ -3,7 +3,8 @@
 ## Purpose
 
 Route entity-scoped work to a small private profile without loading unrelated folders.
-Real entity profiles are local-only. `_template/` is the tracked factory pattern.
+Real entity profiles are gitignored by default and eligible for opt-in sync to a private board.
+`_template/` is the tracked factory pattern.
 
 Household identity, finance, investments, and actions live in the core profile files
 (`../personal.md`, `../financial.md`, `../investments.md`, `../goals.md`). Do not register
@@ -21,7 +22,7 @@ when `index.md` exists. If `index.md` is absent, stay on the core profile files.
 
 If `index.md` is absent, the entity layer is inactive. Otherwise read `index.md` first. It
 records each entity's stable slug, relationship, onboarding status, and available profile
-files. `index.md` is local-only.
+files. `index.md` follows the same sync choice as the entity profiles.
 
 Allowed depth values (Status column — do not replace these with a freshness flag):
 
@@ -56,7 +57,7 @@ domain merely to clear the flag. Do not write freshness into overview onboarding
 
 Keep the assigned slug and unrelated files.
 
-Suggested `index.md` shape (create on first entity; do not commit real names):
+Suggested `index.md` shape (create on first entity; keep real names in the personal board):
 
 ```markdown
 # Entity registry
@@ -91,8 +92,7 @@ until it is free. Every candidate, including suffixes, must match the format reg
 overwrite. Do not write real data into `_template/`. Do not rename a slug that is already in
 the index.
 
-Private entity folders under this rule stay gitignored. Do not choose a slug that would land
-under a tracked factory path.
+Do not choose a slug that would land under a tracked factory path.
 
 ## Load an entity
 

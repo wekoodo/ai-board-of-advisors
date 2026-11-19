@@ -20,7 +20,8 @@ Routine soft checks: **`version.md` only**. Humans: root `README.md` (Use vs con
 | **Product repo** | Canonical clone | Releases / this system |
 | **Contributor** | **Fork** (+ clean tree) | PRs — no real profile/meetings |
 
-`upstream` on a personal board is not a fork. Profile, meetings, and `_inbox/` are gitignored and are not pushed to the product.
+Use `upstream` to fetch system changes. Personal boards can opt in to sync records to their own
+private `origin` using the root `README.md` **Sync context to a private repository** procedure.
 
 **Identity fields** (do not hardcode a second source): `_config/shared/version.md`
 (`product_repo`, `upstream_remote_name`, `version`).
@@ -35,7 +36,7 @@ clone. A clean canonical clone or contributor fork has no profile data and skips
 
 After the profile interview, or when the user asks to connect updates:
 
-1. Briefly: `upstream` only enables **system** updates; profile/meetings/inbox stay local.
+1. Explain that `upstream` fetches system updates and that private sync uses the board's own `origin`.
 2. If remote `upstream` is missing, offer to add it (recommend **yes**). On consent:
 
 ```bash
@@ -57,28 +58,63 @@ Present **both** options. Merge only after clear consent for agent-apply.
 
 ```bash
 git fetch upstream
-git merge upstream/main
+git merge --no-overwrite-ignore upstream/main
 ```
 
-Rebase alternative: `git fetch upstream` then `git rebase upstream/main`.
-Then fix conflicts if any; reopen the board. Profile/meetings should not appear in the merge.
+If Git reports unrelated histories, follow **First update from a template**. With shared history,
+`git rebase upstream/main` after the fetch is also an option. Resolve conflicts before reopening
+the board. The upstream changes should contain only product files.
 
 ### Option B — Agent applies
 
 1. Confirm: “I’ll fetch `upstream` and merge into your current branch. Continue?”
-2. On yes: `git fetch upstream` then `git merge upstream/main`.
+2. On yes: `git fetch upstream`, then `git merge --no-overwrite-ignore upstream/main`.
+   If Git reports unrelated histories, explain the one-time merge below and confirm before running it.
 3. Report: clean merge → new version from `version.md`, optional CHANGELOG highlights; or list conflicts and help resolve (usually edited **system** files — prefer new advisors over editing core).
 4. **Never** force-push, `reset --hard`, or discard work without explicit consent.
-5. **Never** commit private profile/meeting files or weaken `.gitignore` as part of an update.
+5. Keep the board's current sync choice when resolving `.gitignore` conflicts. Enabling sync and
+   committing board records are separate from applying an update.
 
 After success: local `version.md` should match upstream (via the merge). Custom extended advisors in new folders are usually untouched.
 
 ---
 
-## What merges vs stays local
+## First update from a template
 
-| From upstream (system) | Stays local |
-|------------------------|-------------|
-| Advisors, `_config/shared/`, setup, root chair/docs, examples, `profile/CONTEXT.md`, `profile/entities/CONTEXT.md`, `profile/entities/_template/` | Real profile data, your meetings, `_inbox/*` (except tracked README) |
+GitHub's **Use this template** starts with independent history. After fetching and verifying
+`upstream` points to the public product repository, run `git merge-base HEAD upstream/main`.
+If it finds no common ancestor, start on a branch with a clean tracked worktree.
+
+### Join at a matching template snapshot
+
+Find the root commit of your board and compare its tree ID to the upstream tree IDs. Both
+commands print the tree ID followed by the commit ID.
+
+```bash
+git log --first-parent --max-parents=0 --format="%T %H" HEAD
+git log --format="%T %H" upstream/main
+```
+
+If the tree IDs match, use the **matching upstream commit ID** for `UPSTREAM_SNAPSHOT` in the
+first command. This records the known template snapshot as an ancestor while preserving your
+board's files and customizations. The second command applies the product changes since that snapshot.
+
+```bash
+git merge --allow-unrelated-histories --strategy=ours UPSTREAM_SNAPSHOT
+git merge --no-overwrite-ignore upstream/main
+```
+
+### Join without a matching snapshot
+
+If you cannot establish a matching tree, review the full merge once:
+
+```bash
+git merge --allow-unrelated-histories --no-overwrite-ignore upstream/main
+```
+
+The first merge can report add/add conflicts in system files. Review upstream changes against
+your customizations and stage only the resolved system files by path. Use `git merge --abort`
+if you need to stop before finishing a conflicted merge. After a successful merge, use the
+normal update command for later releases. [Git merge options](https://git-scm.com/docs/git-merge)
 
 **Contribute to the product:** fork/clean clone → PR. Do not PR from a personal board with real life data.

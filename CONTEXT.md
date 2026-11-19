@@ -9,6 +9,13 @@ unless that file (or the user) says to.
 
 If the user is using the board as a personal advisor, skip this block and continue below.
 
+## Private repository sync
+
+When the user asks to sync profile or meeting records for a remote harness, follow `README.md`
+**Sync context to a private repository**. Handle sync as repository maintenance outside the
+meeting and onboarding flows. Verify the private `origin` and let the user review the files
+before committing and pushing any real board records.
+
 ## First Launch Check
 
 Before anything else, check for your profile. Apply `_config/shared/icm-conventions.md`

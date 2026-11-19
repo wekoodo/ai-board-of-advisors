@@ -1,17 +1,18 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "google-doc-style": {
       "source": "wekoodo/skills",
       "sourceType": "github",
       "skillPath": "skills/writing/google-doc-style/SKILL.md",
-      "computedHash": "bd70575c9dda6dacbe2a96db739f38281a6afe0968015a58f518a3601cb772c9"
+      "computedHash": "df9696152a64d2455890d911700443b78809b5e59b442ae33d07da3c0b399f78"
     },
     "icm": {
       "source": "wekoodo/skills",
       "sourceType": "github",
       "skillPath": "skills/context/icm/SKILL.md",
-      "computedHash": "8be381cccd6afddee3d07a460ad799bbf0e0100b58c46d1125135d2f208a40a3"
+      "computedHash": "64f7604e7c58eaf47d099abec90f0dbbfad78afe3c3c191be91bed556a6a62d7",
+      "commit": "56ec65d4b2f66222816d14c20da89adffeed1a4a"
     }
   }
 }

@@ -1,24 +1,25 @@
-# User profile — generated during onboarding, excluded from Git by default.
-# Keep the routers and blank entity template tracked; ignore all real profile data.
-# Optional layers: trust.md (or trust/ after a split) and entities/<slug>/ are local-only.
-_config/profile/*
-!_config/profile/CONTEXT.md
-!_config/profile/entities/
-_config/profile/entities/*
-!_config/profile/entities/CONTEXT.md
-!_config/profile/entities/_template/
-!_config/profile/entities/_template/**
+# BEGIN local-only board records (see README.md, Sync context to a private repository)
+/_config/profile/*
+!/_config/profile/CONTEXT.md
+!/_config/profile/entities/
+/_config/profile/entities/*
+!/_config/profile/entities/CONTEXT.md
+!/_config/profile/entities/_template/
+!/_config/profile/entities/_template/**
+/meetings/*
+!/meetings/CONTEXT.md
+!/meetings/example-emergency-fund/
+!/meetings/example-rental-property/
+# END local-only board records
 
 # Local update-check bookkeeping — last product-update check date; local-only, not profile data
-_config/profile/.update-check
+/_config/profile/.update-check
 
-# User meetings — local-only (the shipped example-* meetings are NOT excluded)
-meetings/*/
-!meetings/example-emergency-fund/
-!meetings/example-rental-property/
-
-# Compact private meeting-history routing metadata
-/meetings/index.md
+# Raw sources and full transcripts require a separate opt-in, even with board sync.
+/_config/profile/entities/*/sources/
+/meetings/**/inputs/
+/meetings/**/transcript.md
+!/meetings/example-rental-property/transcript.md
 
 # Pre-meeting document intake — folder + README tracked, dropped docs local-only
 _inbox/*
