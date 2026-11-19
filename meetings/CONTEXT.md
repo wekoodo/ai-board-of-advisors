@@ -91,7 +91,8 @@ to a shipped `example-*` folder.
 
 ## Private Index
 
-`index.md` is local-only routing metadata, not authoritative meeting history. If it does not exist,
+`index.md` is routing metadata and follows the same sync choice as meeting records. Treat the
+record files as authoritative meeting history. If the index does not exist,
 continue with the scoped fallback below. Never add shipped `example-*` meetings to this private
 index.
 

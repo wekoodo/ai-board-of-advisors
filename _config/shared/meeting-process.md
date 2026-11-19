@@ -122,9 +122,9 @@ and memos advisors produce when a document will serve the user better than prose
   now is, not as it was when produced.
 - **Revisions overwrite the same file.** When the user requests a change in conversation, the
   producing advisor revises the artifact and writes back to the same path. The file always
-  reflects the current state. Private meeting records are gitignored, so Git does not keep
-  their revision history. For a consequential change, record the prior decision or assumption
-  in `minutes.md` or in the artifact; do not commit personal data to the product repository.
+  reflects the current state. Meeting records are gitignored by default. For a consequential
+  change, record the prior decision or assumption in `minutes.md` or the artifact. Keep personal
+  data in the personal board.
 
 ## The Meeting Record
 
@@ -144,8 +144,8 @@ A substantive meeting leaves a small set of
 - **`artifacts/`** — present whenever the meeting produced one or more deliverables. Each file is a
   living document the user can read and edit.
 - **`inputs/`** — present whenever the user supplied pre-meeting documents. Holds the source files
-  moved from `_inbox/` when the meeting started (contracts, statements, spreadsheets). Local-only,
-  like the rest of a real meeting record.
+  moved from `_inbox/` when the meeting started (contracts, statements, spreadsheets). The
+  `.gitignore` rules exclude these files even when the user opts in to sync meeting records.
 - **`transcript.md`** — the full, turn-by-turn conversation. Written **only when the user asks to
   keep it** ("save the full transcript" / "keep the record"). It exists for digging deeper into how a
   conclusion or an artifact came about — not as the default record.

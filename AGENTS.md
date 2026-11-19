@@ -30,7 +30,7 @@ The structure is identical to a core advisor and the folder sits at the same dep
 
 - `shared/` — disclaimer, advisor collaboration map, ethics, output conventions (evidence and calculation, Handoff format), and the meeting process (sub-agent and inline convening modes)
 - `setup/` — the onboarding interview that runs on first launch, plus optional entity and trust deepen contracts
-- `profile/` — the locally generated personal, financial, business, investment, and goals profile (gitignored). Tracked: `CONTEXT.md` and `entities/_template/` (plus `entities/CONTEXT.md`). Optional local layers: `trust.md` and `entities/<slug>/`.
+- `profile/` — the personal, financial, business, investment, and goals profile, plus optional `trust.md` and `entities/<slug>/`. Real records are gitignored by default. The routers and blank entity template ship with the product. See `README.md` **Sync context to a private repository** for opt-in sync of profiles and meetings.
 
 ## Ground Rules
 

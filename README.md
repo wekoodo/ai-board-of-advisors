@@ -50,7 +50,7 @@ These are **different** GitHub paths. Pick the one that matches your goal.
 
 **Do not** open pull requests from a personal board that contains real financial profile or meeting content. Contribute from a fork (or clean clone) of the product only.
 
-Adding a git remote named `upstream` on a **personal board** only enables **pulling system updates**. It does **not** turn your board into a fork, share your history with the product, or upload gitignored profile/meetings.
+Use `upstream` to fetch system updates from the public template. Use your own private `origin` to publish board records if you enable sync.
 
 ---
 
@@ -104,22 +104,40 @@ GitHub **does not** notify template-created repos when the product changes. Pers
 
 ```bash
 git fetch upstream
-git merge upstream/main
+git merge --no-overwrite-ignore upstream/main
 ```
 
-**What merges vs what stays local**
+If Git reports unrelated histories on your first update, follow the
+[first update from a template](_config/shared/updates.md#first-update-from-a-template) procedure.
+Existing boards get the private-sync instructions through the same product update. Enable sync
+separately on each private board.
 
-| Updated from the product (system) | Local by default (gitignored) |
-|-----------------------------------|-------------------------------------|
-| Advisors, shared rules, chair protocol, examples, docs | Profile (`_config/profile/`), your meetings, `_inbox/` docs |
+If you customized **system** files in place, merges can conflict. Prefer adding new advisors under `advisors-extended/` over editing core files. [Full update procedure](_config/shared/updates.md)
 
-If you customized **system** files in place, merges can conflict — prefer adding new advisors under `advisors-extended/` over editing core files. Full detail: [`_config/shared/updates.md`](_config/shared/updates.md).
+## Sync context to a private repository
 
-## Your profile stays local
+The board keeps real profiles and meeting records out of Git by default. Enable sync in your own private GitHub repository if a remote harness needs that context.
 
-The onboarding interview writes your personal, financial, business, investment, and goals data into `_config/profile/`. If you own entities or a living trust, optional local files appear under `entities/` and `trust.md`. Real profile data, your meeting records, and `_inbox/` documents are stored in this workspace and excluded from Git by default. The tracked factory pieces are `profile/CONTEXT.md`, `profile/entities/CONTEXT.md`, and `profile/entities/_template/`.
+1. Run `git remote -v` and verify on GitHub that the `origin` push URL points to your own
+   **private** board. Use the public product repository as `upstream` for updates.
+2. In your private board's `.gitignore`, remove the block from `# BEGIN local-only board records`
+   through `# END local-only board records`, inclusive. Keep the rules below it. Git can now track
+   profile files, trust and entity folders, `entities/index.md`, meetings in flat and scoped
+   layouts, and `meetings/index.md`.
+3. Run `git status --short --untracked-files=all -- .gitignore _config/profile/ meetings/`.
+   Stage `.gitignore` and the files you want to sync by path with `git add --`. Include both ends
+   of any profile pointer or index entry you want the harness to follow. Review staged paths
+   and contents with `git diff --cached`.
+4. Commit the reviewed files, then run `git push origin HEAD` from the branch your harness will
+   read. Connect the harness to that private repository and check that it can open a profile and
+   follow a meeting index entry. Stage, commit, and push future edits and new records as needed.
 
-Default Git exclusion is not a guarantee against a forced add. Content you send to a cloud model is processed under that provider's policies and your account settings. Cloning this repository does not restore ignored personal memory. A private backup or export is a separate decision. Connecting `upstream` does not send profile files to the product. Merging product updates does not require or overwrite them.
+The sync rules continue to exclude inbox files, documents moved into meeting `inputs/` or entity
+`sources/`, full meeting transcripts, and the local update-check stamp. To include a specific raw
+document or transcript in your private board, review it, then use `git add -f --` with that file's
+path. Git keeps committed versions in history, and `.gitignore` applies only to untracked files.
+Review the provider's data policies before giving a remote harness access.
+[GitHub guidance on sensitive data in Git history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
 
 ## Add your own advisor
 

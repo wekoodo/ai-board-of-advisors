@@ -52,7 +52,7 @@ This file holds the whole procedure. Routers only point here. Keep the steps in 
 
    ```markdown
    **Product update available:** local `X.Y.Z` → upstream `A.B.C`.
-   Profile and meetings stay local. Say **update the board** for commands or for me to apply it.
+   Say **update the board** for commands or for me to apply it.
    ```
 
    If current or local is ahead, stay silent (say “you’re current” only if they asked).
